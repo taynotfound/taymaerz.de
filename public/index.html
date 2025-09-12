@@ -29,8 +29,10 @@
                         }
                     },
                     animation: {
-                        'fade-in': 'fadeIn 0.3s ease-in-out',
-                        'slide-in-up': 'slideInUp 0.4s ease-out'
+                        'fade-in': 'fadeIn 0.6s ease-in-out',
+                        'slide-in-up': 'slideInUp 0.7s ease-in-out',
+                        'slide-in-left': 'slideInLeft 0.7s ease-in-out',
+                        'slide-in-right': 'slideInRight 0.7s ease-in-out'
                     },
                     keyframes: {
                         fadeIn: {
@@ -40,6 +42,14 @@
                         slideInUp: {
                             '0%': { transform: 'translateY(20px)', opacity: '0' },
                             '100%': { transform: 'translateY(0)', opacity: '1' }
+                        },
+                        slideInLeft: {
+                            '0%': { transform: 'translateX(-20px)', opacity: '0' },
+                            '100%': { transform: 'translateX(0)', opacity: '1' }
+                        },
+                        slideInRight: {
+                            '0%': { transform: 'translateX(20px)', opacity: '0' },
+                            '100%': { transform: 'translateX(0)', opacity: '1' }
                         }
                     }
                 }
@@ -368,19 +378,19 @@
     <nav class="fixed top-0 w-full bg-gray-900/90 backdrop-blur-md border-b border-gray-700 z-40 transition-all duration-300">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center py-4">
-                <div class="text-xl font-bold text-purple-400">
+                <div class="text-xl font-bold text-purple-950">
                     TM
                 </div>
                 
                 <div class="hidden md:flex space-x-6">
-                    <a href="#about" class="nav-link text-gray-300 hover:text-purple-400 transition-colors duration-200">About</a>
-                    <a href="#skills" class="nav-link text-gray-300 hover:text-purple-400 transition-colors duration-200">Skills</a>
-                    <a href="#experience" class="nav-link text-gray-300 hover:text-purple-400 transition-colors duration-200">Experience</a>
-                    <a href="#projects" class="nav-link text-gray-300 hover:text-purple-400 transition-colors duration-200">Projects</a>
-                    <a href="#education" class="nav-link text-gray-300 hover:text-purple-400 transition-colors duration-200">Education</a>
-                    <a href="#cv" class="nav-link text-gray-300 hover:text-purple-400 transition-colors duration-200">CV</a>
-                    <a href="#testimonials" class="nav-link text-gray-300 hover:text-purple-400 transition-colors duration-200">Reviews</a>
-                    <a href="#contact" class="nav-link text-gray-300 hover:text-purple-400 transition-colors duration-200">Contact</a>
+                    <a href="#about" class="nav-link text-gray-300 hover:text-purple-950 transition-colors duration-200">About</a>
+                    <a href="#skills" class="nav-link text-gray-300 hover:text-purple-950 transition-colors duration-200">Skills</a>
+                    <a href="#experience" class="nav-link text-gray-300 hover:text-purple-950 transition-colors duration-200">Experience</a>
+                    <a href="#projects" class="nav-link text-gray-300 hover:text-purple-950 transition-colors duration-200">Projects</a>
+                    <a href="#education" class="nav-link text-gray-300 hover:text-purple-950 transition-colors duration-200">Education</a>
+                    <a href="#cv" class="nav-link text-gray-300 hover:text-purple-950 transition-colors duration-200">CV</a>
+                    <a href="#testimonials" class="nav-link text-gray-300 hover:text-purple-950 transition-colors duration-200">Reviews</a>
+                    <a href="#contact" class="nav-link text-gray-300 hover:text-purple-950 transition-colors duration-200">Contact</a>
                 </div>
                 
                 <div class="flex items-center space-x-4">
@@ -396,14 +406,14 @@
             <!-- Mobile Menu -->
             <div id="mobile-menu" class="hidden md:hidden pb-4">
                 <div class="flex flex-col space-y-2">
-                    <a href="#about" class="mobile-nav-link px-3 py-2 rounded-md text-gray-300 hover:bg-purple-900/30 hover:text-purple-400">About</a>
-                    <a href="#skills" class="mobile-nav-link px-3 py-2 rounded-md text-gray-300 hover:bg-purple-900/30 hover:text-purple-400">Skills</a>
-                    <a href="#experience" class="mobile-nav-link px-3 py-2 rounded-md text-gray-300 hover:bg-purple-900/30 hover:text-purple-400">Experience</a>
-                    <a href="#projects" class="mobile-nav-link px-3 py-2 rounded-md text-gray-300 hover:bg-purple-900/30 hover:text-purple-400">Projects</a>
-                    <a href="#education" class="mobile-nav-link px-3 py-2 rounded-md text-gray-300 hover:bg-purple-900/30 hover:text-purple-400">Education</a>
-                    <a href="#cv" class="mobile-nav-link px-3 py-2 rounded-md text-gray-300 hover:bg-purple-900/30 hover:text-purple-400">CV</a>
-                    <a href="#testimonials" class="mobile-nav-link px-3 py-2 rounded-md text-gray-300 hover:bg-purple-900/30 hover:text-purple-400">Reviews</a>
-                    <a href="#contact" class="mobile-nav-link px-3 py-2 rounded-md text-gray-300 hover:bg-purple-900/30 hover:text-purple-400">Contact</a>
+                    <a href="#about" class="mobile-nav-link px-3 py-2 rounded-md text-gray-300 hover:bg-purple-900/30 hover:text-purple-950">About</a>
+                    <a href="#skills" class="mobile-nav-link px-3 py-2 rounded-md text-gray-300 hover:bg-purple-900/30 hover:text-purple-950">Skills</a>
+                    <a href="#experience" class="mobile-nav-link px-3 py-2 rounded-md text-gray-300 hover:bg-purple-900/30 hover:text-purple-950">Experience</a>
+                    <a href="#projects" class="mobile-nav-link px-3 py-2 rounded-md text-gray-300 hover:bg-purple-900/30 hover:text-purple-950">Projects</a>
+                    <a href="#education" class="mobile-nav-link px-3 py-2 rounded-md text-gray-300 hover:bg-purple-900/30 hover:text-purple-950">Education</a>
+                    <a href="#cv" class="mobile-nav-link px-3 py-2 rounded-md text-gray-300 hover:bg-purple-900/30 hover:text-purple-950">CV</a>
+                    <a href="#testimonials" class="mobile-nav-link px-3 py-2 rounded-md text-gray-300 hover:bg-purple-900/30 hover:text-purple-950">Reviews</a>
+                    <a href="#contact" class="mobile-nav-link px-3 py-2 rounded-md text-gray-300 hover:bg-purple-900/30 hover:text-purple-950">Contact</a>
                 </div>
             </div>
         </div>
@@ -430,7 +440,7 @@
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
                             </svg>
                         </a>
-                        <a href="#contact" class="inline-flex items-center px-6 py-3 border-2 border-purple-800 text-purple-800 hover:bg-purple-600 hover:text-white hover:border-purple-600 rounded-lg transition-colors duration-200">
+                        <a href="#contact" class="inline-flex items-center px-6 py-3 border-2 border-purple-950 text-purple-950 hover:bg-purple-600 hover:text-white hover:border-purple-600 rounded-lg transition-colors duration-200">
                             Get In Touch
                         </a>
                     </div>
@@ -455,18 +465,18 @@
             
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
                 <div>
-                    <h3 class="text-2xl font-semibold mb-6 text-purple-800">Who I Am</h3>
+                    <h3 class="text-2xl font-semibold mb-6 text-purple-950">Who I Am</h3>
                     <p class="text-lg text-gray-300 mb-6 leading-relaxed" id="about-bio">
                         Loading...
                     </p>
                     
                     <div class="grid grid-cols-2 gap-4 mt-8">
                         <div class="text-center p-4 bg-gray-700 rounded-lg shadow-sm border border-purple-500/20 hover:border-purple-500/40 transition-colors duration-300">
-                            <div class="text-2xl font-bold text-purple-800" id="experience-years">6+</div>
+                            <div class="text-2xl font-bold text-purple-950" id="experience-years">6+</div>
                             <div class="text-sm text-gray-300">Years Experience</div>
                         </div>
                         <div class="text-center p-4 bg-gray-700 rounded-lg shadow-sm border border-purple-500/20 hover:border-purple-500/40 transition-colors duration-300">
-                            <div class="text-2xl font-bold text-purple-800" id="projects-count">8+</div>
+                            <div class="text-2xl font-bold text-purple-950" id="projects-count">8+</div>
                             <div class="text-sm text-gray-300">Projects Built</div>
                         </div>
                     </div>
@@ -474,7 +484,7 @@
                 
                 <div>
                     <div class="bg-gray-700 p-8 rounded-xl shadow-lg border border-purple-500/20 hover:border-purple-500/40 transition-colors duration-300">
-                        <h4 class="text-xl font-semibold mb-6 text-purple-800">Quick Facts</h4>
+                        <h4 class="text-xl font-semibold mb-6 text-purple-950">Quick Facts</h4>
                         <div class="space-y-4">
                             <div class="flex items-center">
                                 <span class="w-2 h-2 bg-purple-600 rounded-full mr-3"></span>
@@ -562,8 +572,8 @@
                             <span class="text-xl">🎓</span>
                         </div>
                         <div class="flex-1">
-                            <h3 class="text-xl font-semibold mb-2 text-purple-400">IT Specialist in System Integration</h3>
-                            <p class="text-purple-200 mb-2">dikon Elektronik & IT GmbH</p>
+                            <h3 class="text-xl font-semibold mb-2 text-purple-950">IT Specialist in System Integration</h3>
+                            <p class="text-purple-950 mb-2">dikon Elektronik & IT GmbH</p>
                             <p class="text-gray-300 text-sm mb-3">2025 - Present</p>
                             <p class="text-gray-300">Currently pursuing apprenticeship in IT system integration, focusing on infrastructure management and technical support.</p>
                         </div>
@@ -576,8 +586,8 @@
                             <span class="text-xl">💻</span>
                         </div>
                         <div class="flex-1">
-                            <h3 class="text-xl font-semibold mb-2 text-purple-400">Self-Taught Developer</h3>
-                            <p class="text-purple-200 mb-2">Various Online Platforms</p>
+                            <h3 class="text-xl font-semibold mb-2 text-purple-950">Self-Taught Developer</h3>
+                            <p class="text-purple-950 mb-2">Various Online Platforms</p>
                             <p class="text-gray-300 text-sm mb-3">2019 - Ongoing</p>
                             <p class="text-gray-300">Continuous learning through online courses, documentation, and hands-on projects in web development and Linux administration.</p>
                         </div>
@@ -599,37 +609,37 @@
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 <div class="bg-gray-700 p-6 rounded-xl shadow-lg border border-purple-500/20 hover:border-purple-500/40 transition-colors duration-300 text-center">
                     <div class="text-3xl mb-4">🚀</div>
-                    <h3 class="text-xl font-semibold mb-3 text-purple-400">8+ Projects Deployed</h3>
+                    <h3 class="text-xl font-semibold mb-3 text-purple-950">8+ Projects Deployed</h3>
                     <p class="text-gray-300">Successfully launched and maintained multiple web applications serving real users</p>
                 </div>
                 
                 <div class="bg-gray-700 p-6 rounded-xl shadow-lg border border-purple-500/20 hover:border-purple-500/40 transition-colors duration-300 text-center">
                     <div class="text-3xl mb-4">⭐</div>
-                    <h3 class="text-xl font-semibold mb-3 text-purple-400">Open Source Contributor</h3>
+                    <h3 class="text-xl font-semibold mb-3 text-purple-950">Open Source Contributor</h3>
                     <p class="text-gray-300">Active contributor to open source projects and maintainer of personal repositories</p>
                 </div>
                 
                 <div class="bg-gray-700 p-6 rounded-xl shadow-lg border border-purple-500/20 hover:border-purple-500/40 transition-colors duration-300 text-center">
                     <div class="text-3xl mb-4">🏆</div>
-                    <h3 class="text-xl font-semibold mb-3 text-purple-400">6+ Years Experience</h3>
+                    <h3 class="text-xl font-semibold mb-3 text-purple-950">6+ Years Experience</h3>
                     <p class="text-gray-300">Consistent growth and learning in programming since 2019</p>
                 </div>
                 
                 <div class="bg-gray-700 p-6 rounded-xl shadow-lg border border-purple-500/20 hover:border-purple-500/40 transition-colors duration-300 text-center">
                     <div class="text-3xl mb-4">🌐</div>
-                    <h3 class="text-xl font-semibold mb-3 text-purple-400">Multi-Domain Portfolio</h3>
+                    <h3 class="text-xl font-semibold mb-3 text-purple-950">Multi-Domain Portfolio</h3>
                     <p class="text-gray-300">Managing and developing across 7+ different domains and projects</p>
                 </div>
                 
                 <div class="bg-gray-700 p-6 rounded-xl shadow-lg border border-purple-500/20 hover:border-purple-500/40 transition-colors duration-300 text-center">
                     <div class="text-3xl mb-4">🐧</div>
-                    <h3 class="text-xl font-semibold mb-3 text-purple-400">Linux Enthusiast</h3>
+                    <h3 class="text-xl font-semibold mb-3 text-purple-950">Linux Enthusiast</h3>
                     <p class="text-gray-300">Passionate about open source technologies and Linux system administration</p>
                 </div>
                 
                 <div class="bg-gray-700 p-6 rounded-xl shadow-lg border border-purple-500/20 hover:border-purple-500/40 transition-colors duration-300 text-center">
                     <div class="text-3xl mb-4">🎯</div>
-                    <h3 class="text-xl font-semibold mb-3 text-purple-400">Problem Solver</h3>
+                    <h3 class="text-xl font-semibold mb-3 text-purple-950">Problem Solver</h3>
                     <p class="text-gray-300">Dedicated to finding elegant solutions to complex technical challenges</p>
                 </div>
             </div>
@@ -648,7 +658,7 @@
             <div class="bg-gray-800 rounded-xl shadow-lg p-8 border border-purple-500/20">
                 <div class="flex flex-col md:flex-row justify-between items-center mb-8">
                     <div>
-                        <h3 class="text-xl font-semibold text-purple-400 mb-2">Download CV</h3>
+                        <h3 class="text-xl font-semibold text-purple-950 mb-2">Download CV</h3>
                         <p class="text-gray-300">Get a comprehensive overview of my experience and skills</p>
                         <p class="text-red-500">Please select to only print pages 1-2! There's currently a known bug thats creating blank pages</p>
                     </div>
@@ -656,7 +666,7 @@
                         <button onclick="printCV()" class="px-6 py-3 bg-purple-600 hover:bg-purple-700 text-white rounded-lg transition-colors duration-200">
                             🖨️ Print CV
                         </button>
-                        <button onclick="viewCV()" class="px-6 py-3 border-2 border-purple-400 text-purple-400 hover:bg-purple-600 hover:text-white hover:border-purple-600 rounded-lg transition-colors duration-200">
+                        <button onclick="viewCV()" class="px-6 py-3 border-2 border-purple-950 text-purple-950 hover:bg-purple-600 hover:text-white hover:border-purple-600 rounded-lg transition-colors duration-200">
                             👁️ View CV
                         </button>
                     </div>
@@ -758,7 +768,7 @@
                     <div class="flex items-center mb-4">
                         <img src="https://thespacedev.com/assets/Niklas_Pfp-Anfw_Xbm.png" alt="Niklas" class="w-12 h-12 rounded-full mr-4 object-cover">
                         <div>
-                            <h4 class="font-semibold text-purple-400">Niklas</h4>
+                            <h4 class="font-semibold text-purple-950">Niklas</h4>
                             <p class="text-gray-400 text-sm">CEO, EasySystems</p>
                             <a href="https://thespacedev.com" class="text-purple-500 hover:text-purple-400 text-xs" target="_blank">thespacedev.com</a>
                         </div>
@@ -766,7 +776,7 @@
                     <p class="text-gray-300 italic mb-4">
                         "Tay is an engaged and motivated staff member of EasySystems. Their passion and experience is a really important part for the entire project. I can only recommend Tay for any collaboration as his experience and personality is a great addition for every team."
                     </p>
-                    <div class="flex text-purple-400">
+                    <div class="flex text-purple-950">
                         ⭐⭐⭐⭐⭐
                     </div>
                 </div>
@@ -776,7 +786,7 @@
                     <div class="w-16 h-16 bg-purple-600/20 rounded-full flex items-center justify-center mb-4">
                         <span class="text-2xl">⏳</span>
                     </div>
-                    <h4 class="font-semibold text-purple-400 mb-2">Coming Soon</h4>
+                    <h4 class="font-semibold text-purple-950 mb-2">Coming Soon</h4>
                     <p class="text-gray-400 text-sm">More testimonials from colleagues and clients will be added here soon.</p>
                 </div>
                 
@@ -784,7 +794,7 @@
                     <div class="w-16 h-16 bg-purple-600/20 rounded-full flex items-center justify-center mb-4">
                         <span class="text-2xl">�</span>
                     </div>
-                    <h4 class="font-semibold text-purple-400 mb-2">Share Your Experience</h4>
+                    <h4 class="font-semibold text-purple-950 mb-2">Share Your Experience</h4>
                     <p class="text-gray-400 text-sm">Worked with Tay? We'd love to hear about your experience!</p>
                     <a href="mailto:hi@taymaerz.de?subject=Testimonial" class="mt-3 text-purple-500 hover:text-purple-400 text-sm underline">Submit Testimonial</a>
                 </div>
@@ -803,41 +813,41 @@
             
             <div class="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12">
                 <div class="animate-slide-in-left">
-                    <h3 class="text-2xl font-semibold mb-6 text-purple-800">Contact Information</h3>
+                    <h3 class="text-2xl font-semibold mb-6 text-purple-950">Contact Information</h3>
                     
                     <div class="space-y-6">
                         <div class="flex items-center">
                             <div class="w-12 h-12 bg-purple-900/30 rounded-lg flex items-center justify-center mr-4 border border-purple-500/20">
-                                <svg class="w-6 h-6 text-purple-800" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <svg class="w-6 h-6 text-purple-950" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
                                 </svg>
                             </div>
                             <div>
-                                <h4 class="font-semibold text-purple-800">Email</h4>
+                                <h4 class="font-semibold text-purple-950">Email</h4>
                                 <a href="mailto:hi@taymaerz.de" class="text-purple-500 hover:text-purple-100 hover:underline" id="contact-email">hi@taymaerz.de</a>
                             </div>
                         </div>
                         
                         <div class="flex items-center">
                             <div class="w-12 h-12 bg-purple-900/30 rounded-lg flex items-center justify-center mr-4 border border-purple-500/20">
-                                <svg class="w-6 h-6 text-purple-800" fill="currentColor" viewBox="0 0 24 24">
+                                <svg class="w-6 h-6 text-purple-950" fill="currentColor" viewBox="0 0 24 24">
                                     <path d="M20.317 4.3698a19.7913 19.7913 0 00-4.8851-1.5152.0741.0741 0 00-.0785.0371c-.211.3753-.4447.8648-.6083 1.2495-1.8447-.2762-3.68-.2762-5.4868 0-.1636-.3933-.4058-.8742-.6177-1.2495a.077.077 0 00-.0785-.037 19.7363 19.7363 0 00-4.8852 1.515.0699.0699 0 00-.0321.0277C.5334 9.0458-.319 13.5799.0992 18.0578a.0824.0824 0 00.0312.0561c2.0528 1.5076 4.0413 2.4228 5.9929 3.0294a.0777.0777 0 00.0842-.0276c.4616-.6304.8731-1.2952 1.226-1.9942a.076.076 0 00-.0416-.1057c-.6528-.2476-1.2743-.5495-1.8722-.8923a.077.077 0 01-.0076-.1277c.1258-.0943.2517-.1923.3718-.2914a.0743.0743 0 01.0776-.0105c3.9278 1.7933 8.18 1.7933 12.0614 0a.0739.0739 0 01.0785.0095c.1202.099.246.1981.3728.2924a.077.077 0 01-.0066.1276 12.2986 12.2986 0 01-1.873.8914.0766.0766 0 00-.0407.1067c.3604.698.7719 1.3628 1.225 1.9932a.076.076 0 00.0842.0286c1.961-.6067 3.9495-1.5219 6.0023-3.0294a.077.077 0 00.0313-.0552c.5004-5.177-.8382-9.6739-3.5485-13.6604a.061.061 0 00-.0312-.0286zM8.02 15.3312c-1.1825 0-2.1569-1.0857-2.1569-2.419 0-1.3332.9555-2.4189 2.157-2.4189 1.2108 0 2.1757 1.0952 2.1568 2.419-.019 1.3332-.9555 2.4189-2.1569 2.4189zm7.9748 0c-1.1825 0-2.1569-1.0857-2.1569-2.419 0-1.3332.9554-2.4189 2.1569-2.4189 1.2108 0 2.1757 1.0952 2.1568 2.419 0 1.3332-.9555 2.4189-2.1568 2.4189Z"/>
                                 </svg>
                             </div>
                             <div>
-                                <h4 class="font-semibold text-purple-800">Discord</h4>
+                                <h4 class="font-semibold text-purple-950">Discord</h4>
                                 <span class="text-purple-500" id="contact-discord">notfound.sh</span>
                             </div>
                         </div>
                         
                         <div class="flex items-center">
                             <div class="w-12 h-12 bg-purple-900/30 rounded-lg flex items-center justify-center mr-4 border border-purple-500/20">
-                                <svg class="w-6 h-6 text-purple-800" fill="currentColor" viewBox="0 0 24 24">
+                                <svg class="w-6 h-6 text-purple-950" fill="currentColor" viewBox="0 0 24 24">
                                     <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
                                 </svg>
                             </div>
                             <div>
-                                <h4 class="font-semibold text-purple-800">GitHub</h4>
+                                <h4 class="font-semibold text-purple-950">GitHub</h4>
                                 <a href="https://github.com/taynotfound" target="_blank" class="text-purple-500 hover:text-purple-100 hover:underline">@taynotfound</a>
                             </div>
                         </div>
@@ -846,7 +856,7 @@
                 
                 <div class="animate-slide-in-right">
                     <div class="bg-gray-700 p-8 rounded-xl shadow-lg border border-purple-500/20 hover:border-purple-500/40 transition-colors duration-300">
-                        <h3 class="text-2xl font-semibold mb-6 text-purple-400">Send Message</h3>
+                        <h3 class="text-2xl font-semibold mb-6 text-purple-950">Send Message</h3>
                         
                         <!-- Contact Form -->
                         <form id="contact-form" class="space-y-4">
@@ -928,8 +938,8 @@
                         <div class="mt-6 pt-6 border-t border-gray-600">
                             <p class="text-gray-400 text-sm mb-3">Or reach out directly:</p>
                             <div class="flex space-x-4">
-                                <a href="mailto:hi@taymaerz.de" class="text-purple-400 hover:text-purple-300 text-sm underline">hi@taymaerz.de</a>
-                                <a href="https://github.com/taynotfound" target="_blank" class="text-purple-400 hover:text-purple-300 text-sm underline">GitHub</a>
+                                <a href="mailto:hi@taymaerz.de" class="text-purple-950 hover:text-purple-300 text-sm underline">hi@taymaerz.de</a>
+                                <a href="https://github.com/taynotfound" target="_blank" class="text-purple-950 hover:text-purple-300 text-sm underline">GitHub</a>
                             </div>
                         </div>
                     </div>
@@ -943,24 +953,24 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
                 <div>
-                    <h3 class="text-xl font-bold mb-4 text-purple-800">Tay März</h3>
+                    <h3 class="text-xl font-bold mb-4 text-purple-950">Tay März</h3>
                     <p class="text-gray-400">Developer & Linux Enthusiast based in Germany</p>
                 </div>
                 
                 <div>
-                    <h4 class="font-semibold mb-4 text-purple-800">Quick Links</h4>
+                    <h4 class="font-semibold mb-4 text-purple-950">Quick Links</h4>
                     <div class="space-y-2">
-                        <a href="#about" class="block text-gray-400 hover:text-purple-800 transition-colors duration-200">About</a>
-                        <a href="#projects" class="block text-gray-400 hover:text-purple-800 transition-colors duration-200">Projects</a>
-                        <a href="#contact" class="block text-gray-400 hover:text-purple-800 transition-colors duration-200">Contact</a>
+                        <a href="#about" class="block text-gray-400 hover:text-purple-950 transition-colors duration-200">About</a>
+                        <a href="#projects" class="block text-gray-400 hover:text-purple-950 transition-colors duration-200">Projects</a>
+                        <a href="#contact" class="block text-gray-400 hover:text-purple-950 transition-colors duration-200">Contact</a>
                     </div>
                 </div>
                 
                 <div>
-                    <h4 class="font-semibold mb-4 text-purple-800">Legal</h4>
+                    <h4 class="font-semibold mb-4 text-purple-950">Legal</h4>
                     <div class="space-y-2">
-                        <a href="/impressum" class="block text-gray-400 hover:text-purple-800 transition-colors duration-200">Impressum (DE)</a>
-                        <a href="/impressum-en" class="block text-gray-400 hover:text-purple-800 transition-colors duration-200">Impressum (EN)</a>
+                        <a href="/impressum" class="block text-gray-400 hover:text-purple-950 transition-colors duration-200">Impressum (DE)</a>
+                        <a href="/impressum-en" class="block text-gray-400 hover:text-purple-950 transition-colors duration-200">Impressum (EN)</a>
                     </div>
                 </div>
             </div>
@@ -1074,10 +1084,10 @@
                 experienceCard.className = `bg-gray-700 p-8 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 border-l-4 border-purple-600 border border-purple-500/20 hover:border-purple-500/40`;
                 experienceCard.innerHTML = `
                     <div class="flex flex-col md:flex-row md:items-center md:justify-between mb-4">
-                        <h3 class="text-xl font-semibold text-purple-500">${exp.position}</h3>
+                        <h3 class="text-xl font-semibold text-purple-950">${exp.position}</h3>
                         <span class="text-sm text-gray-300 font-medium">${exp.period}</span>
                     </div>
-                    <h4 class="text-lg font-medium mb-2 text-purple-600">${exp.company}</h4>
+                    <h4 class="text-lg font-medium mb-2 text-purple-950">${exp.company}</h4>
                     <p class="text-gray-300 text-sm mb-3">${exp.location}</p>
                     <p class="text-gray-300">${exp.description}</p>
                 `;
@@ -1102,14 +1112,14 @@
                         <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 hover:opacity-100 transition-opacity duration-300"></div>
                     </div>
                     <div class="p-6">
-                        <h3 class="text-xl font-semibold mb-3 text-purple-800">${project.name}</h3>
+                        <h3 class="text-xl font-semibold mb-3 text-purple-950">${project.name}</h3>
                         <p class="text-gray-300 mb-4">${project.description}</p>
                         <div class="flex space-x-4">
                             <a href="${project.liveUrl}" target="_blank" class="flex-1 bg-purple-600 hover:bg-purple-700 text-white text-center py-2 px-4 rounded-lg transition-all duration-200 hover:scale-105 hover:shadow-lg hover:shadow-purple-500/25">
                                 View Live
                             </a>
                             ${project.githubUrl ? `
-                                <a href="${project.githubUrl}" target="_blank" class="flex-1 border-2 border-purple-800 text-purple-800 hover:bg-purple-600 hover:text-white hover:border-purple-600 text-center py-2 px-4 rounded-lg transition-all duration-200 hover:scale-105">
+                                <a href="${project.githubUrl}" target="_blank" class="flex-1 border-2 border-purple-950 text-purple-950 hover:bg-purple-600 hover:text-white hover:border-purple-600 text-center py-2 px-4 rounded-lg transition-all duration-200 hover:scale-105">
                                     GitHub
                                 </a>
                             ` : ''}
@@ -1166,12 +1176,12 @@
                     if (entry.isIntersecting) {
                         const currentId = entry.target.getAttribute('id');
                         navLinks.forEach(link => {
-                            link.classList.remove('text-purple-800');
+                            link.classList.remove('text-purple-950');
                             link.classList.add('text-gray-300');
                             
                             if (link.getAttribute('href') === `#${currentId}`) {
                                 link.classList.remove('text-gray-300');
-                                link.classList.add('text-purple-800');
+                                link.classList.add('text-purple-950');
                             }
                         });
                     }
