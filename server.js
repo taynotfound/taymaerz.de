@@ -31,7 +31,7 @@ async function fetchPortfolioData() {
     const data = {
       name: "Tay März",
       title: "Developer & Linux Enthusiast",
-      bio: "I'm a passionate developer from Germany with 6+ years of programming experience since 2019, dedicated to building beautiful, accessible, and modern web experiences. My journey has taken me through AI prototyping, internships, and real-world projects for communities and businesses. I thrive on learning new technologies, collaborating with others, and turning ideas into reality. Always curious, always shipping.",
+      bio: "I'm a passionate developer from Germany with 6+ years of programming experience since 2019, dedicated to building beautiful, accessible, and modern web experiences. My journey has taken me through AI prototyping, internships, and real-world projects for communities and businesses. I run a 2-node Proxmox homelab where I host my own services, giving me hands-on experience with virtualization and networking. I thrive on learning new technologies, collaborating with others, and turning ideas into reality. Always curious, always shipping.",
       photo: "/assets/images/photo.jpg",
       contact: {
         email: "tay@taymaerz.de",
@@ -50,6 +50,8 @@ async function fetchPortfolioData() {
         { name: "Python", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" },
         { name: "PHP", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/php/php-original.svg" },
         { name: "MongoDB", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg" },
+        { name: "Proxmox", icon: "https://www.startpage.com/av/proxy-image?piurl=https%3A%2F%2Fimg.icons8.com%2Fcolor%2F452%2Fproxmox.png&sp=1757920745T3df516444fd0f2699cc2417a05309cea91653a22e9552d45048ffda7f60a8f0e" },
+        { name: "Docker", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg" },
         { name: "Linux", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linux/linux-original.svg" },
         { name: "Bash", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bash/bash-original.svg" }
       ],
@@ -60,6 +62,13 @@ async function fetchPortfolioData() {
           position: "Trainee IT specialist in system integration",
           location: "Germany",
           description: "Support and maintain the company's infrastructure and employees PCs."
+        },
+        {
+          period: "2019 - Present",
+          company: "Homelab",
+          position: "Self-Hosted Infrastructure Administrator",
+          location: "Germany (Home)",
+          description: "Manage a 2-node Proxmox cluster hosting multiple self-hosted services including web applications, databases, and development environments. Gained extensive experience in virtualization, networking, container orchestration, and system administration."
         },
         {
           period: "2024 - 2025",

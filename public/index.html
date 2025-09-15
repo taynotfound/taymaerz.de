@@ -277,6 +277,78 @@
             100% { background-position: 0% 50%; }
         }
         
+        @keyframes slideInUp {
+            from { 
+                opacity: 0; 
+                transform: translateY(20px); 
+            }
+            to { 
+                opacity: 1; 
+                transform: translateY(0); 
+            }
+        }
+        
+        @keyframes bounceIn {
+            0% { 
+                opacity: 0; 
+                transform: scale(0.3); 
+            }
+            50% { 
+                opacity: 1; 
+                transform: scale(1.05); 
+            }
+            70% { 
+                transform: scale(0.9); 
+            }
+            100% { 
+                opacity: 1; 
+                transform: scale(1); 
+            }
+        }
+        
+        @keyframes wiggle {
+            0%, 7% { transform: rotateZ(0); }
+            15% { transform: rotateZ(-15deg); }
+            20% { transform: rotateZ(10deg); }
+            25% { transform: rotateZ(-10deg); }
+            30% { transform: rotateZ(6deg); }
+            35% { transform: rotateZ(-4deg); }
+            40%, 100% { transform: rotateZ(0); }
+        }
+        
+        @keyframes fadeInScale {
+            0% { 
+                opacity: 0; 
+                transform: scale(0.8) translateY(30px); 
+            }
+            100% { 
+                opacity: 1; 
+                transform: scale(1) translateY(0); 
+            }
+        }
+        
+        @keyframes slideInLeft {
+            0% { 
+                opacity: 0; 
+                transform: translateX(-50px); 
+            }
+            100% { 
+                opacity: 1; 
+                transform: translateX(0); 
+            }
+        }
+        
+        @keyframes slideInRight {
+            0% { 
+                opacity: 0; 
+                transform: translateX(50px); 
+            }
+            100% { 
+                opacity: 1; 
+                transform: translateX(0); 
+            }
+        }
+        
         .float-animation {
             animation: float 3s ease-in-out infinite;
         }
@@ -293,6 +365,123 @@
             -webkit-text-fill-color: transparent;
             background-clip: text;
         }
+        
+        .story-chapter {
+            transition: all 0.3s ease;
+        }
+        
+        .story-chapter:hover {
+            transform: translateX(10px);
+            background: rgba(139, 92, 246, 0.1);
+            border-radius: 8px;
+            padding: 12px;
+            margin: -12px;
+        }
+        
+        .animate-fade-in-scale {
+            animation: fadeInScale 0.8s ease-out;
+        }
+        
+        .animate-slide-in-left {
+            animation: slideInLeft 0.8s ease-out;
+        }
+        
+        .animate-slide-in-right {
+            animation: slideInRight 0.8s ease-out;
+        }
+        
+        .hover-lift {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .hover-lift:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(139, 92, 246, 0.3);
+        }
+        
+        .card-glow {
+            transition: all 0.3s ease;
+            border: 1px solid rgba(139, 92, 246, 0.2);
+        }
+        
+        .card-glow:hover {
+            border-color: rgba(139, 92, 246, 0.6);
+            box-shadow: 0 0 20px rgba(139, 92, 246, 0.2);
+        }
+
+        /* 🌈 Easter Egg Animations */
+        @keyframes rainbow {
+            0% { filter: hue-rotate(0deg); }
+            100% { filter: hue-rotate(360deg); }
+        }
+
+        /* 🎯 Secret hover effects */
+        .secret-hover:hover {
+            animation: wiggle 0.5s ease-in-out;
+            cursor: help;
+        }
+        
+        /* Mobile-specific adjustments */
+        @media (max-width: 768px) {
+            .story-chapter:hover {
+                transform: none;
+                padding: 8px;
+                margin: -8px;
+            }
+            
+            .story-chapter:active {
+                transform: translateX(5px);
+                background: rgba(139, 92, 246, 0.15);
+            }
+        }
+        
+        .skill-filter.active {
+            transform: scale(1.05);
+            box-shadow: 0 4px 15px rgba(168, 85, 247, 0.4);
+        }
+        
+        @media (max-width: 768px) {
+            .skill-filter.active {
+                transform: scale(1.02);
+            }
+        }
+        
+        .animation-delay-2000 {
+            animation-delay: 2s;
+        }
+        
+        .animation-delay-4000 {
+            animation-delay: 4s;
+        }
+        
+        /* Interactive hover effects */
+        .hover-grow {
+            transition: transform 0.2s ease;
+        }
+        
+        .hover-grow:hover {
+            transform: scale(1.05);
+        }
+        
+        @media (max-width: 768px) {
+            .hover-grow:hover {
+                transform: scale(1.02);
+            }
+        }
+        
+        /* Stagger animations */
+        .stagger-animation {
+            opacity: 0;
+            transform: translateY(20px);
+            animation: slideInUp 0.6s ease forwards;
+        }
+        
+        .stagger-animation:nth-child(1) { animation-delay: 0.1s; }
+        .stagger-animation:nth-child(2) { animation-delay: 0.2s; }
+        .stagger-animation:nth-child(3) { animation-delay: 0.3s; }
+        .stagger-animation:nth-child(4) { animation-delay: 0.4s; }
+        .stagger-animation:nth-child(5) { animation-delay: 0.5s; }
+        .stagger-animation:nth-child(6) { animation-delay: 0.6s; }
         
         /* Particle Effect Canvas */
         #particles-canvas {
@@ -378,19 +567,19 @@
     <nav class="fixed top-0 w-full bg-gray-900/90 backdrop-blur-md border-b border-gray-700 z-40 transition-all duration-300">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center py-4">
-                <div class="text-xl font-bold text-purple-950">
+                <div class="text-xl font-bold text-purple-800">
                     TM
                 </div>
                 
                 <div class="hidden md:flex space-x-6">
-                    <a href="#about" class="nav-link text-gray-300 hover:text-purple-950 transition-colors duration-200">About</a>
-                    <a href="#skills" class="nav-link text-gray-300 hover:text-purple-950 transition-colors duration-200">Skills</a>
-                    <a href="#experience" class="nav-link text-gray-300 hover:text-purple-950 transition-colors duration-200">Experience</a>
-                    <a href="#projects" class="nav-link text-gray-300 hover:text-purple-950 transition-colors duration-200">Projects</a>
-                    <a href="#education" class="nav-link text-gray-300 hover:text-purple-950 transition-colors duration-200">Education</a>
-                    <a href="#cv" class="nav-link text-gray-300 hover:text-purple-950 transition-colors duration-200">CV</a>
-                    <a href="#testimonials" class="nav-link text-gray-300 hover:text-purple-950 transition-colors duration-200">Reviews</a>
-                    <a href="#contact" class="nav-link text-gray-300 hover:text-purple-950 transition-colors duration-200">Contact</a>
+                    <a href="#about" class="nav-link text-gray-300 hover:text-purple-800 transition-colors duration-200">About</a>
+                    <a href="#skills" class="nav-link text-gray-300 hover:text-purple-800 transition-colors duration-200">Skills</a>
+                    <a href="#experience" class="nav-link text-gray-300 hover:text-purple-800 transition-colors duration-200">Experience</a>
+                    <a href="#projects" class="nav-link text-gray-300 hover:text-purple-800 transition-colors duration-200">Projects</a>
+                    <a href="#education" class="nav-link text-gray-300 hover:text-purple-800 transition-colors duration-200">Education</a>
+                    <a href="#cv" class="nav-link text-gray-300 hover:text-purple-800 transition-colors duration-200">CV</a>
+                    <a href="#testimonials" class="nav-link text-gray-300 hover:text-purple-800 transition-colors duration-200">Reviews</a>
+                    <a href="#contact" class="nav-link text-gray-300 hover:text-purple-800 transition-colors duration-200">Contact</a>
                 </div>
                 
                 <div class="flex items-center space-x-4">
@@ -406,50 +595,98 @@
             <!-- Mobile Menu -->
             <div id="mobile-menu" class="hidden md:hidden pb-4">
                 <div class="flex flex-col space-y-2">
-                    <a href="#about" class="mobile-nav-link px-3 py-2 rounded-md text-gray-300 hover:bg-purple-900/30 hover:text-purple-950">About</a>
-                    <a href="#skills" class="mobile-nav-link px-3 py-2 rounded-md text-gray-300 hover:bg-purple-900/30 hover:text-purple-950">Skills</a>
-                    <a href="#experience" class="mobile-nav-link px-3 py-2 rounded-md text-gray-300 hover:bg-purple-900/30 hover:text-purple-950">Experience</a>
-                    <a href="#projects" class="mobile-nav-link px-3 py-2 rounded-md text-gray-300 hover:bg-purple-900/30 hover:text-purple-950">Projects</a>
-                    <a href="#education" class="mobile-nav-link px-3 py-2 rounded-md text-gray-300 hover:bg-purple-900/30 hover:text-purple-950">Education</a>
-                    <a href="#cv" class="mobile-nav-link px-3 py-2 rounded-md text-gray-300 hover:bg-purple-900/30 hover:text-purple-950">CV</a>
-                    <a href="#testimonials" class="mobile-nav-link px-3 py-2 rounded-md text-gray-300 hover:bg-purple-900/30 hover:text-purple-950">Reviews</a>
-                    <a href="#contact" class="mobile-nav-link px-3 py-2 rounded-md text-gray-300 hover:bg-purple-900/30 hover:text-purple-950">Contact</a>
+                    <a href="#about" class="mobile-nav-link px-3 py-2 rounded-md text-gray-300 hover:bg-purple-700/30 hover:text-purple-800">About</a>
+                    <a href="#skills" class="mobile-nav-link px-3 py-2 rounded-md text-gray-300 hover:bg-purple-700/30 hover:text-purple-800">Skills</a>
+                    <a href="#experience" class="mobile-nav-link px-3 py-2 rounded-md text-gray-300 hover:bg-purple-700/30 hover:text-purple-800">Experience</a>
+                    <a href="#projects" class="mobile-nav-link px-3 py-2 rounded-md text-gray-300 hover:bg-purple-700/30 hover:text-purple-800">Projects</a>
+                    <a href="#education" class="mobile-nav-link px-3 py-2 rounded-md text-gray-300 hover:bg-purple-700/30 hover:text-purple-800">Education</a>
+                    <a href="#cv" class="mobile-nav-link px-3 py-2 rounded-md text-gray-300 hover:bg-purple-700/30 hover:text-purple-800">CV</a>
+                    <a href="#testimonials" class="mobile-nav-link px-3 py-2 rounded-md text-gray-300 hover:bg-purple-700/30 hover:text-purple-800">Reviews</a>
+                    <a href="#contact" class="mobile-nav-link px-3 py-2 rounded-md text-gray-300 hover:bg-purple-700/30 hover:text-purple-800">Contact</a>
                 </div>
             </div>
         </div>
     </nav>
 
     <!-- Hero Section -->
-    <section id="hero" class="min-h-screen flex items-center pt-20 bg-gray-900">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-                <div class="text-center lg:text-left">
-                    <h1 class="text-4xl md:text-6xl font-bold mb-6">
-                        Hi, I'm <span class="gradient-text glitch" data-text="Tay März">Tay März</span>
+    <section id="hero" class="min-h-screen flex items-center pt-20 bg-gray-900 relative overflow-hidden">
+        <!-- Interactive Background Elements -->
+        <div class="absolute inset-0 opacity-20">
+            <div class="absolute top-20 left-10 w-72 h-72 bg-purple-600 rounded-full mix-blend-multiply filter blur-xl animate-pulse"></div>
+            <div class="absolute top-40 right-10 w-72 h-72 bg-blue-600 rounded-full mix-blend-multiply filter blur-xl animate-pulse animation-delay-2000"></div>
+            <div class="absolute -bottom-8 left-20 w-72 h-72 bg-pink-600 rounded-full mix-blend-multiply filter blur-xl animate-pulse animation-delay-4000"></div>
+        </div>
+        
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 lg:py-20 relative z-10">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
+                <div class="text-center lg:text-left order-2 lg:order-1">
+                    <!-- Interactive Greeting -->
+                    <div class="mb-4 lg:mb-6 animate-bounce">
+                        <span class="inline-block text-sm lg:text-lg text-purple-800 font-medium mb-2">👋 Welcome to my digital space</span>
+                    </div>
+                    
+                    <h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 lg:mb-6 animate-slide-in-up">
+                        Hi, I'm <span class="gradient-text glitch cursor-pointer" data-text="Tay März" ondblclick="triggerNameGlitch(this)" title="Double-click for a surprise! 🎭">Tay März</span>
                     </h1>
-                    <h2 class="text-xl md:text-2xl text-gray-300 mb-8 float-animation">
-                        <span id="typing-text" class="typing-animation"></span>
-                    </h2>
-                    <p class="text-lg text-gray-300 mb-8 leading-relaxed" id="hero-bio">
-                        Loading...
-                    </p>
-                    <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
-                        <a href="#projects" class="inline-flex items-center px-6 py-3 bg-purple-600 hover:bg-purple-700 text-white rounded-lg transition-colors duration-200">
-                            View My Work
-                            <svg class="ml-2 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                    
+                    <!-- Story-driven subtitle -->
+                    <div class="mb-6 lg:mb-8 animate-slide-in-up animation-delay-300">
+                        <h2 class="text-lg sm:text-xl md:text-2xl text-gray-300 mb-3 lg:mb-4">
+                            <span id="typing-text" class="typing-animation"></span>
+                        </h2>
+                        <div class="text-purple-800 text-xs lg:text-sm font-medium" id="journey-indicator">
+                            📍 <span class="font-bold">6+ years</span> in tech
+                        </div>
+                    </div>
+                    
+                    <!-- Simplified bio -->
+                    <div class="story-container relative mb-6 lg:mb-8 animate-slide-in-up animation-delay-600">
+                        <p class="text-sm lg:text-lg text-gray-300 mb-4 lg:mb-6 leading-relaxed" id="hero-bio">
+                            Developer with 6+ years experience. Building web apps, managing a 2-node Proxmox homelab, and contributing to open source. 
+                            <span class="text-purple-800">Warning: May contain traces of spaghetti code and excessive energy drink consumption.</span>
+                        </p>
+                    </div>
+                    
+                    <!-- Interactive CTA buttons -->
+                    <div class="flex flex-col sm:flex-row gap-3 lg:gap-4 justify-center lg:justify-start">
+                        <a href="#projects" class="group inline-flex items-center justify-center px-4 lg:px-6 py-2 lg:py-3 bg-purple-600 hover:bg-purple-700 text-white rounded-lg transition-all duration-200 hover:shadow-lg hover:shadow-purple-500/25 hover:scale-105 text-sm lg:text-base">
+                            <span>Explore My Work</span>
+                            <svg class="ml-2 w-3 h-3 lg:w-4 lg:h-4 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
                             </svg>
                         </a>
-                        <a href="#contact" class="inline-flex items-center px-6 py-3 border-2 border-purple-950 text-purple-950 hover:bg-purple-600 hover:text-white hover:border-purple-600 rounded-lg transition-colors duration-200">
-                            Get In Touch
+                        <a href="#about" class="group inline-flex items-center justify-center px-4 lg:px-6 py-2 lg:py-3 border-2 border-purple-600 text-purple-800 hover:bg-purple-600 hover:text-white rounded-lg transition-all duration-200 hover:scale-105 text-sm lg:text-base">
+                            <span>My Story</span>
+                            <svg class="ml-2 w-3 h-3 lg:w-4 lg:h-4 transition-transform group-hover:rotate-12" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.746 0 3.332.477 4.5 1.253v13C19.832 18.477 18.246 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path>
+                            </svg>
                         </a>
                     </div>
                 </div>
                 
-                <div class="flex justify-center lg:justify-end">
-                    <div class="relative">
-                        <img id="hero-photo" src="/assets/images/photo.jpg" alt="Tay März" class="w-80 h-80 rounded-full object-cover shadow-2xl border-4 border-purple-800 hover:border-purple-700 transition-colors duration-300 hover-lift pulse-glow">
+                <div class="flex justify-center lg:justify-end order-1 lg:order-2">
+                    <div class="relative group">
+                        <!-- Interactive photo with tooltip -->
+                        <img id="hero-photo" src="/assets/images/photo.jpg" alt="Tay März" class="w-64 h-64 sm:w-72 sm:h-72 lg:w-80 lg:h-80 rounded-full object-cover shadow-2xl border-4 border-purple-800 hover:border-purple-700 transition-all duration-300 hover-lift pulse-glow cursor-pointer" onclick="showPhotoStory()">
+                        
+                        <!-- Floating status indicators -->
+                        <div class="absolute -top-1 -right-1 lg:-top-2 lg:-right-2 bg-green-500 w-4 h-4 lg:w-6 lg:h-6 rounded-full border-2 lg:border-4 border-gray-900 animate-pulse cursor-pointer" title="🟢 Online and properly energized! (Red Bull + Paulaner Spezi = optimal coding state)"></div>
+                        <div class="absolute -bottom-1 -left-1 lg:-bottom-2 lg:-left-2 bg-purple-600 px-2 py-1 lg:px-3 lg:py-1 rounded-full text-xs lg:text-xs text-white font-medium cursor-pointer" title="Fun fact: This updates automatically based on my energy drink and Paulaner Spezi consumption levels">
+                            🚀 Shipping projects
+                        </div>
+                        
+                        <!-- Photo story modal trigger -->
+                        <div class="absolute inset-0 bg-black/60 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center cursor-pointer" onclick="showPhotoStory()">
+                            <span class="text-white text-xs lg:text-sm font-medium text-center px-4">Click to see my workspace! 🕵️</span>
+                        </div>
                     </div>
+                </div>
+            </div>
+            
+            <!-- Scroll indicator with story progression -->
+            <div class="absolute bottom-4 lg:bottom-8 left-1/2 transform -translate-x-1/2 text-center">
+                <div class="w-5 h-8 lg:w-6 lg:h-10 border-2 border-purple-600 rounded-full flex justify-center cursor-pointer secret-hover" title="🐭 Scroll down to continue the adventure! (Or use your mouse wheel like a normal person)">
+                    <div class="w-1 h-2 lg:h-3 bg-purple-600 rounded-full mt-1 lg:mt-2 animate-bounce"></div>
                 </div>
             </div>
         </div>
@@ -459,48 +696,133 @@
     <section id="about" class="py-20 bg-gray-800 transition-colors duration-300">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16">
-                <h2 class="text-3xl md:text-4xl font-bold mb-4 text-gradient">About Me</h2>
+                <h2 class="text-3xl md:text-4xl font-bold mb-4 text-gradient">My Journey & Story</h2>
                 <div class="w-20 h-1 bg-purple-600 mx-auto"></div>
+                <p class="mt-4 text-gray-300">From curiosity to expertise - here's how it all began</p>
             </div>
             
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-                <div>
-                    <h3 class="text-2xl font-semibold mb-6 text-purple-950">Who I Am</h3>
-                    <p class="text-lg text-gray-300 mb-6 leading-relaxed" id="about-bio">
-                        Loading...
-                    </p>
-                    
-                    <div class="grid grid-cols-2 gap-4 mt-8">
-                        <div class="text-center p-4 bg-gray-700 rounded-lg shadow-sm border border-purple-500/20 hover:border-purple-500/40 transition-colors duration-300">
-                            <div class="text-2xl font-bold text-purple-950" id="experience-years">6+</div>
-                            <div class="text-sm text-gray-300">Years Experience</div>
+            <div class="grid grid-cols-1 xl:grid-cols-2 gap-8 lg:gap-12 items-start">
+                <div class="order-2 xl:order-1">
+                    <!-- Story timeline -->
+                    <div class="space-y-4 lg:space-y-6">
+                        <div class="story-chapter group cursor-pointer" onclick="revealChapter(1)">
+                            <div class="flex items-center mb-2 lg:mb-3">
+                                <div class="w-3 h-3 lg:w-4 lg:h-4 bg-purple-500 rounded-full mr-2 lg:mr-3 group-hover:scale-125 transition-transform"></div>
+                                <h3 class="text-lg lg:text-xl font-semibold text-purple-800 group-hover:text-purple-700">Chapter 1: The Spark (2019)</h3>
+                            </div>
+                            <div class="ml-5 lg:ml-7">
+                                <p class="text-sm lg:text-base text-gray-300 leading-relaxed">
+                                    "How do websites work?" → HTML, CSS, and countless nights of wondering why my div won't center.
+                                </p>
+                                <div id="chapter-1-details" class="hidden mt-3 p-3 bg-gray-700/50 rounded border-l-2 border-purple-700">
+                                    <p class="text-gray-400 text-xs lg:text-sm">
+                                        First "Hello World" website. Breaking things, fixing them, and learning that "it works on my machine" isn't a valid bug report.
+                                    </p>
+                                </div>
+                            </div>
                         </div>
-                        <div class="text-center p-4 bg-gray-700 rounded-lg shadow-sm border border-purple-500/20 hover:border-purple-500/40 transition-colors duration-300">
-                            <div class="text-2xl font-bold text-purple-950" id="projects-count">8+</div>
-                            <div class="text-sm text-gray-300">Projects Built</div>
+                        
+                        <div class="story-chapter group cursor-pointer" onclick="revealChapter(2)">
+                            <div class="flex items-center mb-2 lg:mb-3">
+                                <div class="w-3 h-3 lg:w-4 lg:h-4 bg-purple-500 rounded-full mr-2 lg:mr-3 group-hover:scale-125 transition-transform"></div>
+                                <h3 class="text-lg lg:text-xl font-semibold text-purple-800 group-hover:text-purple-700">Chapter 2: Building & Learning (2020-2022)</h3>
+                            </div>
+                            <div class="ml-5 lg:ml-7">
+                                <p class="text-sm lg:text-base text-gray-300 leading-relaxed">
+                                    JavaScript, Python, databases. First real projects that people actually used (and somehow didn't break).
+                                </p>
+                                <div id="chapter-2-details" class="hidden mt-3 p-3 bg-gray-700/50 rounded border-l-2 border-purple-700">
+                                    <p class="text-gray-400 text-xs lg:text-sm">
+                                        Discord bots, volunteer moderating, open source contributions. Learned that debugging is like being a detective in a crime movie where you're also the murderer.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="story-chapter group cursor-pointer" onclick="revealChapter(3)">
+                            <div class="flex items-center mb-2 lg:mb-3">
+                                <div class="w-3 h-3 lg:w-4 lg:h-4 bg-purple-500 rounded-full mr-2 lg:mr-3 group-hover:scale-125 transition-transform"></div>
+                                <h3 class="text-lg lg:text-xl font-semibold text-purple-800 group-hover:text-purple-700">Chapter 3: Going Professional (2023-2024)</h3>
+                            </div>
+                            <div class="ml-5 lg:ml-7">
+                                <p class="text-sm lg:text-base text-gray-300 leading-relaxed">
+                                    Internships, client work, professional development. Learned that "production is just another testing environment" (sometimes).
+                                </p>
+                                <div id="chapter-3-details" class="hidden mt-3 p-3 bg-gray-700/50 rounded border-l-2 border-purple-700">
+                                    <p class="text-gray-400 text-xs lg:text-sm">
+                                        AGVolution (AI integration), Greenmark (scalable systems). Every bug became a puzzle to solve, and every solved puzzle revealed three new bugs.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="story-chapter group cursor-pointer" onclick="revealChapter(4)">
+                            <div class="flex items-center mb-2 lg:mb-3">
+                                <div class="w-3 h-3 lg:w-4 lg:h-4 bg-green-400 rounded-full mr-2 lg:mr-3 group-hover:scale-125 transition-transform animate-pulse"></div>
+                                <h3 class="text-lg lg:text-xl font-semibold text-green-300 group-hover:text-green-200">Chapter 4: The Homelab Era (2019-Present)</h3>
+                            </div>
+                            <div class="ml-5 lg:ml-7">
+                                <p class="text-sm lg:text-base text-gray-300 leading-relaxed">
+                                    Setting up my 2-node Proxmox cluster opened up a whole new world of infrastructure, 
+                                    networking, and self-hosting. Now I run my own digital ecosystem.
+                                </p>
+                                <div id="chapter-4-details" class="hidden mt-3 p-3 bg-gray-700/50 rounded border-l-2 border-green-400">
+                                    <p class="text-gray-400 text-xs lg:text-sm">
+                                        My homelab isn't just a hobby - it's my playground for testing new technologies, 
+                                        hosting my applications, and understanding infrastructure at a deeper level. From 
+                                        Docker containers to reverse proxies, every service taught me something new.
+                                    </p>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
                 
-                <div>
-                    <div class="bg-gray-700 p-8 rounded-xl shadow-lg border border-purple-500/20 hover:border-purple-500/40 transition-colors duration-300">
-                        <h4 class="text-xl font-semibold mb-6 text-purple-950">Quick Facts</h4>
-                        <div class="space-y-4">
-                            <div class="flex items-center">
-                                <span class="w-2 h-2 bg-purple-600 rounded-full mr-3"></span>
-                                <span>Based in Germany</span>
+                <div class="order-1 xl:order-2">
+                    <!-- Interactive stats & achievements -->
+                    <div class="bg-gray-700 p-6 lg:p-8 rounded-xl shadow-lg border border-purple-500/20 hover:border-purple-500/40 transition-colors duration-300">
+                        <h4 class="text-lg lg:text-xl font-semibold mb-4 lg:mb-6 text-purple-800">By the Numbers</h4>
+                        
+                        <!-- Animated counters -->
+                        <div class="grid grid-cols-2 gap-4 lg:gap-6 mb-6 lg:mb-8">
+                            <div class="text-center">
+                                <div class="text-2xl lg:text-3xl font-bold text-purple-800 cursor-pointer" id="experience-counter" title="Years of turning energy drinks and Paulaner Spezi into code ⚡🥤">6+</div>
+                                <div class="text-xs lg:text-sm text-gray-300">Years of Coding</div>
                             </div>
-                            <div class="flex items-center">
-                                <span class="w-2 h-2 bg-purple-600 rounded-full mr-3"></span>
-                                <span>Passionate about Linux & Open Source</span>
+                            <div class="text-center">
+                                <div class="text-2xl lg:text-3xl font-bold text-purple-800 cursor-pointer" id="projects-counter" title="Projects that actually work! (most of the time) 🤞">8+</div>
+                                <div class="text-xs lg:text-sm text-gray-300">Projects Built</div>
                             </div>
-                            <div class="flex items-center">
-                                <span class="w-2 h-2 bg-purple-600 rounded-full mr-3"></span>
-                                <span>Specializing in Web Development</span>
+                            <div class="text-center">
+                                <div class="text-2xl lg:text-3xl font-bold text-purple-800 cursor-pointer" id="services-counter" title="Self-hosted services running 24/7 (and consuming my electricity bill) ⚡">15+</div>
+                                <div class="text-xs lg:text-sm text-gray-300">Self-Hosted Services</div>
                             </div>
-                            <div class="flex items-center">
-                                <span class="w-2 h-2 bg-purple-600 rounded-full mr-3"></span>
-                                <span>AI & Modern Web Technologies Enthusiast</span>
+                            <div class="text-center">
+                                <div class="text-2xl lg:text-3xl font-bold text-purple-800 cursor-pointer" id="commits-counter" title="GitHub commits (including the 'fix typo' and 'actually fix typo' commits) 🙈">500+</div>
+                                <div class="text-xs lg:text-sm text-gray-300">GitHub Commits (Est.)</div>
+                            </div>
+                        </div>
+                        
+                        <!-- Current focus -->
+                        <div class="border-t border-gray-600 pt-4 lg:pt-6">
+                            <h5 class="font-semibold text-purple-800 mb-3 lg:mb-4 text-sm lg:text-base">Current Mission</h5>
+                            <div class="space-y-2 lg:space-y-3">
+                                <div class="flex items-center text-xs lg:text-sm">
+                                    <div class="w-2 h-2 bg-green-500 rounded-full mr-2 lg:mr-3 animate-pulse flex-shrink-0"></div>
+                                    <span class="text-gray-300">Building beautiful, accessible web experiences (and occasionally making them work too)</span>
+                                </div>
+                                <div class="flex items-center text-xs lg:text-sm">
+                                    <div class="w-2 h-2 bg-blue-500 rounded-full mr-2 lg:mr-3 animate-pulse flex-shrink-0"></div>
+                                    <span class="text-gray-300">Expanding my Proxmox homelab (because 2 servers are never enough)</span>
+                                </div>
+                                <div class="flex items-center text-xs lg:text-sm">
+                                    <div class="w-2 h-2 bg-yellow-500 rounded-full mr-2 lg:mr-3 animate-pulse flex-shrink-0"></div>
+                                    <span class="text-gray-300">Learning new technologies and frameworks</span>
+                                </div>
+                                <div class="flex items-center text-xs lg:text-sm">
+                                    <div class="w-2 h-2 bg-purple-500 rounded-full mr-2 lg:mr-3 animate-pulse flex-shrink-0"></div>
+                                    <span class="text-gray-300">Contributing to open source communities</span>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -513,13 +835,35 @@
     <section id="skills" class="py-20 bg-gray-900">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16">
-                <h2 class="text-3xl md:text-4xl font-bold mb-4 text-gradient">Skills & Technologies</h2>
+                <h3 class="text-xl lg:text-2xl font-semibold text-center mb-6 lg:mb-8 text-purple-800 animate-slide-in-up">Tech Stack</h3>
                 <div class="w-20 h-1 bg-purple-600 mx-auto"></div>
-                <p class="mt-4 text-gray-300">Technologies I work with</p>
+                <p class="mt-4 text-gray-300">Technologies that power my creations <span class="text-purple-800">(and occasionally crash my localhost)</span></p>
             </div>
             
-            <div id="skills-grid" class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-6">
-                <!-- Skills will be loaded here via JavaScript -->
+            <!-- Skill Categories with Progressive Disclosure -->
+            <div class="mb-8 lg:mb-12">
+                <div class="flex flex-wrap justify-center gap-2 lg:gap-4 mb-6 lg:mb-8">
+                    <button onclick="filterSkills('all')" class="skill-filter active px-4 lg:px-6 py-2 rounded-full bg-purple-600 text-white transition-all hover:scale-105 text-sm lg:text-base" data-category="all">
+                        All Technologies
+                    </button>
+                    <button onclick="filterSkills('frontend')" class="skill-filter px-4 lg:px-6 py-2 rounded-full bg-gray-700 text-gray-300 transition-all hover:scale-105 hover:bg-gray-600 text-sm lg:text-base" data-category="frontend">
+                        Frontend
+                    </button>
+                    <button onclick="filterSkills('backend')" class="skill-filter px-4 lg:px-6 py-2 rounded-full bg-gray-700 text-gray-300 transition-all hover:scale-105 hover:bg-gray-600 text-sm lg:text-base" data-category="backend">
+                        Backend
+                    </button>
+                    <button onclick="filterSkills('infrastructure')" class="skill-filter px-4 lg:px-6 py-2 rounded-full bg-gray-700 text-gray-300 transition-all hover:scale-105 hover:bg-gray-600 text-sm lg:text-base" data-category="infrastructure">
+                        Infrastructure
+                    </button>
+                    <button onclick="filterSkills('tools')" class="skill-filter px-4 lg:px-6 py-2 rounded-full bg-gray-700 text-gray-300 transition-all hover:scale-105 hover:bg-gray-600 text-sm lg:text-base" data-category="tools">
+                        Tools
+                    </button>
+                </div>
+            </div>
+            
+            <!-- Interactive Skills Grid -->
+            <div id="skills-grid" class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-4 lg:gap-6">
+                <!-- Skills will be loaded here via JavaScript with categories -->
             </div>
         </div>
     </section>
@@ -530,7 +874,7 @@
             <div class="text-center mb-16">
                 <h2 class="text-3xl md:text-4xl font-bold mb-4 text-gradient">Experience</h2>
                 <div class="w-20 h-1 bg-purple-600 mx-auto"></div>
-                <p class="mt-4 text-gray-300">My professional journey</p>
+                <p class="mt-4 text-gray-300">My professional journey <span class="text-purple-800">(featuring plot twists and learning curves)</span></p>
             </div>
             
             <div class="max-w-4xl mx-auto">
@@ -545,9 +889,9 @@
     <section id="projects" class="py-20 bg-gray-900">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16">
-                <h2 class="text-3xl md:text-4xl font-bold mb-4 text-gradient">Featured Projects</h2>
-                <div class="w-20 h-1 bg-purple-600 mx-auto"></div>
-                <p class="mt-4 text-gray-300">Some of the projects I've worked on</p>
+                <h2 class="text-3xl md:text-4xl font-bold mb-4 text-gradient animate-slide-in-up">Featured Projects</h2>
+                <div class="w-20 h-1 bg-purple-600 mx-auto animate-slide-in-up animation-delay-300"></div>
+                <p class="mt-4 text-gray-300 animate-slide-in-up animation-delay-600">Building solutions that matter <span class="text-purple-800">(and surprisingly don't always break in production)</span></p>
             </div>
             
             <div id="projects-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -560,36 +904,36 @@
     <section id="education" class="py-20 bg-gray-900 transition-colors duration-300">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16">
-                <h2 class="text-3xl md:text-4xl font-bold mb-4 text-gradient">Education & Training</h2>
-                <div class="w-20 h-1 bg-purple-600 mx-auto"></div>
-                <p class="mt-4 text-gray-300">Academic background and professional development</p>
+                <h2 class="text-3xl md:text-4xl font-bold mb-4 text-gradient animate-slide-in-up">Education</h2>
+                <div class="w-20 h-1 bg-purple-600 mx-auto animate-slide-in-up animation-delay-300"></div>
+                <p class="mt-4 text-gray-300 animate-slide-in-up animation-delay-600">Learning never stops <span class="text-purple-800">(neither does Stack Overflow apparently)</span></p>
             </div>
             
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
-                <div class="bg-gray-800 p-8 rounded-xl shadow-lg border border-purple-500/20 hover:border-purple-500/40 transition-colors duration-300">
+                <div class="bg-gray-800 p-8 rounded-xl shadow-lg card-glow hover-lift animate-slide-in-left">
                     <div class="flex items-start space-x-4">
                         <div class="flex-shrink-0 w-12 h-12 bg-purple-600 rounded-lg flex items-center justify-center">
                             <span class="text-xl">🎓</span>
                         </div>
                         <div class="flex-1">
-                            <h3 class="text-xl font-semibold mb-2 text-purple-950">IT Specialist in System Integration</h3>
-                            <p class="text-purple-950 mb-2">dikon Elektronik & IT GmbH</p>
+                            <h3 class="text-xl font-semibold mb-2 text-purple-800">IT Specialist in System Integration</h3>
+                            <p class="text-purple-800 mb-2">dikon Elektronik & IT GmbH</p>
                             <p class="text-gray-300 text-sm mb-3">2025 - Present</p>
-                            <p class="text-gray-300">Currently pursuing apprenticeship in IT system integration, focusing on infrastructure management and technical support.</p>
+                            <p class="text-gray-300">Infrastructure management & technical support apprenticeship. <span class="text-purple-800">Currently mastering the art of turning it off and on again.</span></p>
                         </div>
                     </div>
                 </div>
                 
-                <div class="bg-gray-800 p-8 rounded-xl shadow-lg border border-purple-500/20 hover:border-purple-500/40 transition-colors duration-300">
+                <div class="bg-gray-800 p-8 rounded-xl shadow-lg card-glow hover-lift animate-slide-in-right">
                     <div class="flex items-start space-x-4">
                         <div class="flex-shrink-0 w-12 h-12 bg-purple-600 rounded-lg flex items-center justify-center">
                             <span class="text-xl">💻</span>
                         </div>
                         <div class="flex-1">
-                            <h3 class="text-xl font-semibold mb-2 text-purple-950">Self-Taught Developer</h3>
-                            <p class="text-purple-950 mb-2">Various Online Platforms</p>
+                            <h3 class="text-xl font-semibold mb-2 text-purple-800">Self-Taught Developer</h3>
+                            <p class="text-purple-800 mb-2">Various Online Platforms</p>
                             <p class="text-gray-300 text-sm mb-3">2019 - Ongoing</p>
-                            <p class="text-gray-300">Continuous learning through online courses, documentation, and hands-on projects in web development and Linux administration.</p>
+                            <p class="text-gray-300">Web development & Linux administration through hands-on projects. <span class="text-purple-800">PhD in Google-Fu and Stack Overflow Citations.</span></p>
                         </div>
                     </div>
                 </div>
@@ -609,31 +953,31 @@
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 <div class="bg-gray-700 p-6 rounded-xl shadow-lg border border-purple-500/20 hover:border-purple-500/40 transition-colors duration-300 text-center">
                     <div class="text-3xl mb-4">🚀</div>
-                    <h3 class="text-xl font-semibold mb-3 text-purple-950">8+ Projects Deployed</h3>
+                    <h3 class="text-xl font-semibold mb-3 text-purple-800">8+ Projects Deployed</h3>
                     <p class="text-gray-300">Successfully launched and maintained multiple web applications serving real users</p>
                 </div>
                 
                 <div class="bg-gray-700 p-6 rounded-xl shadow-lg border border-purple-500/20 hover:border-purple-500/40 transition-colors duration-300 text-center">
                     <div class="text-3xl mb-4">⭐</div>
-                    <h3 class="text-xl font-semibold mb-3 text-purple-950">Open Source Contributor</h3>
+                    <h3 class="text-xl font-semibold mb-3 text-purple-800">Open Source Contributor</h3>
                     <p class="text-gray-300">Active contributor to open source projects and maintainer of personal repositories</p>
                 </div>
                 
                 <div class="bg-gray-700 p-6 rounded-xl shadow-lg border border-purple-500/20 hover:border-purple-500/40 transition-colors duration-300 text-center">
                     <div class="text-3xl mb-4">🏆</div>
-                    <h3 class="text-xl font-semibold mb-3 text-purple-950">6+ Years Experience</h3>
+                    <h3 class="text-xl font-semibold mb-3 text-purple-800">6+ Years Experience</h3>
                     <p class="text-gray-300">Consistent growth and learning in programming since 2019</p>
                 </div>
                 
                 <div class="bg-gray-700 p-6 rounded-xl shadow-lg border border-purple-500/20 hover:border-purple-500/40 transition-colors duration-300 text-center">
                     <div class="text-3xl mb-4">🌐</div>
-                    <h3 class="text-xl font-semibold mb-3 text-purple-950">Multi-Domain Portfolio</h3>
+                    <h3 class="text-xl font-semibold mb-3 text-purple-800">Multi-Domain Portfolio</h3>
                     <p class="text-gray-300">Managing and developing across 7+ different domains and projects</p>
                 </div>
                 
                 <div class="bg-gray-700 p-6 rounded-xl shadow-lg border border-purple-500/20 hover:border-purple-500/40 transition-colors duration-300 text-center">
                     <div class="text-3xl mb-4">🐧</div>
-                    <h3 class="text-xl font-semibold mb-3 text-purple-950">Linux Enthusiast</h3>
+                    <h3 class="text-xl font-semibold mb-3 text-purple-800">Linux Enthusiast</h3>
                     <p class="text-gray-300">Passionate about open source technologies and Linux system administration</p>
                 </div>
                 
@@ -652,7 +996,7 @@
             <div class="text-center mb-16">
                 <h2 class="text-3xl md:text-4xl font-bold mb-4 text-gradient">Curriculum Vitae</h2>
                 <div class="w-20 h-1 bg-purple-600 mx-auto"></div>
-                <p class="mt-4 text-gray-300">Professional resume and detailed information</p>
+                <p class="mt-4 text-gray-300">Professional resume and detailed information <span class="text-purple-800">(bug warnings included for transparency)</span></p>
             </div>
             
             <div class="bg-gray-800 rounded-xl shadow-lg p-8 border border-purple-500/20">
@@ -660,7 +1004,7 @@
                     <div>
                         <h3 class="text-xl font-semibold text-purple-950 mb-2">Download CV</h3>
                         <p class="text-gray-300">Get a comprehensive overview of my experience and skills</p>
-                        <p class="text-red-500">Please select to only print pages 1-2! There's currently a known bug thats creating blank pages</p>
+                        <p class="text-red-500">Please select to only print pages 1-2! There's currently a known bug creating blank pages <span class="text-purple-800">(I'm a developer, not a magician... yet)</span></p>
                     </div>
                     <div class="flex space-x-4 mt-4 md:mt-0">
                         <button onclick="printCV()" class="px-6 py-3 bg-purple-600 hover:bg-purple-700 text-white rounded-lg transition-colors duration-200">
@@ -808,7 +1152,7 @@
             <div class="text-center mb-16">
                 <h2 class="text-3xl md:text-4xl font-bold mb-4 text-gradient">Get In Touch</h2>
                 <div class="w-20 h-1 bg-purple-600 mx-auto"></div>
-                <p class="mt-4 text-gray-300">Let's work together on something amazing</p>
+                <p class="mt-4 text-gray-300">Let's work together on something amazing <span class="text-purple-800">(energy drink recommendations welcome)</span></p>
             </div>
             
             <div class="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12">
@@ -904,7 +1248,7 @@
                                     required 
                                     rows="4"
                                     class="w-full px-4 py-3 bg-gray-800 border border-gray-600 rounded-lg text-white placeholder-gray-400 focus:border-purple-500 focus:ring-2 focus:ring-purple-500/20 transition-colors duration-200 resize-none"
-                                    placeholder="Tell me about your project or idea..."
+                                    placeholder="Tell me about your project or idea... (Fun fact: I read every message, even the ones that just say 'test' 😄)"
                                 ></textarea>
                             </div>
                             
@@ -920,7 +1264,7 @@
                                         <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
                                         <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
                                     </svg>
-                                    Sending...
+                                    <span id="loading-text">Sending...</span>
                                 </span>
                             </button>
                         </form>
@@ -938,8 +1282,8 @@
                         <div class="mt-6 pt-6 border-t border-gray-600">
                             <p class="text-gray-400 text-sm mb-3">Or reach out directly:</p>
                             <div class="flex space-x-4">
-                                <a href="mailto:hi@taymaerz.de" class="text-purple-950 hover:text-purple-300 text-sm underline">hi@taymaerz.de</a>
-                                <a href="https://github.com/taynotfound" target="_blank" class="text-purple-950 hover:text-purple-300 text-sm underline">GitHub</a>
+                                <a href="mailto:hi@taymaerz.de" class="text-purple-950 hover:text-purple-800 text-sm underline">hi@taymaerz.de</a>
+                                <a href="https://github.com/taynotfound" target="_blank" class="text-purple-950 hover:text-purple-800 text-sm underline">GitHub</a>
                             </div>
                         </div>
                     </div>
@@ -954,7 +1298,7 @@
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
                 <div>
                     <h3 class="text-xl font-bold mb-4 text-purple-950">Tay März</h3>
-                    <p class="text-gray-400">Developer & Linux Enthusiast based in Germany</p>
+                    <p class="text-gray-400">Developer & Linux Enthusiast based in Germany <span class="text-purple-800">(powered by energy drinks and curiosity)</span></p>
                 </div>
                 
                 <div>
@@ -1046,8 +1390,16 @@
             const data = await fetchPortfolioData();
             if (!data) return;
 
-            document.getElementById('about-bio').textContent = data.bio;
-            document.getElementById('projects-count').textContent = `${data.projects.length}+`;
+            // Only update if the element exists
+            const aboutBio = document.getElementById('about-bio');
+            if (aboutBio) {
+                aboutBio.textContent = data.bio;
+            }
+            
+            const projectsCount = document.getElementById('projects-count');
+            if (projectsCount) {
+                projectsCount.textContent = `${data.projects.length}+`;
+            }
         }
 
         // Load skills section
@@ -1058,13 +1410,35 @@
             const skillsGrid = document.getElementById('skills-grid');
             skillsGrid.innerHTML = '';
 
+            // Define skill categories
+            const skillCategories = {
+                'HTML': 'frontend',
+                'CSS': 'frontend', 
+                'JavaScript': 'frontend',
+                'TypeScript': 'frontend',
+                'React': 'frontend',
+                'Next.js': 'frontend',
+                'Astro': 'frontend',
+                'Tailwind': 'frontend',
+                'Python': 'backend',
+                'PHP': 'backend',
+                'MongoDB': 'backend',
+                'Proxmox': 'infrastructure',
+                'Docker': 'infrastructure',
+                'Linux': 'infrastructure',
+                'Bash': 'tools'
+            };
+
             data.skills.forEach((skill, index) => {
+                const category = skillCategories[skill.name] || 'tools';
                 const skillCard = document.createElement('div');
-                skillCard.className = `bg-gray-700 p-6 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 border border-purple-500/20 hover:border-purple-500/40`;
+                skillCard.className = `skill-item bg-gray-700 p-6 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 border border-purple-500/20 hover:border-purple-500/40 hover:scale-105`;
+                skillCard.setAttribute('data-category', category);
                 skillCard.innerHTML = `
-                    <div class="flex flex-col items-center">
-                        <img src="${skill.icon}" alt="${skill.name}" class="w-12 h-12 mb-3 filter brightness-110">
-                        <span class="text-sm font-medium text-center text-purple-950">${skill.name}</span>
+                    <div class="flex flex-col items-center group">
+                        <img src="${skill.icon}" alt="${skill.name}" class="w-12 h-12 mb-3 filter brightness-110 group-hover:scale-110 transition-transform">
+                        <span class="text-sm font-medium text-center text-purple-800 group-hover:text-purple-700">${skill.name}</span>
+                        <div class="text-xs text-gray-500 mt-1 capitalize">${category}</div>
                     </div>
                 `;
                 skillsGrid.appendChild(skillCard);
@@ -1084,10 +1458,10 @@
                 experienceCard.className = `bg-gray-700 p-8 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 border-l-4 border-purple-600 border border-purple-500/20 hover:border-purple-500/40`;
                 experienceCard.innerHTML = `
                     <div class="flex flex-col md:flex-row md:items-center md:justify-between mb-4">
-                        <h3 class="text-xl font-semibold text-purple-950">${exp.position}</h3>
+                        <h3 class="text-xl font-semibold text-purple-800">${exp.position}</h3>
                         <span class="text-sm text-gray-300 font-medium">${exp.period}</span>
                     </div>
-                    <h4 class="text-lg font-medium mb-2 text-purple-950">${exp.company}</h4>
+                    <h4 class="text-lg font-medium mb-2 text-purple-800">${exp.company}</h4>
                     <p class="text-gray-300 text-sm mb-3">${exp.location}</p>
                     <p class="text-gray-300">${exp.description}</p>
                 `;
@@ -1199,8 +1573,12 @@
                 const texts = [
                     'Developer & Linux Enthusiast',
                     'Full-Stack Developer',
+                    'Homelab Administrator',
+                    'Professional Bug Creator',
+                    'Coffee-to-Code Converter',
+                    'Stack Overflow Researcher',
                     'Open Source Contributor',
-                    'Problem Solver'
+                    'Problem Solver (and Creator)'
                 ];
                 let textIndex = 0;
                 let charIndex = 0;
@@ -1248,24 +1626,46 @@
             
             window.addEventListener('scroll', updateScrollIndicator);
             
-            // Skill progress animation on scroll
-            function animateSkillBars() {
-                const skillCards = document.querySelectorAll('.bg-gray-700.p-6');
+            // Animated counters
+            function animateCounters() {
+                const counters = [
+                    { id: 'experience-counter', target: 6, suffix: '+' },
+                    { id: 'projects-counter', target: 8, suffix: '+' },
+                    { id: 'services-counter', target: 15, suffix: '+' },
+                    { id: 'commits-counter', target: 500, suffix: '+' }
+                ];
+                
+                counters.forEach(counter => {
+                    const element = document.getElementById(counter.id);
+                    if (element) {
+                        let current = 0;
+                        const increment = counter.target / 50;
+                        const timer = setInterval(() => {
+                            current += increment;
+                            if (current >= counter.target) {
+                                current = counter.target;
+                                clearInterval(timer);
+                            }
+                            element.textContent = Math.floor(current) + counter.suffix;
+                        }, 50);
+                    }
+                });
+            }
+            
+            // Trigger counter animation when about section is visible
+            const aboutSection = document.getElementById('about');
+            if (aboutSection) {
                 const observer = new IntersectionObserver((entries) => {
                     entries.forEach(entry => {
                         if (entry.isIntersecting) {
-                            entry.target.style.transform = 'scale(1.02)';
-                            setTimeout(() => {
-                                entry.target.style.transform = 'scale(1)';
-                            }, 200);
+                            setTimeout(animateCounters, 500); // Add delay to ensure elements are loaded
+                            observer.unobserve(entry.target);
                         }
                     });
-                }, { threshold: 0.5 });
+                }, { threshold: 0.3 }); // Lower threshold for better mobile experience
                 
-                skillCards.forEach(card => observer.observe(card));
+                observer.observe(aboutSection);
             }
-            
-            setTimeout(animateSkillBars, 1000);
             
             // Add sparkle effect to buttons
             function addSparkleEffect() {
@@ -1281,6 +1681,241 @@
             }
             
             setTimeout(addSparkleEffect, 500);
+        }
+
+        // Interactive story functions
+        function revealMoreStory() {
+            const extendedStory = document.getElementById('extended-story');
+            const button = document.getElementById('story-reveal-btn');
+            
+            if (extendedStory.classList.contains('hidden')) {
+                extendedStory.classList.remove('hidden');
+                extendedStory.style.animation = 'slideInUp 0.5s ease-out';
+                button.innerHTML = '📖 <span class="underline">Hide extended story</span>';
+            } else {
+                extendedStory.classList.add('hidden');
+                button.innerHTML = '🔍 Want to know more about my journey? <span class="underline">Click here</span>';
+            }
+        }
+
+        function revealChapter(chapterNumber) {
+            const details = document.getElementById(`chapter-${chapterNumber}-details`);
+            if (details.classList.contains('hidden')) {
+                details.classList.remove('hidden');
+                details.style.animation = 'slideInUp 0.3s ease-out';
+            } else {
+                details.classList.add('hidden');
+            }
+        }
+
+        function showPhotoStory() {
+            // Create modal for photo story
+            const modal = document.createElement('div');
+            modal.className = 'fixed inset-0 bg-black/80 z-50 flex items-center justify-center p-4';
+            modal.innerHTML = `
+                <div class="bg-gray-800 rounded-xl p-8 max-w-4xl w-full max-h-[95vh] overflow-y-auto">
+                    <div class="flex justify-between items-center mb-6">
+                        <h3 class="text-2xl font-bold text-purple-400">🔥 THE ABSOLUTE CHAOS THAT IS MY "WORKSPACE" 🔥</h3>
+                        <button onclick="this.closest('.fixed').remove()" class="text-gray-400 hover:text-white">
+                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                            </svg>
+                        </button>
+                    </div>
+                    <div class="space-y-4 text-gray-300">
+                        <p>🎪 <strong>WELCOME TO THE CIRCUS!</strong> You've just unlocked access to what I generously call my "workspace" but what any sane person would call "a disaster zone with internet access."</p>
+                        
+                        <div class="bg-red-600/30 border-2 border-red-500 rounded-lg p-4 mb-4 animate-pulse">
+                            <p class="text-red-200 font-bold text-center">⚠️ STRUCTURAL INTEGRITY WARNING ⚠️</p>
+                            <p class="text-red-300 text-sm text-center">The following setup may cause physical pain to IT professionals</p>
+                        </div>
+                        
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mt-6">
+                            <div class="bg-orange-800/30 border border-orange-500 p-4 rounded-lg">
+                                <h4 class="font-semibold text-orange-400 mb-2">🖥️ "Professional" Monitor Setup (Send Help)</h4>
+                                <ul class="text-sm space-y-1">
+                                    <li class="text-red-300">• Monitor #1: Half the pixels gave up on life (every 2nd line is just... gone)</li>
+                                    <li class="text-red-400">• Do I replace it? NO! I'm too cheap and stubborn</li>
+                                    <li class="text-red-500">• Instead I squint at striped code like I'm decoding hieroglyphics</li>
+                                    <li class="text-yellow-300">• Monitor #2: Balanced on TV table + book tower (structural engineering by drunk toddler)</li>
+                                    <li class="text-purple-400">• Book tower includes: "Java for Dummies", "Self-Help for Hopeless Cases", "Why Do I Make Bad Decisions?"</li>
+                                    <li class="text-gray-300">• Height adjustment method: Add another book and pray</li>
+                                    <li class="text-orange-400">• My neck hurts constantly but I deserve this pain</li>
+                                    <li class="text-red-300">• Earthquake resistance: What earthquake? A sneeze would topple this</li>
+                                    <li class="text-green-400">• Mechanical keyboard: Sounds like gunfire (neighbors called police twice)</li>
+                                    <li class="text-gray-400">• Mouse pad: Bold of you to assume I have standards (using pizza box)</li>
+                                    <li class="text-purple-300">• Eye strain level: Optometrist's dream customer</li>
+                                    <li class="text-red-200">• Self-respect: Not found (404 error)</li>
+                                </ul>
+                            </div>
+                            <div class="bg-purple-800/30 border border-purple-500 p-4 rounded-lg">
+                                <h4 class="font-semibold text-purple-400 mb-2">🏠 "Enterprise-Grade" Homelab (Tower of Babel Edition)</h4>
+                                <ul class="text-sm space-y-2">
+                                    <li class="text-yellow-400"><strong>NODE 1 - "The Ancient One":</strong></li>
+                                    <li>• i5 4th gen (from when dinosaurs roamed)</li>
+                                    <li>• 16GB DDR3 (vintage RAM, very classy)</li>
+                                    <li>• GT 710 (can it run Crysis? LOL NO)</li>
+                                    <li>• Status: Wheezing but functional</li>
+                                    <li>• Location: Somewhere in the tower of chaos</li>
+                                    <li class="text-red-400"><strong>NODE 2 - "The Slightly Less Ancient":</strong></li>
+                                    <li>• i7 3rd gen (practically prehistoric)</li>
+                                    <li>• 16GB DDR3 (matching set with Node 1)</li>
+                                    <li>• GTX 1050Ti (the gaming powerhouse... in 2016)</li>
+                                    <li>• Status: Surprisingly not on fire</li>
+                                    <li>• Home: Rollable kommode tower (engineering nightmare)</li>
+                                    <li class="text-orange-400"><strong>MAIN PC - "The Exiled One":</strong></li>
+                                    <li>• Too big for my pathetic desk</li>
+                                    <li>• Lives on rollable tower like a digital nomad</li>
+                                    <li>• Structural support: Hopes, dreams, and prayer</li>
+                                    <li>• Mobility: Can roll away in shame when needed</li>
+                                    <li>• Stability: What stability?</li>
+                                    <li class="text-purple-300">• Everything held together by: Pure willpower and denial</li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        <div class="bg-green-800/30 border border-green-500 rounded-lg p-4">
+                            <h4 class="font-semibold text-green-400 mb-2">� The MVP: Raspberry Pi AdGuard Hero</h4>
+                            <ul class="text-sm space-y-1">
+                                <li>• Single Raspberry Pi doing God's work</li>
+                                <li>• Blocking ads like a digital bouncer</li>
+                                <li>• Smaller than my energy drink can but more reliable than everything else</li>
+                                <li>• Probably the most stable part of my entire setup</li>
+                                <li>• Cost: $35. Value: PRICELESS</li>
+                                <li class="text-purple-400">• Sitting somewhere on the desk pile (location unknown)</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="bg-gray-700/50 border border-gray-500 rounded-lg p-4">
+                            <h4 class="font-semibold text-gray-300 mb-2">🌪️ The Desk Situation (A Cry for Help)</h4>
+                            <ul class="text-sm space-y-1">
+                                <li>• Organization level: Post-apocalyptic wasteland</li>
+                                <li>• Cable management: Spaghetti factory explosion</li>
+                                <li>• Desk pad: Crusty museum artifact (archaeology students welcome)</li>
+                                <li>• Standing desk: Never stood once (I'm a professional sitter)</li>
+                                <li>• Desk size: Too small for anything useful (PC exiled to tower of shame)</li>
+                                <li>• PC location: Rollable kommode tower (structural engineering by fever dream)</li>
+                                <li>• Random items found: 3 USB drives, 2 SD cards, 47 pens (negative functionality)</li>
+                                <li>• Energy drink cans: Lost count after 23 (they breed at night)</li>
+                                <li>• Paulaner Spezi bottles: The only classy thing here (standing proud in shame)</li>
+                                <li>• Gerald the rubber duck: Judging me silently (he's disappointed)</li>
+                                <li>• Important documents: Fossilized under archaeological layers of junk</li>
+                                <li class="text-red-400">• Clean surface area: 2.3 square inches (generous estimate)</li>
+                                <li class="text-orange-400">• Dust layer thickness: Measurable with ruler</li>
+                                <li class="text-purple-400">• My parents' disappointment: Immeasurable</li>
+                                <li class="text-red-300">• Ability to find anything: -47/10</li>
+                                <li class="text-yellow-400">• Marie Kondo would spontaneously combust upon viewing this</li>
+                                <li class="text-gray-400">• Self-loathing: Maximum capacity reached</li>
+                                <li class="text-blue-400">• Living alone: Best decision ever (no witnesses to this horror)</li>
+                                <li class="text-red-500">• Structural integrity: Held together by hopes, dreams, and pure stubbornness</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="bg-blue-800/30 border border-blue-500 rounded-lg p-4">
+                            <h4 class="font-semibold text-blue-400 mb-2">⚡ Power & Heat Management (Financial Ruin Edition)</h4>
+                            <ul class="text-sm space-y-1">
+                                <li>• Power strips: Daisy-chained like Christmas lights</li>
+                                <li>• Heat output: Could warm a small village (or melt my soul)</li>
+                                <li>• Noise level: Jet engine during takeoff</li>
+                                <li>• Neighbor complaints: 17 and counting</li>
+                                <li>• Fan symphony: Available in surround sound</li>
+                                <li>• Summer mode: AC vs. Homelab (AC always loses)</li>
+                                <li class="text-red-400">• Energy bill: Causes physical pain and emotional trauma</li>
+                                <li class="text-orange-400">• Monthly electricity cost: More than some people's rent</li>
+                                <li class="text-purple-400">• Living alone: Thank God no one else has to pay for this madness</li>
+                                <li class="text-yellow-400">• Power company: Sends me Christmas cards (I'm their favorite customer)</li>
+                                <li class="text-red-300">• My wallet: Filing for bankruptcy protection</li>
+                                <li class="text-gray-400">• Energy efficiency: What's that? Never heard of it</li>
+                                <li class="text-green-400">• Carbon footprint: Visible from space</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="bg-yellow-800/30 border border-yellow-500 rounded-lg p-4">
+                            <h4 class="font-semibold text-yellow-400 mb-2">🎯 Daily Survival Routine (The Struggle is Real)</h4>
+                            <ul class="text-sm space-y-1">
+                                <li>• 9:00 AM: Check if everything is still alive (usually disappointed)</li>
+                                <li>• 9:05 AM: Pray to tech gods (they've blocked my number)</li>
+                                <li>• 9:15 AM: Energy drink #1 (liquid depression)</li>
+                                <li>• 9:30 AM: Look at standing desk, decide sitting is fine (lying to myself since 2019)</li>
+                                <li>• 10:00 AM: Squint at striped monitor like I'm reading the Matrix</li>
+                                <li>• 10:30 AM: Question all life choices that led to this moment</li>
+                                <li>• 11:00 AM: Realize something crashed overnight (shocking, I know)</li>
+                                <li>• 11:30 AM: Check energy bill, contemplate bankruptcy</li>
+                                <li>• 12:00 PM: Google "why does my homelab hate me" (no answers found)</li>
+                                <li>• 1:00 PM: Contemplate switching careers to sheep farming</li>
+                                <li>• 2:00 PM: Paulaner Spezi break (fancy suffering)</li>
+                                <li>• 2:30 PM: Accidentally kick rollable PC tower, have heart attack</li>
+                                <li>• 3:00 PM: Stack Overflow investigation (copy-paste shame cycle)</li>
+                                <li>• 4:00 PM: Add another book to monitor tower (structural nightmare)</li>
+                                <li>• 5:00 PM: Argue with striped code lines (they're winning)</li>
+                                <li>• 6:00 PM: Energy drink #47 (hands are shaking)</li>
+                                <li>• 7:00 PM: Grateful I live alone (no witnesses to this madness)</li>
+                                <li>• 8:00 PM: "Tomorrow I'll clean my desk pad" (narrator: he's delusional)</li>
+                                <li>• 9:00 PM: Wonder how everything is still standing (hopes and dreams are strong)</li>
+                                <li>• 10:00 PM: Stare into void, void stares back (void is also disappointed)</li>
+                                <li>• 11:00 PM: Wonder why I do this to myself (no answers, only pain)</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="text-center bg-red-700/30 border-2 border-red-400 rounded-lg p-4 mt-4">
+                            <p class="text-red-300 font-bold text-lg">🏆 ACHIEVEMENT UNLOCKED 🏆</p>
+                            <p class="text-yellow-300 font-semibold">"CHAOS MASTER"</p>
+                            <p class="text-gray-300 text-sm mt-2">You've witnessed a workspace that defies physics, logic, and basic safety standards</p>
+                            <p class="text-purple-400 text-xs mt-1">Warning: Do not attempt to recreate at home</p>
+                        </div>
+                        
+                        <div class="bg-red-900/40 border-2 border-red-600 rounded-lg p-4 mt-4 animate-pulse">
+                            <h4 class="text-red-400 font-bold text-center mb-2">🚨 PSYCHOLOGICAL PROFILE ALERT 🚨</h4>
+                            <ul class="text-red-300 text-sm space-y-1">
+                                <li>• Mental state: Questionable at best</li>
+                                <li>• Self-preservation instinct: Clearly malfunctioning</li>
+                                <li>• Standards: What standards?</li>
+                                <li>• Dignity: Last seen in 2019</li>
+                                <li>• Will to live properly: Critically low</li>
+                                <li>• Acceptance of chaos: Maximum level reached</li>
+                                <li class="text-orange-400">• Therapist recommendation: URGENT</li>
+                            </ul>
+                        </div>
+                        
+                        <p class="text-sm text-gray-400 mt-4 italic border-l-4 border-purple-500 pl-4">
+                            This magnificent disaster is where I create digital magic while everything around me slowly falls apart. 
+                            It's not much, but it's honest work... and somehow, against all odds and engineering principles, 
+                            it actually works. Most of the time. When the stars align. And the books don't fall over. 
+                            <span class="text-red-400">Send help. And maybe a structural engineer.</span> �
+                        </p>
+                    </div>
+                </div>
+            `;
+            document.body.appendChild(modal);
+        }
+
+        // Skills filtering system
+        let currentSkillCategory = 'all';
+        
+        function filterSkills(category) {
+            currentSkillCategory = category;
+            
+            // Update filter buttons
+            document.querySelectorAll('.skill-filter').forEach(btn => {
+                btn.classList.remove('active', 'bg-purple-600', 'text-white');
+                btn.classList.add('bg-gray-700', 'text-gray-300');
+            });
+            
+            const activeBtn = document.querySelector(`[data-category="${category}"]`);
+            activeBtn.classList.add('active', 'bg-purple-600', 'text-white');
+            activeBtn.classList.remove('bg-gray-700', 'text-gray-300');
+            
+            // Filter skills
+            const skills = document.querySelectorAll('.skill-item');
+            skills.forEach(skill => {
+                const skillCategory = skill.getAttribute('data-category');
+                if (category === 'all' || skillCategory === category) {
+                    skill.style.display = 'block';
+                    skill.style.animation = 'fadeIn 0.5s ease-in-out';
+                } else {
+                    skill.style.display = 'none';
+                }
+            });
         }
 
         // Advanced Features
@@ -1481,6 +2116,29 @@
                 submitBtn.disabled = loading;
                 submitText.classList.toggle('hidden', loading);
                 submitLoading.classList.toggle('hidden', !loading);
+                
+                // Fun loading messages
+                if (loading) {
+                    const loadingMessages = [
+                        'Sending via carrier pigeon...',
+                        'Encrypting with quantum magic...',
+                        'Asking the servers nicely...',
+                        'Translating to binary...',
+                        'Consulting the rubber duck...',
+                        'Sending through the tubes...'
+                    ];
+                    const loadingTextEl = document.getElementById('loading-text');
+                    let messageIndex = 0;
+                    
+                    const messageInterval = setInterval(() => {
+                        if (loadingTextEl && !submitLoading.classList.contains('hidden')) {
+                            loadingTextEl.textContent = loadingMessages[messageIndex % loadingMessages.length];
+                            messageIndex++;
+                        } else {
+                            clearInterval(messageInterval);
+                        }
+                    }, 800);
+                }
             }
 
             function showSuccess(message) {
@@ -1690,6 +2348,130 @@
 
         // Start the application
         init();
+
+        // 🎮 Easter Egg: Konami Code
+        let konamiCode = [];
+        const konamiSequence = ['ArrowUp', 'ArrowUp', 'ArrowDown', 'ArrowDown', 'ArrowLeft', 'ArrowRight', 'ArrowLeft', 'ArrowRight', 'KeyB', 'KeyA'];
+        
+        document.addEventListener('keydown', (e) => {
+            konamiCode.push(e.code);
+            konamiCode = konamiCode.slice(-konamiSequence.length);
+            
+            if (konamiCode.join('') === konamiSequence.join('')) {
+                activateSecretMode();
+            }
+        });
+
+        function activateSecretMode() {
+            // Add rainbow animation to the whole page
+            document.body.style.animation = 'rainbow 2s infinite';
+            
+            // Show secret message
+            const secretDiv = document.createElement('div');
+            secretDiv.innerHTML = `
+                <div class="fixed top-4 right-4 bg-purple-600 text-white p-4 rounded-lg shadow-lg z-50 animate-bounce">
+                    <p class="font-bold">🎉 Konami Code Activated!</p>
+                    <p class="text-sm">You found the secret! 🚀</p>
+                    <p class="text-xs mt-2">Easter egg level: Developer</p>
+                </div>
+            `;
+            document.body.appendChild(secretDiv);
+            
+            // Auto-remove after 5 seconds
+            setTimeout(() => {
+                secretDiv.remove();
+                document.body.style.animation = '';
+            }, 5000);
+        }
+
+        // 🎯 Easter Egg: Click counter on logo
+        let logoClicks = 0;
+        const logo = document.querySelector('.text-xl.font-bold.text-purple-800');
+        if (logo) {
+            logo.addEventListener('click', () => {
+                logoClicks++;
+                if (logoClicks === 5) {
+                    logo.textContent = '🤖 Tay März';
+                    logo.title = 'Robot mode activated! Beep boop!';
+                } else if (logoClicks === 10) {
+                    logo.textContent = '🚀 Tay März';
+                    logo.title = 'Space mode! To infinity and beyond!';
+                } else if (logoClicks === 15) {
+                    logo.textContent = '🧙‍♂️ Tay März';
+                    logo.title = 'Wizard mode! Abracadabra!';
+                    logoClicks = 0; // Reset
+                }
+            });
+        }
+
+        // 🎲 Random Facts Easter Egg
+        const randomFacts = [
+            "I once spent 6 hours debugging only to realize I had caps lock on",
+            "My rubber duck has heard more confessions than a priest",
+            "I have more GitHub repos than plants (and they're both growing)",
+            "Coffee is not just a drink, it's a lifestyle choice",
+            "I measure time in commits, not hours",
+            "My homelab generates more heat than my heater",
+            "I dream in code and wake up in bugs",
+            "Stack Overflow is my spirit animal"
+        ];
+
+        // Add random fact button (hidden)
+        function addRandomFactEasterEgg() {
+            let factClickCount = 0;
+            document.addEventListener('click', (e) => {
+                if (e.altKey && e.shiftKey) {
+                    factClickCount++;
+                    if (factClickCount >= 3) {
+                        const fact = randomFacts[Math.floor(Math.random() * randomFacts.length)];
+                        const factDiv = document.createElement('div');
+                        factDiv.innerHTML = `
+                            <div class="fixed bottom-4 left-4 bg-gray-800 text-white p-4 rounded-lg shadow-lg z-50 max-w-xs border border-purple-500">
+                                <p class="font-bold text-purple-400">🎲 Random Dev Fact:</p>
+                                <p class="text-sm mt-2">${fact}</p>
+                            </div>
+                        `;
+                        document.body.appendChild(factDiv);
+                        
+                        setTimeout(() => factDiv.remove(), 4000);
+                        factClickCount = 0;
+                    }
+                }
+            });
+        }
+        addRandomFactEasterEgg();
+
+        // 🎭 Name Glitch Easter Egg
+        function triggerNameGlitch(element) {
+            const alternatives = [
+                '👨‍💻 Code Wizard',
+                '🚀 Bug Hunter',
+                '☕ Coffee.exe',
+                '🤖 AI Prompt Engineer',
+                '🧙‍♂️ Stack Overflow Sage',
+                '🎯 Problem.Solver()',
+                '🐧 Linux Penguin',
+                'Tay März' // Original
+            ];
+            
+            let glitchCount = 0;
+            const maxGlitches = 8;
+            
+            const glitchInterval = setInterval(() => {
+                const randomName = alternatives[Math.floor(Math.random() * alternatives.length)];
+                element.textContent = randomName;
+                element.setAttribute('data-text', randomName);
+                
+                glitchCount++;
+                if (glitchCount >= maxGlitches) {
+                    clearInterval(glitchInterval);
+                    setTimeout(() => {
+                        element.textContent = 'Tay März';
+                        element.setAttribute('data-text', 'Tay März');
+                    }, 1000);
+                }
+            }, 200);
+        }
     </script>
 </body>
 </html>
