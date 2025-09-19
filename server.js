@@ -192,6 +192,9 @@ app.get('/impressum-en', (req, res) => {
   res.sendFile(path.join(__dirname, 'public', 'impressum-en.html'));
 });
 
+app.get("/minimal", (req, res) => {
+  res.sendFile(path.join(__dirname, 'public', 'minimal.html'));
+});
 // API Routes
 app.get('/api/portfolio', async (req, res) => {
   try {
@@ -251,7 +254,7 @@ app.post('/api/contact', async (req, res) => {
     const referer = req.get('Referer');
     const origin = req.get('Origin');
     const allowedDomains = [
-      'http://localhost:3000',
+      'http://localhost:2050',
       'https://taymaerz.de',
       'https://www.taymaerz.de'
     ];
