@@ -90,13 +90,6 @@ async function fetchPortfolioData() {
           position: "Intern Web & AI Developer",
           location: "Göttingen (Hybrid)",
           description: "Independently developed a self-hosted AI assistant for agriculture, and contributed to backend and frontend web projects."
-        },
-        {
-          period: "2022 - Present",
-          company: "EasySystems",
-          position: "Developer",
-          location: "Germany (Remote)",
-          description: "Develop and maintain Discord bots, including an AI-powered assistant and a leveling system for communities."
         }
       ],
       volunteer: [
