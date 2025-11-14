@@ -103,6 +103,13 @@ async function fetchPortfolioData() {
       ],
       projects: [
         {
+          name: "Humngry v1.4.0 🍽️",
+          description: "Privacy-first meal tracker that respects your data. Track meals, earn XP, level up your nutrition - without surveillance capitalism. Features ML-powered predictions, 1000+ recipes, nutrition scoring (A-F), Cooking Mode v2.0, 40+ challenges, shopping lists, and 100% offline-first. No accounts, no tracking, no ads, fully open source.",
+          image: "https://humngry.taymaerz.de/images/screenshot9.jpg",
+          liveUrl: "https://humngry.taymaerz.de",
+          githubUrl: "https://github.com/taynotfound/Humgry"
+        },
+        {
           name: "WeatherWeb",
           description: "Autistic Friendly & AI Powered Weather Web App without any bullshit.",
           image: "/assets/images/screenshots/weatherweb-1.png",
