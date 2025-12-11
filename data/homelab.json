@@ -1,0 +1,107 @@
+{
+  "title": "Self-Hosted Stack",
+  "subtitle": "Running on my Homelab",
+  "description": "Proudly running these on my 2-node Proxmox cluster",
+  "apps": [
+    {
+      "name": "Nextcloud",
+      "icon": "https://cdn.simpleicons.org/nextcloud/0082C9",
+      "status": "running"
+    },
+    {
+      "name": "Pelican",
+      "icon": "https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/svg/pelican-panel.svg",
+      "status": "running"
+    },
+    {
+      "name": "AzuraCast",
+      "icon": "https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/svg/azuracast.svg",
+      "status": "running"
+    },
+    {
+      "name": "Element/Matrix",
+      "icon": "https://cdn.simpleicons.org/element/0DBD8B",
+      "status": "running"
+    },
+    {
+      "name": "Proxmox VE",
+      "icon": "https://cdn.simpleicons.org/proxmox/E57000",
+      "status": "running"
+    },
+    {
+      "name": "AdGuard Home",
+      "icon": "https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/svg/adguard-home.svg",
+      "status": "running"
+    },
+    {
+      "name": "Immich",
+      "icon": "https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/svg/immich.svg",
+      "status": "running"
+    },
+    {
+      "name": "Grafana",
+      "icon": "https://cdn.simpleicons.org/grafana/F46800",
+      "status": "running"
+    },
+    {
+      "name": "Uptime Kuma",
+      "icon": "https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/svg/uptime-kuma.svg",
+      "status": "running"
+    },
+    {
+      "name": "n8n",
+      "icon": "https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/svg/n8n.svg",
+      "status": "running"
+    },
+    {
+      "name": "Radarr",
+      "icon": "https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/svg/radarr.svg",
+      "status": "running"
+    },
+    {
+      "name": "Sonarr",
+      "icon": "https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/svg/sonarr.svg",
+      "status": "running"
+    },
+    {
+      "name": "Prowlarr",
+      "icon": "https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/svg/prowlarr.svg",
+      "status": "running"
+    },
+    {
+      "name": "Baikal",
+      "icon": "https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/png/baikal.png",
+      "status": "running"
+    },
+    {
+      "name": "Etherpad",
+      "icon": "https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/svg/etherpad.svg",
+      "status": "running"
+    },
+    {
+      "name": "Portainer",
+      "icon": "https://cdn.simpleicons.org/portainer/13BEF9",
+      "status": "running"
+    },
+    {
+      "name": "Docker",
+      "icon": "https://cdn.simpleicons.org/docker/2496ED",
+      "status": "running"
+    },
+    {
+      "name": "Nginx Proxy",
+      "icon": "https://cdn.simpleicons.org/nginx/009639",
+      "status": "running"
+    },
+    {
+      "name": "Zabbix",
+      "icon": "https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/svg/zabbix.svg",
+      "status": "testing"
+    },
+    {
+      "name": "OwnTracks",
+      "icon": "https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/svg/owntracks.svg",
+      "status": "testing"
+    }
+  ]
+}

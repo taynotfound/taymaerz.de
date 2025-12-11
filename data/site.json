@@ -10,6 +10,49 @@
     "background": "#0a0a0f",
     "surface": "#13131a"
   },
+  "hero": {
+    "greeting": "Welcome to my portfolio",
+    "prefix": "Hi, I'm",
+    "scrollText": "scroll down :3"
+  },
+  "sections": {
+    "about": {
+      "label": "About Me",
+      "title": "Who I Am"
+    },
+    "homelab": {
+      "label": "Running on my Homelab",
+      "title": "Self-Hosted Stack"
+    },
+    "skills": {
+      "label": "What I Use",
+      "title": "Skills & Technologies"
+    },
+    "projects": {
+      "label": "My Work",
+      "title": "Featured Projects",
+      "otherTitle": "Other Projects"
+    },
+    "experience": {
+      "label": "My Journey",
+      "title": "Experience"
+    },
+    "contact": {
+      "label": "Get In Touch",
+      "title": "Let's Work Together",
+      "subtitle": "Have a project in mind or just want to say hi? Feel free to reach out!"
+    }
+  },
+  "quotes": [
+    { "text": "Talk is cheap. Show me the code.", "author": "Linus Torvalds" },
+    { "text": "First, solve the problem. Then, write the code.", "author": "John Johnson" },
+    { "text": "Any fool can write code that a computer can understand. Good programmers write code that humans can understand.", "author": "Martin Fowler" },
+    { "text": "The best error message is the one that never shows up.", "author": "Thomas Fuchs" },
+    { "text": "It works on my machine.", "author": "Every Developer Ever" },
+    { "text": "There are only two hard things in Computer Science: cache invalidation and naming things.", "author": "Phil Karlton" },
+    { "text": "The cloud is just someone else's computer.", "author": "Unknown" },
+    { "text": "sudo make me a sandwich", "author": "xkcd" }
+  ],
   "navigation": [
     { "name": "Home", "href": "#home" },
     { "name": "About", "href": "#about" },
@@ -19,10 +62,23 @@
     { "name": "Contact", "href": "#contact" }
   ],
   "footer": {
-    "copyright": "© 2026 Tay März. All rights reserved.",
+    "copyright": "© 2025 Tay März. All rights reserved.",
+    "tagline": "Self-hosted on my Proxmox homelab with love & Spezi 🍺",
+    "pride": "Made with pride 🌈",
+    "kaomoji": ":3",
     "links": [
       { "name": "Impressum", "href": "/impressum" },
       { "name": "Impressum (EN)", "href": "/impressum-en" }
     ]
+  },
+  "social": {
+    "kofi": {
+      "url": "https://ko-fi.com/taygotkofi",
+      "text": "Buy me a Spezi"
+    },
+    "currentEmployer": {
+      "name": "dikon",
+      "url": "https://www.dikon-elektronik.de"
+    }
   }
 }

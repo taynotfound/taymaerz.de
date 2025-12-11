@@ -736,223 +736,23 @@
     <section id="homelab" class="py-16 relative overflow-hidden">
         <div class="max-w-6xl mx-auto px-6 mb-8">
             <div class="section-header text-center">
-                <p class="text-purple-400 font-mono text-sm tracking-widest uppercase mb-4">Running on my Homelab</p>
-                <h2 class="text-3xl md:text-4xl font-bold gradient-text mb-4">Self-Hosted Stack</h2>
-                <p class="text-gray-500 max-w-xl mx-auto">Proudly running these on my 2-node Proxmox cluster</p>
+                <p id="homelab-label" class="text-purple-400 font-mono text-sm tracking-widest uppercase mb-4">Running on my Homelab</p>
+                <h2 id="homelab-title" class="text-3xl md:text-4xl font-bold gradient-text mb-4">Self-Hosted Stack</h2>
+                <p id="homelab-description" class="text-gray-500 max-w-xl mx-auto">Proudly running these on my 2-node Proxmox cluster</p>
             </div>
         </div>
         
-        <!-- Marquee Row 1 - Production Apps -->
+        <!-- Marquee Row 1 -->
         <div class="marquee-container mb-4">
-            <div class="marquee">
-                <div class="marquee-item">
-                    <img src="https://cdn.simpleicons.org/nextcloud/0082C9" alt="Nextcloud">
-                    <span class="text-gray-300">Nextcloud</span>
-                    <span class="text-xs text-green-400">• Running</span>
-                </div>
-                <div class="marquee-item">
-                    <img src="https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/svg/pelican-panel.svg" alt="Pelican">
-                    <span class="text-gray-300">Pelican</span>
-                    <span class="text-xs text-green-400">• Running</span>
-                </div>
-                <div class="marquee-item">
-                    <img src="https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/svg/azuracast.svg" alt="AzuraCast">
-                    <span class="text-gray-300">AzuraCast</span>
-                    <span class="text-xs text-green-400">• Running</span>
-                </div>
-                <div class="marquee-item">
-                    <img src="https://cdn.simpleicons.org/element/0DBD8B" alt="Element">
-                    <span class="text-gray-300">Element/Matrix</span>
-                    <span class="text-xs text-green-400">• Running</span>
-                </div>
-                <div class="marquee-item">
-                    <img src="https://cdn.simpleicons.org/proxmox/E57000" alt="Proxmox">
-                    <span class="text-gray-300">Proxmox VE</span>
-                    <span class="text-xs text-green-400">• Running</span>
-                </div>
-                <div class="marquee-item">
-                    <img src="https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/svg/adguard-home.svg" alt="AdGuard Home">
-                    <span class="text-gray-300">AdGuard Home</span>
-                    <span class="text-xs text-green-400">• Running</span>
-                </div>
-                <div class="marquee-item">
-                    <img src="https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/svg/immich.svg" alt="Immich">
-                    <span class="text-gray-300">Immich</span>
-                    <span class="text-xs text-green-400">• Running</span>
-                </div>
-                <div class="marquee-item">
-                    <img src="https://cdn.simpleicons.org/grafana/F46800" alt="Grafana">
-                    <span class="text-gray-300">Grafana</span>
-                    <span class="text-xs text-green-400">• Running</span>
-                </div>
-                <div class="marquee-item">
-                    <img src="https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/svg/uptime-kuma.svg" alt="Uptime Kuma">
-                    <span class="text-gray-300">Uptime Kuma</span>
-                    <span class="text-xs text-green-400">• Running</span>
-                </div>
-                <div class="marquee-item">
-                    <img src="https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/svg/n8n.svg" alt="n8n">
-                    <span class="text-gray-300">n8n</span>
-                    <span class="text-xs text-green-400">• Running</span>
-                </div>
-                <!-- Duplicate for seamless loop -->
-                <div class="marquee-item">
-                    <img src="https://cdn.simpleicons.org/nextcloud/0082C9" alt="Nextcloud">
-                    <span class="text-gray-300">Nextcloud</span>
-                    <span class="text-xs text-green-400">• Running</span>
-                </div>
-                <div class="marquee-item">
-                    <img src="https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/svg/pelican-panel.svg" alt="Pelican">
-                    <span class="text-gray-300">Pelican</span>
-                    <span class="text-xs text-green-400">• Running</span>
-                </div>
-                <div class="marquee-item">
-                    <img src="https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/svg/azuracast.svg" alt="AzuraCast">
-                    <span class="text-gray-300">AzuraCast</span>
-                    <span class="text-xs text-green-400">• Running</span>
-                </div>
-                <div class="marquee-item">
-                    <img src="https://cdn.simpleicons.org/element/0DBD8B" alt="Element">
-                    <span class="text-gray-300">Element/Matrix</span>
-                    <span class="text-xs text-green-400">• Running</span>
-                </div>
-                <div class="marquee-item">
-                    <img src="https://cdn.simpleicons.org/proxmox/E57000" alt="Proxmox">
-                    <span class="text-gray-300">Proxmox VE</span>
-                    <span class="text-xs text-green-400">• Running</span>
-                </div>
-                <div class="marquee-item">
-                    <img src="https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/svg/adguard-home.svg" alt="AdGuard Home">
-                    <span class="text-gray-300">AdGuard Home</span>
-                    <span class="text-xs text-green-400">• Running</span>
-                </div>
-                <div class="marquee-item">
-                    <img src="https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/svg/immich.svg" alt="Immich">
-                    <span class="text-gray-300">Immich</span>
-                    <span class="text-xs text-green-400">• Running</span>
-                </div>
-                <div class="marquee-item">
-                    <img src="https://cdn.simpleicons.org/grafana/F46800" alt="Grafana">
-                    <span class="text-gray-300">Grafana</span>
-                    <span class="text-xs text-green-400">• Running</span>
-                </div>
-                <div class="marquee-item">
-                    <img src="https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/svg/uptime-kuma.svg" alt="Uptime Kuma">
-                    <span class="text-gray-300">Uptime Kuma</span>
-                    <span class="text-xs text-green-400">• Running</span>
-                </div>
-                <div class="marquee-item">
-                    <img src="https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/svg/n8n.svg" alt="n8n">
-                    <span class="text-gray-300">n8n</span>
-                    <span class="text-xs text-green-400">• Running</span>
-                </div>
+            <div id="marquee-row-1" class="marquee">
+                <!-- Dynamic apps -->
             </div>
         </div>
         
-        <!-- Marquee Row 2 - More Apps (reverse direction) -->
+        <!-- Marquee Row 2 (reverse direction) -->
         <div class="marquee-container">
-            <div class="marquee marquee-reverse">
-                <div class="marquee-item">
-                    <img src="https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/svg/radarr.svg" alt="Radarr">
-                    <span class="text-gray-300">Radarr</span>
-                    <span class="text-xs text-green-400">• Running</span>
-                </div>
-                <div class="marquee-item">
-                    <img src="https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/svg/sonarr.svg" alt="Sonarr">
-                    <span class="text-gray-300">Sonarr</span>
-                    <span class="text-xs text-green-400">• Running</span>
-                </div>
-                <div class="marquee-item">
-                    <img src="https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/svg/prowlarr.svg" alt="Prowlarr">
-                    <span class="text-gray-300">Prowlarr</span>
-                    <span class="text-xs text-green-400">• Running</span>
-                </div>
-                <div class="marquee-item">
-                    <img src="https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/png/baikal.png" alt="Baikal">
-                    <span class="text-gray-300">Baikal</span>
-                    <span class="text-xs text-green-400">• Running</span>
-                </div>
-                <div class="marquee-item">
-                    <img src="https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/svg/etherpad.svg" alt="Etherpad">
-                    <span class="text-gray-300">Etherpad</span>
-                    <span class="text-xs text-green-400">• Running</span>
-                </div>
-                <div class="marquee-item">
-                    <img src="https://cdn.simpleicons.org/portainer/13BEF9" alt="Portainer">
-                    <span class="text-gray-300">Portainer</span>
-                    <span class="text-xs text-green-400">• Running</span>
-                </div>
-                <div class="marquee-item">
-                    <img src="https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/svg/zabbix.svg" alt="Zabbix">
-                    <span class="text-gray-300">Zabbix</span>
-                    <span class="text-xs text-yellow-400">• Testing</span>
-                </div>
-                <div class="marquee-item">
-                    <img src="https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/svg/owntracks.svg" alt="OwnTracks">
-                    <span class="text-gray-300">OwnTracks</span>
-                    <span class="text-xs text-yellow-400">• Testing</span>
-                </div>
-                <div class="marquee-item">
-                    <img src="https://cdn.simpleicons.org/docker/2496ED" alt="Docker">
-                    <span class="text-gray-300">Docker</span>
-                    <span class="text-xs text-green-400">• Running</span>
-                </div>
-                <div class="marquee-item">
-                    <img src="https://cdn.simpleicons.org/nginx/009639" alt="Nginx">
-                    <span class="text-gray-300">Nginx Proxy</span>
-                    <span class="text-xs text-green-400">• Running</span>
-                </div>
-                <!-- Duplicate for seamless loop -->
-                <div class="marquee-item">
-                    <img src="https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/svg/radarr.svg" alt="Radarr">
-                    <span class="text-gray-300">Radarr</span>
-                    <span class="text-xs text-green-400">• Running</span>
-                </div>
-                <div class="marquee-item">
-                    <img src="https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/svg/sonarr.svg" alt="Sonarr">
-                    <span class="text-gray-300">Sonarr</span>
-                    <span class="text-xs text-green-400">• Running</span>
-                </div>
-                <div class="marquee-item">
-                    <img src="https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/svg/prowlarr.svg" alt="Prowlarr">
-                    <span class="text-gray-300">Prowlarr</span>
-                    <span class="text-xs text-green-400">• Running</span>
-                </div>
-                <div class="marquee-item">
-                    <img src="https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/png/baikal.png" alt="Baikal">
-                    <span class="text-gray-300">Baikal</span>
-                    <span class="text-xs text-green-400">• Running</span>
-                </div>
-                <div class="marquee-item">
-                    <img src="https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/svg/etherpad.svg" alt="Etherpad">
-                    <span class="text-gray-300">Etherpad</span>
-                    <span class="text-xs text-green-400">• Running</span>
-                </div>
-                <div class="marquee-item">
-                    <img src="https://cdn.simpleicons.org/portainer/13BEF9" alt="Portainer">
-                    <span class="text-gray-300">Portainer</span>
-                    <span class="text-xs text-green-400">• Running</span>
-                </div>
-                <div class="marquee-item">
-                    <img src="https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/svg/zabbix.svg" alt="Zabbix">
-                    <span class="text-gray-300">Zabbix</span>
-                    <span class="text-xs text-yellow-400">• Testing</span>
-                </div>
-                <div class="marquee-item">
-                    <img src="https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/svg/owntracks.svg" alt="OwnTracks">
-                    <span class="text-gray-300">OwnTracks</span>
-                    <span class="text-xs text-yellow-400">• Testing</span>
-                </div>
-                <div class="marquee-item">
-                    <img src="https://cdn.simpleicons.org/docker/2496ED" alt="Docker">
-                    <span class="text-gray-300">Docker</span>
-                    <span class="text-xs text-green-400">• Running</span>
-                </div>
-                <div class="marquee-item">
-                    <img src="https://cdn.simpleicons.org/nginx/009639" alt="Nginx">
-                    <span class="text-gray-300">Nginx Proxy</span>
-                    <span class="text-xs text-green-400">• Running</span>
-                </div>
+            <div id="marquee-row-2" class="marquee marquee-reverse">
+                <!-- Dynamic apps -->
             </div>
         </div>
     </section>
@@ -961,8 +761,8 @@
     <section id="skills" class="py-32 relative bg-dark-800/50">
         <div class="max-w-6xl mx-auto px-6">
             <div class="section-header text-center mb-16">
-                <p class="text-purple-400 font-mono text-sm tracking-widest uppercase mb-4">What I Use</p>
-                <h2 class="text-4xl md:text-5xl font-bold gradient-text">Skills & Technologies</h2>
+                <p id="skills-label" class="text-purple-400 font-mono text-sm tracking-widest uppercase mb-4">What I Use</p>
+                <h2 id="skills-title" class="text-4xl md:text-5xl font-bold gradient-text">Skills & Technologies</h2>
             </div>
             <div id="skills-container" class="space-y-12">
                 <!-- Dynamic skills -->
@@ -974,8 +774,8 @@
     <section id="projects" class="py-32 relative">
         <div class="max-w-6xl mx-auto px-6">
             <div class="section-header text-center mb-16">
-                <p class="text-purple-400 font-mono text-sm tracking-widest uppercase mb-4">My Work</p>
-                <h2 class="text-4xl md:text-5xl font-bold gradient-text">Featured Projects</h2>
+                <p id="projects-label" class="text-purple-400 font-mono text-sm tracking-widest uppercase mb-4">My Work</p>
+                <h2 id="projects-title" class="text-4xl md:text-5xl font-bold gradient-text">Featured Projects</h2>
             </div>
             
             <!-- Featured Projects -->
@@ -985,7 +785,7 @@
             
             <!-- Other Projects -->
             <div class="text-center mb-8">
-                <h3 class="text-2xl font-semibold text-gray-300">Other Projects</h3>
+                <h3 id="projects-other-title" class="text-2xl font-semibold text-gray-300">Other Projects</h3>
             </div>
             <div id="other-projects" class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
                 <!-- Dynamic other projects -->
@@ -997,8 +797,8 @@
     <section id="experience" class="py-32 relative bg-dark-800/50">
         <div class="max-w-6xl mx-auto px-6">
             <div class="section-header text-center mb-16">
-                <p class="text-purple-400 font-mono text-sm tracking-widest uppercase mb-4">My Journey</p>
-                <h2 class="text-4xl md:text-5xl font-bold gradient-text">Experience</h2>
+                <p id="experience-label" class="text-purple-400 font-mono text-sm tracking-widest uppercase mb-4">My Journey</p>
+                <h2 id="experience-title" class="text-4xl md:text-5xl font-bold gradient-text">Experience</h2>
             </div>
             <div id="experience-timeline" class="relative">
                 <!-- Timeline line -->
@@ -1012,9 +812,9 @@
     <section id="contact" class="py-32 relative">
         <div class="max-w-4xl mx-auto px-6 text-center">
             <div class="section-header">
-                <p class="text-purple-400 font-mono text-sm tracking-widest uppercase mb-4">Get In Touch</p>
-                <h2 class="text-4xl md:text-5xl font-bold gradient-text mb-6">Let's Work Together</h2>
-                <p class="text-gray-400 text-lg mb-12 max-w-2xl mx-auto">Have a project in mind or just want to say hi? Feel free to reach out!</p>
+                <p id="contact-label" class="text-purple-400 font-mono text-sm tracking-widest uppercase mb-4">Get In Touch</p>
+                <h2 id="contact-title" class="text-4xl md:text-5xl font-bold gradient-text mb-6">Let's Work Together</h2>
+                <p id="contact-subtitle" class="text-gray-400 text-lg mb-12 max-w-2xl mx-auto">Have a project in mind or just want to say hi? Feel free to reach out!</p>
             </div>
             
             <div id="contact-links" class="flex flex-wrap justify-center gap-6 mb-12">
@@ -1035,18 +835,14 @@
         <div class="max-w-6xl mx-auto px-6">
             <!-- Fun rotating quotes -->
             <div class="text-center mb-8">
-                <p id="tech-quote" class="font-mono text-gray-600 text-sm italic transition-opacity duration-500">"Talk is cheap. Show me the code." - Linus Torvalds</p>
+                <p id="tech-quote" class="font-mono text-gray-600 text-sm italic transition-opacity duration-500">"Loading quote..."</p>
             </div>
             <!-- Hosting Fun Fact -->
-            <div class="flex flex-wrap items-center justify-center gap-3 mb-8 text-gray-500 text-sm">
-                <span class="text-lg">🏠</span>
-                <span>Self-hosted on my Proxmox homelab with love & Spezi 🍺</span>
-                <span class="hidden sm:inline">•</span>
-                <span class="text-lg">🌈</span>
-                <span>Made with pride</span>
+            <div id="footer-tagline" class="flex flex-wrap items-center justify-center gap-3 mb-8 text-gray-500 text-sm">
+                <!-- Dynamic tagline -->
             </div>
             <div class="flex flex-col md:flex-row items-center justify-between gap-4">
-                <p class="text-gray-500 text-sm">© 2025 Tay März. All rights reserved. <span class="font-mono text-purple-500">:3</span></p>
+                <p id="footer-copyright" class="text-gray-500 text-sm">Loading...</p>
                 <div id="footer-links" class="flex items-center gap-6">
                     <!-- Dynamic footer links -->
                 </div>
@@ -1083,6 +879,7 @@
                 this.renderNavigation();
                 this.renderHero();
                 this.renderAbout();
+                this.renderHomelab();
                 this.renderSkills();
                 this.renderProjects();
                 this.renderExperience();
@@ -1151,8 +948,14 @@
             }
             
             renderSkills() {
-                const { skills } = this.data;
+                const { skills, site } = this.data;
                 if (!skills?.categories) return;
+                
+                // Update section headers from site.json
+                if (site?.sections?.skills) {
+                    document.getElementById('skills-label').textContent = site.sections.skills.label;
+                    document.getElementById('skills-title').textContent = site.sections.skills.title;
+                }
                 
                 const container = document.getElementById('skills-container');
                 container.innerHTML = skills.categories.map(category => `
@@ -1174,8 +977,17 @@
             }
             
             renderProjects() {
-                const { projects } = this.data;
+                const { projects, site } = this.data;
                 if (!projects) return;
+                
+                // Update section headers from site.json
+                if (site?.sections?.projects) {
+                    document.getElementById('projects-label').textContent = site.sections.projects.label;
+                    document.getElementById('projects-title').textContent = site.sections.projects.title;
+                    if (site.sections.projects.otherTitle) {
+                        document.getElementById('projects-other-title').textContent = site.sections.projects.otherTitle;
+                    }
+                }
                 
                 // Featured Projects
                 const featuredContainer = document.getElementById('featured-projects');
@@ -1225,8 +1037,14 @@
             }
             
             renderExperience() {
-                const { experience } = this.data;
+                const { experience, site } = this.data;
                 if (!experience?.work) return;
+                
+                // Update section headers from site.json
+                if (site?.sections?.experience) {
+                    document.getElementById('experience-label').textContent = site.sections.experience.label;
+                    document.getElementById('experience-title').textContent = site.sections.experience.title;
+                }
                 
                 const timeline = document.getElementById('experience-timeline');
                 const items = experience.work.map((exp, index) => `
@@ -1256,8 +1074,17 @@
             }
             
             renderContact() {
-                const { contact } = this.data;
+                const { contact, site } = this.data;
                 if (!contact) return;
+                
+                // Update section headers from site.json
+                if (site?.sections?.contact) {
+                    document.getElementById('contact-label').textContent = site.sections.contact.label;
+                    document.getElementById('contact-title').textContent = site.sections.contact.title;
+                    if (site.sections.contact.subtitle) {
+                        document.getElementById('contact-subtitle').textContent = site.sections.contact.subtitle;
+                    }
+                }
                 
                 // Use real email for mailto link
                 document.getElementById('email-link').href = `mailto:${contact.emailReal || contact.email.replace('[at]', '@')}`;
@@ -1280,10 +1107,67 @@
                 `}).join('');
             }
             
+            renderHomelab() {
+                const { homelab, site } = this.data;
+                if (!homelab?.apps) return;
+                
+                // Update section headers from site.json if available
+                if (site?.sections?.homelab) {
+                    const section = site.sections.homelab;
+                    document.getElementById('homelab-label').textContent = section.label;
+                    document.getElementById('homelab-title').textContent = section.title;
+                }
+                if (homelab.description) {
+                    document.getElementById('homelab-description').textContent = homelab.description;
+                }
+                
+                // Split apps into two rows
+                const apps = homelab.apps;
+                const midpoint = Math.ceil(apps.length / 2);
+                const row1Apps = apps.slice(0, midpoint);
+                const row2Apps = apps.slice(midpoint);
+                
+                // Generate marquee item HTML
+                const generateMarqueeItem = (app) => {
+                    const statusColor = app.status === 'running' ? 'green' : app.status === 'testing' ? 'yellow' : 'gray';
+                    const statusText = app.status === 'running' ? 'Running' : app.status === 'testing' ? 'Testing' : 'Offline';
+                    return `
+                        <div class="marquee-item">
+                            <img src="${app.icon}" alt="${app.name}" onerror="this.style.display='none'">
+                            <span class="text-gray-300">${app.name}</span>
+                            <span class="text-xs text-${statusColor}-400">• ${statusText}</span>
+                        </div>
+                    `;
+                };
+                
+                // Row 1 - duplicate for seamless loop
+                const row1HTML = [...row1Apps, ...row1Apps].map(generateMarqueeItem).join('');
+                document.getElementById('marquee-row-1').innerHTML = row1HTML;
+                
+                // Row 2 - duplicate for seamless loop
+                const row2HTML = [...row2Apps, ...row2Apps].map(generateMarqueeItem).join('');
+                document.getElementById('marquee-row-2').innerHTML = row2HTML;
+            }
+            
             renderFooter() {
                 const { site } = this.data;
                 if (!site?.footer) return;
                 
+                // Copyright
+                const copyrightEl = document.getElementById('footer-copyright');
+                copyrightEl.innerHTML = `${site.footer.copyright} <span class="font-mono text-purple-500">${site.footer.kaomoji || ':3'}</span>`;
+                
+                // Tagline
+                const taglineEl = document.getElementById('footer-tagline');
+                taglineEl.innerHTML = `
+                    <span class="text-lg">🏠</span>
+                    <span>${site.footer.tagline || 'Self-hosted with love'}</span>
+                    <span class="hidden sm:inline">•</span>
+                    <span class="text-lg">🌈</span>
+                    <span>${site.footer.pride || 'Made with pride'}</span>
+                `;
+                
+                // Footer links
                 const footerLinks = document.getElementById('footer-links');
                 footerLinks.innerHTML = site.footer.links.map(link => 
                     `<a href="${link.href}" class="text-gray-500 hover:text-purple-400 text-sm transition-colors">${link.name}</a>`
@@ -1419,24 +1303,23 @@
             }
             
             setupQuotes() {
-                const quotes = [
-                    '"Talk is cheap. Show me the code." - Linus Torvalds',
-                    '"Software is like sex: it\'s better when it\'s free." - Linus Torvalds',
-                    '"Given enough eyeballs, all bugs are shallow." - Eric S. Raymond',
-                    '"First, solve the problem. Then, write the code." - John Johnson',
-                    '"Any fool can write code that a computer can understand. Good programmers write code that humans can understand." - Martin Fowler',
-                    '"The best error message is the one that never shows up." - Thomas Fuchs',
-                    '"If debugging is the process of removing bugs, then programming must be the process of putting them in." - Edsger Dijkstra',
-                    '"It works on my machine." - Every developer ever',
-                    '"I don\'t always test my code, but when I do, I do it in production." - probably me',
-                    '"There are only two hard things in CS: cache invalidation and naming things." - Phil Karlton',
-                    '"rm -rf / is just spring cleaning for your filesystem" - nobody sane',
-                    '"sudo make me a sandwich" - xkcd',
-                    '"I use Arch btw" - me, every 5 minutes'
-                ];
+                const { site } = this.data;
+                
+                // Use quotes from site.json if available, otherwise use defaults
+                const quotes = site?.quotes?.length > 0 
+                    ? site.quotes.map(q => `"${q.text}" - ${q.author}`)
+                    : [
+                        '"Talk is cheap. Show me the code." - Linus Torvalds',
+                        '"First, solve the problem. Then, write the code." - John Johnson',
+                        '"It works on my machine." - Every developer ever',
+                        '"sudo make me a sandwich" - xkcd'
+                    ];
                 
                 let currentQuote = 0;
                 const quoteEl = document.getElementById('tech-quote');
+                
+                // Set initial quote
+                quoteEl.textContent = quotes[0];
                 
                 setInterval(() => {
                     quoteEl.style.opacity = '0';

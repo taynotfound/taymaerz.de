@@ -30,7 +30,8 @@ app.get('/api/data', (req, res) => {
       skills: loadData('skills.json'),
       experience: loadData('experience.json'),
       projects: loadData('projects.json'),
-      site: loadData('site.json')
+      site: loadData('site.json'),
+      homelab: loadData('homelab.json')
     };
     res.json(data);
   } catch (error) {
@@ -46,6 +47,7 @@ app.get('/api/experience', (req, res) => res.json(loadData('experience.json')));
 app.get('/api/projects', (req, res) => res.json(loadData('projects.json')));
 app.get('/api/site', (req, res) => res.json(loadData('site.json')));
 app.get('/api/legal', (req, res) => res.json(loadData('legal.json')));
+app.get('/api/homelab', (req, res) => res.json(loadData('homelab.json')));
 
 // Main routes
 app.get('/', (req, res) => {
