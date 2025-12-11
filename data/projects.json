@@ -1,0 +1,76 @@
+{
+  "featured": [
+    {
+      "name": "Humngry",
+      "version": "v1.4.0",
+      "emoji": "🍽️",
+      "description": "Privacy-first meal tracker that respects your data. Track meals, earn XP, level up your nutrition - without surveillance capitalism.",
+      "highlights": ["ML-powered predictions", "1000+ recipes", "100% offline-first", "Open source"],
+      "image": "https://humngry.taymaerz.de/images/screenshot9.jpg",
+      "liveUrl": "https://humngry.taymaerz.de",
+      "githubUrl": "https://github.com/taynotfound/Humgry",
+      "featured": true,
+      "tags": ["PWA", "Privacy", "Health"]
+    },
+    {
+      "name": "WeatherWeb",
+      "emoji": "🌤️",
+      "description": "Autistic-friendly & AI-powered weather web app. Clean, simple, no distractions.",
+      "highlights": ["AI-powered", "Accessible", "Clean UI"],
+      "image": "/assets/images/screenshots/weatherweb-1.png",
+      "liveUrl": "https://weather.taymaerz.de/",
+      "githubUrl": "https://github.com/taynotfound/weatherweb",
+      "featured": true,
+      "tags": ["Weather", "AI", "Accessibility"]
+    },
+    {
+      "name": "Nexus Search",
+      "emoji": "🔍",
+      "description": "A modern, privacy-focused search engine interface powered by multiple search APIs.",
+      "highlights": ["Privacy-focused", "Multiple APIs", "Fast"],
+      "image": "/assets/images/screenshots/nexus-search-1.png",
+      "liveUrl": "https://search.taymaerz.de/",
+      "githubUrl": "https://github.com/taynotfound/nexus-search",
+      "featured": true,
+      "tags": ["Search", "Privacy", "API"]
+    }
+  ],
+  "other": [
+    {
+      "name": "Recimaster",
+      "emoji": "👨‍🍳",
+      "description": "Recipes without any BS & AI-powered instructions. Just you and your food.",
+      "liveUrl": "https://recipe.taymaerz.de/",
+      "githubUrl": "https://github.com/taynotfound/recimaster",
+      "tags": ["Recipes", "AI"]
+    },
+    {
+      "name": "MyRadio",
+      "emoji": "📻",
+      "description": "A web-based radio station with curated playlists and song requests.",
+      "liveUrl": "https://myradio.taymaerz.de/",
+      "tags": ["Music", "Streaming"]
+    },
+    {
+      "name": "maerz.click",
+      "emoji": "🔗",
+      "description": "Modern URL shortener with custom domains, click tracking, and full management.",
+      "liveUrl": "https://maerz.click/",
+      "tags": ["Tools", "URL"]
+    },
+    {
+      "name": "Soup",
+      "emoji": "✈️",
+      "description": "A travel assistant with AI built in for smarter trip planning.",
+      "liveUrl": "https://soup.taymaerz.de/",
+      "tags": ["Travel", "AI"]
+    },
+    {
+      "name": "Gay Clicker",
+      "emoji": "🏳️‍🌈",
+      "description": "The ultimate LGBTQ+ idle game! Collect gay points and become the ultimate Gay Icon.",
+      "liveUrl": "https://gayshit.wtf/clicker",
+      "tags": ["Game", "Fun"]
+    }
+  ]
+}

@@ -1,0 +1,28 @@
+{
+  "title": "Tay März - Developer & Linux Enthusiast",
+  "description": "Personal portfolio of Tay März - passionate developer from Germany building beautiful, accessible, and modern web experiences.",
+  "keywords": ["developer", "web development", "linux", "germany", "portfolio", "tay märz", "frontend", "backend"],
+  "favicon": "/favicon.ico",
+  "theme": {
+    "primary": "#a855f7",
+    "secondary": "#7c3aed",
+    "accent": "#c084fc",
+    "background": "#0a0a0f",
+    "surface": "#13131a"
+  },
+  "navigation": [
+    { "name": "Home", "href": "#home" },
+    { "name": "About", "href": "#about" },
+    { "name": "Skills", "href": "#skills" },
+    { "name": "Projects", "href": "#projects" },
+    { "name": "Experience", "href": "#experience" },
+    { "name": "Contact", "href": "#contact" }
+  ],
+  "footer": {
+    "copyright": "© 2026 Tay März. All rights reserved.",
+    "links": [
+      { "name": "Impressum", "href": "/impressum" },
+      { "name": "Impressum (EN)", "href": "/impressum-en" }
+    ]
+  }
+}

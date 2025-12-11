@@ -1,0 +1,59 @@
+{
+  "lastUpdated": "2025-12-11",
+  "owner": {
+    "name": "Tay März",
+    "street": "Reinhäuser Landstraße 129",
+    "zip": "37083",
+    "city": "Göttingen",
+    "country": "Deutschland"
+  },
+  "contact": {
+    "email": "hi[at]taymaerz.de",
+    "emailLink": "hi@taymaerz.de"
+  },
+  "domains": [
+    "taymaerz.de",
+    "maerz.click",
+    "spaghettis.code",
+    "apolochees.me",
+    "gayshit.wtf",
+    "blubberbarsch.de",
+    "hoodity.shop"
+  ],
+  "disclaimers": {
+    "noSpam": {
+      "title": "Werbung & Spam-Hinweis",
+      "titleEn": "Advertising & Spam Notice",
+      "textDe": "Jegliche unaufgeforderte Werbung, Angebote, Paketsendungen, Briefe, Spam-Anrufe oder sonstige kommerzielle Kontaktaufnahmen an die auf dieser Website genannten Kontaktdaten (E-Mail, Postadresse oder andere Kommunikationswege) sind ausdrücklich unerwünscht. Bei Zuwiderhandlung behalte ich mir rechtliche Schritte vor, insbesondere die Geltendmachung von Unterlassungs- und Schadensersatzansprüchen.",
+      "textEn": "Any unsolicited advertising, offers, package deliveries, letters, spam calls, or other commercial contact attempts to the contact details listed on this website (email, postal address, or other means of communication) are expressly unwanted. In case of violation, I reserve the right to take legal action, including claims for injunctive relief and damages."
+    },
+    "liability": {
+      "title": "Haftungsausschluss",
+      "text": "Die Inhalte unserer Seiten wurden mit größter Sorgfalt erstellt. Für die Richtigkeit, Vollständigkeit und Aktualität der Inhalte können wir jedoch keine Gewähr übernehmen."
+    }
+  },
+  "sections": {
+    "de": {
+      "scope": "Dieses Impressum gilt für die folgenden Domains und alle ihre Subdomains, sofern auf der jeweiligen Seite nicht anders verlinkt.",
+      "tmg": "Angaben gemäß § 5 TMG",
+      "contact": "Kontakt",
+      "editorial": "Redaktionell verantwortlich",
+      "dispute": "Die Europäische Kommission stellt eine Plattform zur Online-Streitbeilegung (OS) bereit.",
+      "arbitration": "Wir sind nicht bereit oder verpflichtet, an Streitbeilegungsverfahren vor einer Verbraucherschlichtungsstelle teilzunehmen.",
+      "privacy": "Die Nutzung unserer Webseite ist in der Regel ohne Angabe personenbezogener Daten möglich. Soweit auf unseren Seiten personenbezogene Daten erhoben werden, erfolgt dies, soweit möglich, stets auf freiwilliger Basis. Diese Daten werden ohne Ihre ausdrückliche Zustimmung nicht an Dritte weitergegeben.",
+      "cookies": "Diese Website verwendet keine Tracking-Cookies oder externe Analysedienste. Technisch notwendige Cookies können für die ordnungsgemäße Funktion der Website verwendet werden.",
+      "copyright": "Die durch die Seitenbetreiber erstellten Inhalte und Werke auf diesen Seiten unterliegen dem deutschen Urheberrecht. Die Vervielfältigung, Bearbeitung, Verbreitung und jede Art der Verwertung außerhalb der Grenzen des Urheberrechtes bedürfen der schriftlichen Zustimmung des jeweiligen Autors bzw. Erstellers."
+    },
+    "en": {
+      "scope": "This legal notice applies to the following domains and all their subdomains, unless otherwise linked on the respective page.",
+      "tmg": "Information according to § 5 TMG",
+      "contact": "Contact",
+      "editorial": "Editorially responsible",
+      "dispute": "The European Commission provides a platform for online dispute resolution (OS).",
+      "arbitration": "We are not willing or obligated to participate in dispute resolution proceedings before a consumer arbitration board.",
+      "privacy": "The use of our website is generally possible without providing personal data. As far as personal data is collected on our pages, this is always done on a voluntary basis as far as possible. This data will not be passed on to third parties without your express consent.",
+      "cookies": "This website does not use tracking cookies or external analytics services. Technically necessary cookies may be used for the proper functioning of the website.",
+      "copyright": "The content and works created by the site operators on these pages are subject to German copyright law. Duplication, processing, distribution and any kind of exploitation outside the limits of copyright require the written consent of the respective author or creator."
+    }
+  }
+}

@@ -1,0 +1,31 @@
+{
+  "email": "tay[at]taymaerz.de",
+  "emailReal": "tay@taymaerz.de",
+  "discord": "notfound.sh",
+  "github": "https://github.com/taynotfound",
+  "kofi": "https://ko-fi.com/taygotkofi",
+  "socials": [
+    {
+      "name": "GitHub",
+      "url": "https://github.com/taynotfound",
+      "icon": "github"
+    },
+    {
+      "name": "Discord",
+      "handle": "notfound.sh",
+      "icon": "discord"
+    },
+    {
+      "name": "Email",
+      "url": "mailto:tay@taymaerz.de",
+      "handle": "tay[at]taymaerz.de",
+      "icon": "mail"
+    },
+    {
+      "name": "Ko-fi",
+      "url": "https://ko-fi.com/taygotkofi",
+      "handle": "Buy me a Spezi ☕",
+      "icon": "kofi"
+    }
+  ]
+}

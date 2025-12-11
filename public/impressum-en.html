@@ -1,158 +1,403 @@
 <!DOCTYPE html>
-<html lang="en" class="scroll-smooth dark">
+<html lang="en" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Legal Notice - Tay März</title>
-    <meta name="description" content="Legal notice and imprint for Tay März's website">
+    <meta name="description" content="Legal notice and imprint for Tay März websites">
     
-    <!-- TailwindCSS Play CDN -->
+    <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
             theme: {
                 extend: {
                     colors: {
-                        'purple': {
-                            50: '#1a0b2e',
-                            100: '#2d1b3d',
-                            200: '#402b4c',
-                            300: '#533b5b',
-                            400: '#7c5295',
+                        dark: {
+                            900: '#0a0a0f',
+                            800: '#0f0f17',
+                            700: '#13131a',
+                            600: '#1a1a24',
+                            500: '#22222e'
+                        },
+                        purple: {
+                            400: '#c084fc',
                             500: '#a855f7',
-                            600: '#b366f9',
-                            700: '#c084fc',
-                            800: '#d8b4fe',
-                            900: '#e9d5ff',
-                            950: '#f3e8ff'
+                            600: '#9333ea',
+                            700: '#7c3aed',
+                            800: '#6b21a8',
+                            900: '#581c87'
                         }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'system-ui', 'sans-serif'],
+                        mono: ['JetBrains Mono', 'monospace']
                     }
                 }
             }
         }
     </script>
     
-    <!-- Font -->
+    <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
     
     <style>
-        body { font-family: 'Inter', sans-serif; }
+        ::-webkit-scrollbar { width: 6px; }
+        ::-webkit-scrollbar-track { background: #0a0a0f; }
+        ::-webkit-scrollbar-thumb { background: #7c3aed; border-radius: 3px; }
+        ::-webkit-scrollbar-thumb:hover { background: #a855f7; }
+        
+        .gradient-text {
+            background: linear-gradient(135deg, #c084fc 0%, #a855f7 50%, #7c3aed 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .gradient-border {
+            position: relative;
+            background: linear-gradient(135deg, #1a1a24, #13131a);
+            border-radius: 1rem;
+        }
+        .gradient-border::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            padding: 1px;
+            border-radius: 1rem;
+            background: linear-gradient(135deg, #7c3aed, #a855f7, #c084fc);
+            -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+            mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+            -webkit-mask-composite: xor;
+            mask-composite: exclude;
+        }
+        
+        .blob {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(80px);
+            opacity: 0.3;
+            animation: blob 15s ease-in-out infinite;
+        }
+        
+        @keyframes blob {
+            0%, 100% { transform: translate(0, 0) scale(1); }
+            33% { transform: translate(30px, -50px) scale(1.1); }
+            66% { transform: translate(-20px, 20px) scale(0.9); }
+        }
+        
+        .toc-link {
+            transition: all 0.2s ease;
+        }
+        .toc-link:hover {
+            transform: translateX(4px);
+        }
+        
+        .section-card {
+            transition: all 0.3s ease;
+        }
+        .section-card:hover {
+            border-color: rgba(168, 85, 247, 0.4);
+        }
+        
+        @media print {
+            .no-print { display: none !important; }
+            body { background: white !important; color: black !important; }
+            .gradient-text { -webkit-text-fill-color: #7c3aed !important; }
+        }
     </style>
 </head>
-<body class="bg-gray-900 text-white transition-colors duration-300">
+<body class="bg-dark-900 text-gray-100 font-sans antialiased">
+    <!-- Background Effects -->
+    <div class="fixed inset-0 pointer-events-none overflow-hidden">
+        <div class="blob w-96 h-96 bg-purple-700/30 top-0 -left-48"></div>
+        <div class="blob w-72 h-72 bg-purple-600/20 bottom-0 right-0" style="animation-delay: -7s;"></div>
+    </div>
+    
     <!-- Navigation -->
-    <nav class="bg-gray-900/90 backdrop-blur-md border-b border-gray-700">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between items-center py-4">
-                <div class="text-xl font-bold text-purple-400">
-                    <a href="/">TM</a>
-                </div>
-                
-                <div class="flex items-center space-x-4">
-                    <a href="/" class="text-gray-300 hover:text-purple-400 transition-colors duration-200">
-                        ← Back to Home
+    <nav class="fixed top-0 left-0 right-0 z-50">
+        <div class="max-w-4xl mx-auto px-6 py-4">
+            <div class="flex items-center justify-between bg-dark-800/80 backdrop-blur-xl rounded-2xl px-6 py-3 border border-purple-900/20">
+                <a href="/" class="text-xl font-bold gradient-text">TM</a>
+                <div class="flex items-center gap-4">
+                    <a href="/" class="text-gray-400 hover:text-white transition-colors text-sm">
+                        ← Back
                     </a>
+                    <a href="/impressum" class="text-gray-400 hover:text-purple-400 transition-colors text-sm">
+                        Deutsch
+                    </a>
+                    <button onclick="window.print()" class="no-print px-3 py-1.5 bg-purple-600 hover:bg-purple-500 rounded-lg text-sm transition-colors">
+                        Print
+                    </button>
                 </div>
             </div>
         </div>
     </nav>
-
+    
     <!-- Main Content -->
-    <main class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
-        <div class="bg-gray-800 rounded-xl shadow-lg p-8 md:p-12 border border-purple-500/20">
-            <div class="flex justify-between items-start mb-8">
-                <h1 class="text-3xl md:text-4xl font-bold text-purple-400">Legal Notice</h1>
-                <a href="/impressum" class="text-sm text-gray-400 hover:text-purple-400 transition-colors duration-200">
-                    Deutsche Version →
-                </a>
+    <main class="relative z-10 max-w-4xl mx-auto px-6 pt-32 pb-20">
+        <div class="gradient-border p-8 md:p-12">
+            <!-- Header -->
+            <div class="mb-12">
+                <p class="text-purple-400 font-mono text-sm tracking-widest uppercase mb-4">Legal Information</p>
+                <h1 class="text-4xl md:text-5xl font-bold gradient-text mb-4">Legal Notice</h1>
+                <p id="last-updated" class="text-gray-500 text-sm"></p>
             </div>
             
-            <div class="prose prose-gray prose-invert max-w-none">
-                <div class="bg-purple-900/20 border border-purple-500/30 rounded-lg p-6 mb-8">
-                    <h2 class="text-lg font-semibold mb-3 text-purple-400">Domain Coverage</h2>
-                    <p class="text-gray-300">
-                        This legal notice is valid for the following domains and all of their subdomains, unless linked otherwise on the page itself:
-                        <strong>taymaerz.de</strong>, <strong>maerz.click</strong>, <strong>spaghettis.code</strong>, <strong>apolochees.me</strong>, 
-                        <strong>gayshit.wtf</strong>, <strong>blubberbarsch.de</strong>, and <strong>hoodity.shop</strong>.
+            <!-- Table of Contents -->
+            <div class="bg-dark-700 rounded-xl p-6 mb-10 border border-purple-900/20 no-print">
+                <h2 class="text-lg font-semibold mb-4 text-purple-400">📋 Table of Contents</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-2" id="toc">
+                    <!-- Dynamic TOC -->
+                </div>
+            </div>
+            
+            <!-- Warning Banner - No Spam -->
+            <div id="spam-warning" class="bg-red-900/20 border border-red-500/30 rounded-xl p-6 mb-10">
+                <div class="flex items-start gap-4">
+                    <span class="text-2xl">⚠️</span>
+                    <div>
+                        <h3 class="text-lg font-semibold text-red-400 mb-2">Advertising & Spam Notice</h3>
+                        <p class="text-gray-300 text-sm leading-relaxed">
+                            Any unsolicited advertising, offers, package deliveries, letters, spam calls, or other commercial contact attempts to the contact details listed on this website (email, postal address, or other means of communication) are <strong class="text-red-400">expressly unwanted</strong>. In case of violation, I reserve the right to take legal action, including claims for injunctive relief and damages.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Content Sections -->
+            <div class="space-y-8">
+                <!-- Scope -->
+                <section id="scope" class="section-card bg-dark-700 rounded-xl p-6 border border-purple-900/20">
+                    <h2 class="text-xl font-semibold text-purple-400 mb-4">Scope</h2>
+                    <p class="text-gray-300 mb-4">
+                        This legal notice applies to the following domains and all their subdomains, unless otherwise linked on the respective page:
                     </p>
-                </div>
+                    <div id="domains" class="flex flex-wrap gap-2">
+                        <!-- Dynamic domains -->
+                    </div>
+                </section>
                 
-                <h2 class="text-xl font-semibold mb-4 text-purple-400">Information pursuant to Sect. 5 German Telemedia Act (TMG)</h2>
+                <!-- TMG Info -->
+                <section id="tmg" class="section-card bg-dark-700 rounded-xl p-6 border border-purple-900/20">
+                    <h2 class="text-xl font-semibold text-purple-400 mb-4">Information according to § 5 TMG</h2>
+                    <div id="owner-info" class="space-y-1 text-gray-300">
+                        <!-- Dynamic owner info -->
+                    </div>
+                </section>
                 
-                <div class="bg-gray-700 p-6 rounded-lg mb-8 border border-purple-500/20">
-                    <p class="mb-2"><strong>Tay März</strong></p>
-                    <p class="mb-2">Reinhäuser Landstraße 129</p>
-                    <p class="mb-2">37083 Göttingen</p>
-                    <p class="mb-2">Germany</p>
-                </div>
+                <!-- Contact -->
+                <section id="contact" class="section-card bg-dark-700 rounded-xl p-6 border border-purple-900/20">
+                    <h2 class="text-xl font-semibold text-purple-400 mb-4">Contact</h2>
+                    <p class="text-gray-300">
+                        <strong>Email:</strong> <span id="email" class="text-purple-400 font-mono"></span>
+                    </p>
+                    <p class="text-gray-500 text-xs mt-2 italic">
+                        (The [at] replaces the @ symbol for spam bot protection)
+                    </p>
+                </section>
                 
-                <h3 class="text-lg font-semibold mb-3 text-purple-400">Contact</h3>
-                <p class="mb-2"><strong>Email:</strong> <a href="mailto:hi@taymaerz.de" class="text-purple-400 hover:text-purple-300 hover:underline">hi@taymaerz.de</a></p>
+                <!-- Editorial -->
+                <section id="editorial" class="section-card bg-dark-700 rounded-xl p-6 border border-purple-900/20">
+                    <h2 class="text-xl font-semibold text-purple-400 mb-4">Editorially Responsible</h2>
+                    <p id="editorial-name" class="text-gray-300"></p>
+                </section>
                 
-                <h3 class="text-lg font-semibold mb-3 mt-8 text-purple-400">Person responsible for editorial</h3>
-                <p class="mb-4">Tay März</p>
+                <!-- EU Dispute -->
+                <section id="dispute" class="section-card bg-dark-700 rounded-xl p-6 border border-purple-900/20">
+                    <h2 class="text-xl font-semibold text-purple-400 mb-4">EU Dispute Resolution</h2>
+                    <p class="text-gray-300 mb-2">
+                        The European Commission provides a platform for online dispute resolution (OS):
+                    </p>
+                    <a href="https://ec.europa.eu/consumers/odr/" target="_blank" rel="noopener noreferrer" class="text-purple-400 hover:text-purple-300 transition-colors">
+                        https://ec.europa.eu/consumers/odr/ ↗
+                    </a>
+                    <p class="text-gray-400 mt-2 text-sm">You can find our email address in the legal notice above.</p>
+                </section>
                 
-                <h3 class="text-lg font-semibold mb-3 mt-8 text-purple-400">EU dispute resolution</h3>
-                <p class="mb-4">
-                    The European Commission provides a platform for online dispute resolution (ODR): 
-                    <a href="https://ec.europa.eu/consumers/odr/" target="_blank" rel="noopener noreferrer" class="text-purple-400 hover:text-purple-300 hover:underline">
-                        https://ec.europa.eu/consumers/odr/
-                    </a><br>
-                    Our email address can be found above in the site notice.
-                </p>
+                <!-- Arbitration -->
+                <section id="arbitration" class="section-card bg-dark-700 rounded-xl p-6 border border-purple-900/20">
+                    <h2 class="text-xl font-semibold text-purple-400 mb-4">Consumer Dispute Resolution</h2>
+                    <p class="text-gray-300">
+                        We are not willing or obligated to participate in dispute resolution proceedings before a consumer arbitration board.
+                    </p>
+                </section>
                 
-                <h3 class="text-lg font-semibold mb-3 mt-8 text-purple-400">Dispute resolution proceedings in front of a consumer arbitration board</h3>
-                <p class="mb-4">
-                    We are not willing or obliged to participate in dispute resolution proceedings in front of a consumer arbitration board.
-                </p>
+                <!-- Content Liability -->
+                <section id="liability-content" class="section-card bg-dark-700 rounded-xl p-6 border border-purple-900/20">
+                    <h2 class="text-xl font-semibold text-purple-400 mb-4">Liability for Content</h2>
+                    <p class="text-gray-300 mb-4">
+                        As a service provider, we are responsible for our own content on these pages in accordance with general laws pursuant to § 7 para. 1 TMG. According to §§ 8 to 10 TMG, however, we are not obligated as a service provider to monitor transmitted or stored third-party information or to investigate circumstances that indicate illegal activity.
+                    </p>
+                    <p class="text-gray-300">
+                        Obligations to remove or block the use of information under general laws remain unaffected. However, liability in this regard is only possible from the point in time at which a concrete infringement of the law becomes known. If we become aware of such infringements, we will remove this content immediately.
+                    </p>
+                </section>
                 
-                <h2 class="text-xl font-semibold mb-4 mt-12 text-purple-400">Liability for Contents</h2>
-                <p class="mb-4">
-                    As service providers, we are liable for own contents of these websites according to Paragraph 7, Sect. 1 German Telemedia Act (TMG). However, according to Paragraphs 8 to 10 German Telemedia Act (TMG), service providers are not under obligation to permanently monitor submitted or stored information or to search for evidences that indicate illegal activities.
-                </p>
-                <p class="mb-4">
-                    Legal obligations to removing information or to blocking the use of information remain unchallenged. In this case, liability is only possible at the time of knowledge about a specific violation of law. Illegal contents will be removed immediately at the time we get knowledge of them.
-                </p>
+                <!-- Links Liability -->
+                <section id="liability-links" class="section-card bg-dark-700 rounded-xl p-6 border border-purple-900/20">
+                    <h2 class="text-xl font-semibold text-purple-400 mb-4">Liability for Links</h2>
+                    <p class="text-gray-300 mb-4">
+                        Our offer contains links to external websites of third parties, on whose contents we have no influence. Therefore, we cannot assume any liability for these external contents. The respective provider or operator of the pages is always responsible for the content of the linked pages.
+                    </p>
+                    <p class="text-gray-300">
+                        Permanent monitoring of the content of the linked pages is not reasonable without concrete evidence of a violation of the law. If we become aware of any infringements, we will remove such links immediately.
+                    </p>
+                </section>
                 
-                <h2 class="text-xl font-semibold mb-4 mt-8 text-purple-400">Liability for Links</h2>
-                <p class="mb-4">
-                    Our offer includes links to external third party websites. We have no influence on the contents of those websites, therefore we cannot guarantee for those contents. Providers or administrators of linked websites are always responsible for their own contents.
-                </p>
-                <p class="mb-4">
-                    The linked websites had been checked for possible violations of law at the time of the establishment of the link. Illegal contents were not detected at the time of the linking. A permanent monitoring of the contents of linked websites cannot be imposed without reasonable indications that there has been a violation of law. Illegal links will be removed immediately at the time we get knowledge of them.
-                </p>
+                <!-- Privacy -->
+                <section id="privacy" class="section-card bg-dark-700 rounded-xl p-6 border border-purple-900/20">
+                    <h2 class="text-xl font-semibold text-purple-400 mb-4">Privacy</h2>
+                    <p class="text-gray-300 mb-4">
+                        The use of our website is generally possible without providing personal data. As far as personal data is collected on our pages, this is always done on a voluntary basis as far as possible. This data will not be passed on to third parties without your express consent.
+                    </p>
+                    <p class="text-gray-300">
+                        We point out that data transmission over the Internet (e.g., when communicating by email) can have security gaps. Complete protection of data against access by third parties is not possible.
+                    </p>
+                </section>
                 
-                <h2 class="text-xl font-semibold mb-4 mt-8 text-purple-400">Copyright</h2>
-                <p class="mb-4">
-                    Contents and compilations published on these websites by the providers are subject to German copyright laws. Reproduction, editing, distribution as well as the use of any kind outside the scope of the copyright law require a written permission of the author or originator. Downloads and copies of these websites are permitted for private use only.
-                </p>
-                <p class="mb-4">
-                    The commercial use of our contents without permission of the originator is prohibited.
-                </p>
-                <p class="mb-4">
-                    Copyright laws of third parties are respected as long as the contents on these websites do not originate from the provider. Contributions of third parties on this site are indicated as such. However, if you notice any violations of copyright law, please inform us. Such contents will be removed immediately.
-                </p>
+                <!-- Cookies -->
+                <section id="cookies" class="section-card bg-dark-700 rounded-xl p-6 border border-purple-900/20">
+                    <h2 class="text-xl font-semibold text-purple-400 mb-4">Cookies</h2>
+                    <p class="text-gray-300">
+                        This website does not use tracking cookies or external analytics services. Technically necessary cookies may be used for the proper functioning of the website. These are used exclusively for technical provision and improve the user experience.
+                    </p>
+                </section>
                 
-                <div class="mt-12 pt-8 border-t border-gray-600 text-sm text-gray-400">
-                    <p>Last updated: <span id="last-updated"></span></p>
-                </div>
+                <!-- Copyright -->
+                <section id="copyright" class="section-card bg-dark-700 rounded-xl p-6 border border-purple-900/20">
+                    <h2 class="text-xl font-semibold text-purple-400 mb-4">Copyright</h2>
+                    <p class="text-gray-300 mb-4">
+                        The content and works created by the site operators on these pages are subject to German copyright law. Duplication, processing, distribution, and any kind of exploitation outside the limits of copyright require the written consent of the respective author or creator.
+                    </p>
+                    <p class="text-gray-300">
+                        As far as the content on this page was not created by the operator, the copyrights of third parties are respected. In particular, third-party content is identified as such. Should you nevertheless become aware of a copyright infringement, please inform us accordingly. If we become aware of any infringements, we will remove such content immediately.
+                    </p>
+                </section>
+                
+                <!-- Open Source -->
+                <section id="opensource" class="section-card bg-dark-700 rounded-xl p-6 border border-purple-900/20">
+                    <h2 class="text-xl font-semibold text-purple-400 mb-4">Open Source</h2>
+                    <p class="text-gray-300">
+                        This website and related projects use open-source software and libraries. Corresponding licenses and copyrights are respected in the respective repositories on GitHub. Own open-source contributions are under the licenses specified in the respective repositories.
+                    </p>
+                </section>
             </div>
         </div>
     </main>
-
+    
     <!-- Footer -->
-    <footer class="bg-black text-white py-8 border-t border-purple-500/20">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <p>&copy; 2025 Tay März. All rights reserved.</p>
+    <footer class="relative z-10 py-8 border-t border-purple-900/20">
+        <div class="max-w-4xl mx-auto px-6 text-center">
+            <p class="text-gray-500 text-sm">© 2024 Tay März. All rights reserved.</p>
         </div>
     </footer>
-
-    <!-- JavaScript -->
+    
+    <!-- Scroll to Top -->
+    <button id="scroll-top" onclick="window.scrollTo({top:0,behavior:'smooth'})" class="no-print fixed bottom-6 right-6 w-12 h-12 bg-purple-600 hover:bg-purple-500 rounded-full shadow-lg transition-all duration-300 opacity-0 pointer-events-none z-50">
+        <svg class="w-6 h-6 mx-auto text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 15l7-7 7 7"/>
+        </svg>
+    </button>
+    
     <script>
-        // Set last updated date
-        document.getElementById('last-updated').textContent = new Date().toLocaleDateString('en-US');
+        // Load legal data
+        async function loadLegalData() {
+            try {
+                const response = await fetch('/api/legal');
+                const data = await response.json();
+                renderPage(data);
+            } catch (error) {
+                console.error('Failed to load legal data:', error);
+                renderFallback();
+            }
+        }
+        
+        function renderPage(data) {
+            // Last updated
+            document.getElementById('last-updated').textContent = `Last updated: ${new Date(data.lastUpdated).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}`;
+            
+            // Domains
+            const domainsContainer = document.getElementById('domains');
+            domainsContainer.innerHTML = data.domains.map(domain => 
+                `<span class="px-3 py-1 bg-dark-600 text-purple-300 rounded-lg text-sm font-mono">${domain}</span>`
+            ).join('');
+            
+            // Owner info
+            const ownerInfo = document.getElementById('owner-info');
+            ownerInfo.innerHTML = `
+                <p class="font-semibold text-white">${data.owner.name}</p>
+                <p>${data.owner.street}</p>
+                <p>${data.owner.zip} ${data.owner.city}</p>
+                <p>${data.owner.country}</p>
+            `;
+            
+            // Contact email
+            document.getElementById('email').textContent = data.contact.email;
+            
+            // Editorial
+            document.getElementById('editorial-name').textContent = data.owner.name;
+            
+            // TOC
+            renderTOC();
+        }
+        
+        function renderFallback() {
+            const domains = ['taymaerz.de', 'maerz.click', 'spaghettis.code', 'apolochees.me', 'gayshit.wtf', 'blubberbarsch.de', 'hoodity.shop'];
+            document.getElementById('domains').innerHTML = domains.map(d => 
+                `<span class="px-3 py-1 bg-dark-600 text-purple-300 rounded-lg text-sm font-mono">${d}</span>`
+            ).join('');
+            
+            document.getElementById('owner-info').innerHTML = `
+                <p class="font-semibold text-white">Tay März</p>
+                <p>Reinhäuser Landstraße 129</p>
+                <p>37083 Göttingen</p>
+                <p>Germany</p>
+            `;
+            
+            document.getElementById('email').textContent = 'hi[at]taymaerz.de';
+            document.getElementById('editorial-name').textContent = 'Tay März';
+            document.getElementById('last-updated').textContent = 'Last updated: ' + new Date().toLocaleDateString('en-US');
+            
+            renderTOC();
+        }
+        
+        function renderTOC() {
+            const sections = [
+                { id: 'scope', name: 'Scope' },
+                { id: 'tmg', name: 'Legal Information' },
+                { id: 'contact', name: 'Contact' },
+                { id: 'editorial', name: 'Editorially Responsible' },
+                { id: 'dispute', name: 'EU Dispute Resolution' },
+                { id: 'privacy', name: 'Privacy' },
+                { id: 'cookies', name: 'Cookies' },
+                { id: 'copyright', name: 'Copyright' },
+                { id: 'opensource', name: 'Open Source' }
+            ];
+            
+            document.getElementById('toc').innerHTML = sections.map(s => 
+                `<a href="#${s.id}" class="toc-link block px-3 py-2 text-sm text-gray-400 hover:text-purple-400 hover:bg-dark-600 rounded-lg transition-all">→ ${s.name}</a>`
+            ).join('');
+        }
+        
+        // Scroll to top button
+        window.addEventListener('scroll', () => {
+            const btn = document.getElementById('scroll-top');
+            if (window.scrollY > 300) {
+                btn.classList.remove('opacity-0', 'pointer-events-none');
+                btn.classList.add('opacity-100');
+            } else {
+                btn.classList.add('opacity-0', 'pointer-events-none');
+                btn.classList.remove('opacity-100');
+            }
+        });
+        
+        // Initialize
+        loadLegalData();
     </script>
 </body>
 </html>

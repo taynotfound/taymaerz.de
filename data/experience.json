@@ -1,0 +1,45 @@
+{
+  "work": [
+    {
+      "period": "2025 - Present",
+      "company": "dikon Elektronik & IT GmbH",
+      "position": "Trainee IT Specialist in System Integration",
+      "location": "Germany",
+      "description": "Support and maintain the company's infrastructure and employees' PCs.",
+      "current": true
+    },
+    {
+      "period": "2019 - Present",
+      "company": "Personal Homelab",
+      "position": "Self-Hosted Infrastructure Administrator",
+      "location": "Germany",
+      "description": "Manage a 2-node Proxmox cluster hosting multiple self-hosted services including web applications, databases, and development environments.",
+      "current": true
+    },
+    {
+      "period": "2024 - 2025",
+      "company": "Greenmark IT GmbH",
+      "position": "Junior Development Apprentice",
+      "location": "Alfeld",
+      "description": "Developed and maintained web applications, contributed to new features and internal tools, and supported the launch of a customer portal.",
+      "current": false
+    },
+    {
+      "period": "2023 - 2024",
+      "company": "AGVolution GmbH",
+      "position": "Intern Web & AI Developer",
+      "location": "Göttingen",
+      "description": "Independently developed a self-hosted AI assistant for agriculture, and contributed to backend and frontend web projects.",
+      "current": false
+    }
+  ],
+  "volunteer": [
+    {
+      "period": "2023 - Present",
+      "organization": "PATHFindr",
+      "position": "Volunteer Moderator",
+      "location": "Discord",
+      "description": "Moderating the PATHFindr community Discord Server, ensuring a positive and welcoming environment for all members."
+    }
+  ]
+}

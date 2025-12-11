@@ -1,55 +1,95 @@
 <!DOCTYPE html>
-<html lang="de" class="scroll-smooth dark">
+<html lang="de" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Impressum - Tay März</title>
-    <meta name="description" content="Impressum und rechtliche Hinweise für die Website von Tay März">
+    <meta name="description" content="Impressum und rechtliche Hinweise für die Websites von Tay März">
     
-    <!-- TailwindCSS Play CDN -->
+    <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
             theme: {
                 extend: {
                     colors: {
-                        'purple': {
-                            50: '#1a0b2e',
-                            100: '#2d1b3d',
-                            200: '#402b4c',
-                            300: '#533b5b',
-                            400: '#7c5295',
+                        dark: {
+                            900: '#0a0a0f',
+                            800: '#0f0f17',
+                            700: '#13131a',
+                            600: '#1a1a24',
+                            500: '#22222e'
+                        },
+                        purple: {
+                            400: '#c084fc',
                             500: '#a855f7',
-                            600: '#b366f9',
-                            700: '#c084fc',
-                            800: '#d8b4fe',
-                            900: '#e9d5ff',
-                            950: '#f3e8ff'
+                            600: '#9333ea',
+                            700: '#7c3aed',
+                            800: '#6b21a8',
+                            900: '#581c87'
                         }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'system-ui', 'sans-serif'],
+                        mono: ['JetBrains Mono', 'monospace']
                     }
                 }
             }
         }
     </script>
     
-    <!-- Font -->
+    <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
     
     <style>
-        body { font-family: 'Inter', sans-serif; }
+        ::-webkit-scrollbar { width: 6px; }
+        ::-webkit-scrollbar-track { background: #0a0a0f; }
+        ::-webkit-scrollbar-thumb { background: #7c3aed; border-radius: 3px; }
+        ::-webkit-scrollbar-thumb:hover { background: #a855f7; }
         
-        /* Print styles */
-        @media print {
-            .no-print { display: none !important; }
-            body { background: white !important; color: black !important; }
-            .bg-gray-800, .bg-gray-700 { background: white !important; border: 1px solid #ccc !important; }
-            .text-purple-400 { color: #7c3aed !important; }
-            .text-white { color: black !important; }
+        .gradient-text {
+            background: linear-gradient(135deg, #c084fc 0%, #a855f7 50%, #7c3aed 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
         }
         
-        /* Table of contents */
+        .gradient-border {
+            position: relative;
+            background: linear-gradient(135deg, #1a1a24, #13131a);
+            border-radius: 1rem;
+        }
+        .gradient-border::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            padding: 1px;
+            border-radius: 1rem;
+            background: linear-gradient(135deg, #7c3aed, #a855f7, #c084fc);
+            -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+            mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+            -webkit-mask-composite: xor;
+            mask-composite: exclude;
+        }
+        
+        .blob {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(80px);
+            opacity: 0.3;
+            animation: blob 15s ease-in-out infinite;
+        }
+        
+        @keyframes blob {
+            0%, 100% { transform: translate(0, 0) scale(1); }
+            33% { transform: translate(30px, -50px) scale(1.1); }
+            66% { transform: translate(-20px, 20px) scale(0.9); }
+        }
+        
         .toc-link {
             transition: all 0.2s ease;
         }
@@ -57,264 +97,309 @@
             transform: translateX(4px);
         }
         
-        /* Smooth scroll behavior */
-        html {
-            scroll-behavior: smooth;
+        .section-card {
+            transition: all 0.3s ease;
+        }
+        .section-card:hover {
+            border-color: rgba(168, 85, 247, 0.4);
         }
         
-        /* Highlight animation */
-        .highlight-flash {
-            animation: highlight 2s ease-out;
-        }
-        
-        @keyframes highlight {
-            0% { background-color: rgba(168, 85, 247, 0.3); }
-            100% { background-color: transparent; }
+        @media print {
+            .no-print { display: none !important; }
+            body { background: white !important; color: black !important; }
+            .gradient-text { -webkit-text-fill-color: #7c3aed !important; }
         }
     </style>
 </head>
-<body class="bg-gray-900 text-white transition-colors duration-300">
+<body class="bg-dark-900 text-gray-100 font-sans antialiased">
+    <!-- Background Effects -->
+    <div class="fixed inset-0 pointer-events-none overflow-hidden">
+        <div class="blob w-96 h-96 bg-purple-700/30 top-0 -left-48"></div>
+        <div class="blob w-72 h-72 bg-purple-600/20 bottom-0 right-0" style="animation-delay: -7s;"></div>
+    </div>
+    
     <!-- Navigation -->
-    <nav class="bg-gray-900/90 backdrop-blur-md border-b border-gray-700">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between items-center py-4">
-                <div class="text-xl font-bold text-purple-400">
-                    <a href="/">TM</a>
-                </div>
-                
-                <div class="flex items-center space-x-4">
-                    <a href="/" class="text-gray-300 hover:text-purple-400 transition-colors duration-200">
-                        ← Zurück zur Startseite
+    <nav class="fixed top-0 left-0 right-0 z-50">
+        <div class="max-w-4xl mx-auto px-6 py-4">
+            <div class="flex items-center justify-between bg-dark-800/80 backdrop-blur-xl rounded-2xl px-6 py-3 border border-purple-900/20">
+                <a href="/" class="text-xl font-bold gradient-text">TM</a>
+                <div class="flex items-center gap-4">
+                    <a href="/" class="text-gray-400 hover:text-white transition-colors text-sm">
+                        ← Zurück
                     </a>
+                    <a href="/impressum-en" class="text-gray-400 hover:text-purple-400 transition-colors text-sm">
+                        English
+                    </a>
+                    <button onclick="window.print()" class="no-print px-3 py-1.5 bg-purple-600 hover:bg-purple-500 rounded-lg text-sm transition-colors">
+                        Drucken
+                    </button>
                 </div>
             </div>
         </div>
     </nav>
-
+    
     <!-- Main Content -->
-    <main class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
-        <div class="bg-gray-800 rounded-xl shadow-lg p-8 md:p-12 border border-purple-500/20">
-            <div class="flex justify-between items-start mb-8">
-                <h1 class="text-3xl md:text-4xl font-bold text-purple-400">Impressum</h1>
-                <div class="flex items-center space-x-4 no-print">
-                    <button onclick="window.print()" class="px-4 py-2 bg-purple-600 hover:bg-purple-700 text-white rounded-lg transition-colors duration-200 text-sm">
-                        📄 Drucken
-                    </button>
-                    <a href="/impressum-en" class="text-sm text-gray-400 hover:text-purple-400 transition-colors duration-200">
-                        English Version →
-                    </a>
-                </div>
+    <main class="relative z-10 max-w-4xl mx-auto px-6 pt-32 pb-20">
+        <div class="gradient-border p-8 md:p-12">
+            <!-- Header -->
+            <div class="mb-12">
+                <p class="text-purple-400 font-mono text-sm tracking-widest uppercase mb-4">Rechtliche Informationen</p>
+                <h1 class="text-4xl md:text-5xl font-bold gradient-text mb-4">Impressum</h1>
+                <p id="last-updated" class="text-gray-500 text-sm"></p>
             </div>
             
             <!-- Table of Contents -->
-            <div class="bg-gray-700 rounded-lg p-6 mb-8 border border-purple-500/20 no-print">
+            <div class="bg-dark-700 rounded-xl p-6 mb-10 border border-purple-900/20 no-print">
                 <h2 class="text-lg font-semibold mb-4 text-purple-400">📋 Inhaltsverzeichnis</h2>
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-2">
-                    <a href="#scope" class="toc-link block px-3 py-2 text-sm text-gray-300 hover:text-purple-400 hover:bg-gray-600 rounded transition-all duration-200">→ Geltungsbereich</a>
-                    <a href="#tmg" class="toc-link block px-3 py-2 text-sm text-gray-300 hover:text-purple-400 hover:bg-gray-600 rounded transition-all duration-200">→ Angaben gemäß TMG</a>
-                    <a href="#contact" class="toc-link block px-3 py-2 text-sm text-gray-300 hover:text-purple-400 hover:bg-gray-600 rounded transition-all duration-200">→ Kontakt</a>
-                    <a href="#editorial" class="toc-link block px-3 py-2 text-sm text-gray-300 hover:text-purple-400 hover:bg-gray-600 rounded transition-all duration-200">→ Redaktionell Verantwortlicher</a>
-                    <a href="#dispute" class="toc-link block px-3 py-2 text-sm text-gray-300 hover:text-purple-400 hover:bg-gray-600 rounded transition-all duration-200">→ EU-Streitschlichtung</a>
-                    <a href="#arbitration" class="toc-link block px-3 py-2 text-sm text-gray-300 hover:text-purple-400 hover:bg-gray-600 rounded transition-all duration-200">→ Verbraucherschlichtung</a>
-                    <a href="#privacy" class="toc-link block px-3 py-2 text-sm text-gray-300 hover:text-purple-400 hover:bg-gray-600 rounded transition-all duration-200">→ Datenschutz</a>
-                    <a href="#cookies" class="toc-link block px-3 py-2 text-sm text-gray-300 hover:text-purple-400 hover:bg-gray-600 rounded transition-all duration-200">→ Cookies</a>
-                    <a href="#links" class="toc-link block px-3 py-2 text-sm text-gray-300 hover:text-purple-400 hover:bg-gray-600 rounded transition-all duration-200">→ Externe Links</a>
-                    <a href="#liability" class="toc-link block px-3 py-2 text-sm text-gray-300 hover:text-purple-400 hover:bg-gray-600 rounded transition-all duration-200">→ Haftungsausschluss</a>
-                    <a href="#opensource" class="toc-link block px-3 py-2 text-sm text-gray-300 hover:text-purple-400 hover:bg-gray-600 rounded transition-all duration-200">→ Open Source</a>
-                    <a href="#copyright" class="toc-link block px-3 py-2 text-sm text-gray-300 hover:text-purple-400 hover:bg-gray-600 rounded transition-all duration-200">→ Urheberrecht</a>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-2" id="toc">
+                    <!-- Dynamic TOC -->
                 </div>
             </div>
             
-            <div class="prose prose-gray prose-invert max-w-none">
-                <div id="scope" class="bg-purple-900/20 border border-purple-500/30 rounded-lg p-6 mb-8">
-                    <h2 class="text-lg font-semibold mb-3 text-purple-400">Geltungsbereich</h2>
-                    <p class="text-gray-300">
+            <!-- Warning Banner - No Spam -->
+            <div id="spam-warning" class="bg-red-900/20 border border-red-500/30 rounded-xl p-6 mb-10">
+                <div class="flex items-start gap-4">
+                    <span class="text-2xl">⚠️</span>
+                    <div>
+                        <h3 class="text-lg font-semibold text-red-400 mb-2">Werbung & Spam-Hinweis</h3>
+                        <p class="text-gray-300 text-sm leading-relaxed">
+                            Jegliche unaufgeforderte Werbung, Angebote, Paketsendungen, Briefe, Spam-Anrufe oder sonstige kommerzielle Kontaktaufnahmen an die auf dieser Website genannten Kontaktdaten (E-Mail, Postadresse oder andere Kommunikationswege) sind <strong class="text-red-400">ausdrücklich unerwünscht</strong>. Bei Zuwiderhandlung behalte ich mir rechtliche Schritte vor, insbesondere die Geltendmachung von Unterlassungs- und Schadensersatzansprüchen.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Content Sections -->
+            <div class="space-y-8">
+                <!-- Scope -->
+                <section id="scope" class="section-card bg-dark-700 rounded-xl p-6 border border-purple-900/20">
+                    <h2 class="text-xl font-semibold text-purple-400 mb-4">Geltungsbereich</h2>
+                    <p class="text-gray-300 mb-4">
                         Dieses Impressum gilt für die folgenden Domains und alle ihre Subdomains, sofern auf der jeweiligen Seite nicht anders verlinkt:
-                        <strong>taymaerz.de</strong>, <strong>maerz.click</strong>, <strong>spaghettis.code</strong>, <strong>apolochees.me</strong>, 
-                        <strong>gayshit.wtf</strong>, <strong>blubberbarsch.de</strong> und <strong>hoodity.shop</strong>.
                     </p>
-                </div>
+                    <div id="domains" class="flex flex-wrap gap-2">
+                        <!-- Dynamic domains -->
+                    </div>
+                </section>
                 
-                <h2 id="tmg" class="text-xl font-semibold mb-4 text-purple-400">Angaben gemäß § 5 TMG</h2>
+                <!-- TMG Info -->
+                <section id="tmg" class="section-card bg-dark-700 rounded-xl p-6 border border-purple-900/20">
+                    <h2 class="text-xl font-semibold text-purple-400 mb-4">Angaben gemäß § 5 TMG</h2>
+                    <div id="owner-info" class="space-y-1 text-gray-300">
+                        <!-- Dynamic owner info -->
+                    </div>
+                </section>
                 
-                <div class="bg-gray-700 p-6 rounded-lg mb-8 border border-purple-500/20">
-                    <p class="mb-2"><strong>Tay März</strong></p>
-                    <p class="mb-2">Reinhäuser Landstraße 129</p>
-                    <p class="mb-2">37083 Göttingen</p>
-                    <p class="mb-2">Deutschland</p>
-                </div>
+                <!-- Contact -->
+                <section id="contact" class="section-card bg-dark-700 rounded-xl p-6 border border-purple-900/20">
+                    <h2 class="text-xl font-semibold text-purple-400 mb-4">Kontakt</h2>
+                    <p class="text-gray-300">
+                        <strong>E-Mail:</strong> <span id="email" class="text-purple-400 font-mono"></span>
+                    </p>
+                    <p class="text-gray-500 text-xs mt-2 italic">
+                        (Das [at] ersetzt das @-Zeichen zum Schutz vor Spam-Bots)
+                    </p>
+                </section>
                 
-                <h3 id="contact" class="text-lg font-semibold mb-3 text-purple-400">Kontakt</h3>
-                <p class="mb-2"><strong>E-Mail:</strong> <a href="mailto:hi@taymaerz.de" class="text-purple-400 hover:text-purple-300 hover:underline">hi@taymaerz.de</a></p>
+                <!-- Editorial -->
+                <section id="editorial" class="section-card bg-dark-700 rounded-xl p-6 border border-purple-900/20">
+                    <h2 class="text-xl font-semibold text-purple-400 mb-4">Redaktionell verantwortlich</h2>
+                    <p id="editorial-name" class="text-gray-300"></p>
+                </section>
                 
-                <h3 id="editorial" class="text-lg font-semibold mb-3 mt-8 text-purple-400">Redaktionell verantwortlich</h3>
-                <p class="mb-4">Tay März</p>
+                <!-- EU Dispute -->
+                <section id="dispute" class="section-card bg-dark-700 rounded-xl p-6 border border-purple-900/20">
+                    <h2 class="text-xl font-semibold text-purple-400 mb-4">EU-Streitschlichtung</h2>
+                    <p class="text-gray-300 mb-2">
+                        Die Europäische Kommission stellt eine Plattform zur Online-Streitbeilegung (OS) bereit:
+                    </p>
+                    <a href="https://ec.europa.eu/consumers/odr/" target="_blank" rel="noopener noreferrer" class="text-purple-400 hover:text-purple-300 transition-colors">
+                        https://ec.europa.eu/consumers/odr/ ↗
+                    </a>
+                    <p class="text-gray-400 mt-2 text-sm">Unsere E-Mail-Adresse finden Sie oben im Impressum.</p>
+                </section>
                 
-                <h3 id="dispute" class="text-lg font-semibold mb-3 mt-8 text-purple-400">EU-Streitschlichtung</h3>
-                <p class="mb-4">
-                    Die Europäische Kommission stellt eine Plattform zur Online-Streitbeilegung (OS) bereit: 
-                    <a href="https://ec.europa.eu/consumers/odr/" target="_blank" rel="noopener noreferrer" class="text-purple-400 hover:text-purple-300 hover:underline">
-                        https://ec.europa.eu/consumers/odr/
-                    </a><br>
-                    Unsere E-Mail-Adresse finden Sie oben im Impressum.
-                </p>
+                <!-- Arbitration -->
+                <section id="arbitration" class="section-card bg-dark-700 rounded-xl p-6 border border-purple-900/20">
+                    <h2 class="text-xl font-semibold text-purple-400 mb-4">Verbraucherstreitbeilegung</h2>
+                    <p class="text-gray-300">
+                        Wir sind nicht bereit oder verpflichtet, an Streitbeilegungsverfahren vor einer Verbraucherschlichtungsstelle teilzunehmen.
+                    </p>
+                </section>
                 
-                <h3 class="text-lg font-semibold mb-3 mt-8 text-purple-400">Verbraucherstreitbeilegung/Universalschlichtungsstelle</h3>
-                <p class="mb-4">
-                    Wir sind nicht bereit oder verpflichtet, an Streitbeilegungsverfahren vor einer 
-                    Verbraucherschlichtungsstelle teilzunehmen.
-                </p>
+                <!-- Content Liability -->
+                <section id="liability-content" class="section-card bg-dark-700 rounded-xl p-6 border border-purple-900/20">
+                    <h2 class="text-xl font-semibold text-purple-400 mb-4">Haftung für Inhalte</h2>
+                    <p class="text-gray-300 mb-4">
+                        Als Diensteanbieter sind wir gemäß § 7 Abs.1 TMG für eigene Inhalte auf diesen Seiten nach den allgemeinen Gesetzen verantwortlich. Nach §§ 8 bis 10 TMG sind wir als Diensteanbieter jedoch nicht unter der Verpflichtung, übermittelte oder gespeicherte fremde Informationen zu überwachen oder nach Umständen zu forschen, die auf eine rechtswidrige Tätigkeit hinweisen.
+                    </p>
+                    <p class="text-gray-300">
+                        Verpflichtungen zur Entfernung oder Sperrung der Nutzung von Informationen nach den allgemeinen Gesetzen bleiben hiervon unberührt. Eine diesbezügliche Haftung ist jedoch erst ab dem Zeitpunkt der Kenntnis einer konkreten Rechtsverletzung möglich. Bei Bekanntwerden von entsprechenden Rechtsverletzungen werden wir diese Inhalte umgehend entfernen.
+                    </p>
+                </section>
                 
-                <h2 class="text-xl font-semibold mb-4 mt-12 text-purple-400">Haftung für Inhalte</h2>
-                <p class="mb-4">
-                    Als Diensteanbieter sind wir gemäß § 7 Abs.1 TMG für eigene Inhalte auf diesen Seiten nach den 
-                    allgemeinen Gesetzen verantwortlich. Nach §§ 8 bis 10 TMG sind wir als Diensteanbieter jedoch nicht 
-                    unter der Verpflichtung, übermittelte oder gespeicherte fremde Informationen zu überwachen oder nach 
-                    Umständen zu forschen, die auf eine rechtswidrige Tätigkeit hinweisen.
-                </p>
-                <p class="mb-4">
-                    Verpflichtungen zur Entfernung oder Sperrung der Nutzung von Informationen nach den allgemeinen 
-                    Gesetzen bleiben hiervon unberührt. Eine diesbezügliche Haftung ist jedoch erst ab dem Zeitpunkt der 
-                    Kenntnis einer konkreten Rechtsverletzung möglich. Bei Bekanntwerden von entsprechenden 
-                    Rechtsverletzungen werden wir diese Inhalte umgehend entfernen.
-                </p>
+                <!-- Links Liability -->
+                <section id="liability-links" class="section-card bg-dark-700 rounded-xl p-6 border border-purple-900/20">
+                    <h2 class="text-xl font-semibold text-purple-400 mb-4">Haftung für Links</h2>
+                    <p class="text-gray-300 mb-4">
+                        Unser Angebot enthält Links zu externen Websites Dritter, auf deren Inhalte wir keinen Einfluss haben. Deshalb können wir für diese fremden Inhalte auch keine Gewähr übernehmen. Für die Inhalte der verlinkten Seiten ist stets der jeweilige Anbieter oder Betreiber der Seiten verantwortlich.
+                    </p>
+                    <p class="text-gray-300">
+                        Eine permanente inhaltliche Kontrolle der verlinkten Seiten ist jedoch ohne konkrete Anhaltspunkte einer Rechtsverletzung nicht zumutbar. Bei Bekanntwerden von Rechtsverletzungen werden wir derartige Links umgehend entfernen.
+                    </p>
+                </section>
                 
-                <h2 class="text-xl font-semibold mb-4 mt-8 text-purple-400">Haftung für Links</h2>
-                <p class="mb-4">
-                    Unser Angebot enthält Links zu externen Websites Dritter, auf deren Inhalte wir keinen Einfluss haben. 
-                    Deshalb können wir für diese fremden Inhalte auch keine Gewähr übernehmen. Für die Inhalte der 
-                    verlinkten Seiten ist stets der jeweilige Anbieter oder Betreiber der Seiten verantwortlich. Die 
-                    verlinkten Seiten wurden zum Zeitpunkt der Verlinkung auf mögliche Rechtsverstöße überprüft. 
-                    Rechtswidrige Inhalte waren zum Zeitpunkt der Verlinkung nicht erkennbar.
-                </p>
-                <p class="mb-4">
-                    Eine permanente inhaltliche Kontrolle der verlinkten Seiten ist jedoch ohne konkrete Anhaltspunkte 
-                    einer Rechtsverletzung nicht zumutbar. Bei Bekanntwerden von Rechtsverletzungen werden wir derartige 
-                    Links umgehend entfernen.
-                </p>
+                <!-- Privacy -->
+                <section id="privacy" class="section-card bg-dark-700 rounded-xl p-6 border border-purple-900/20">
+                    <h2 class="text-xl font-semibold text-purple-400 mb-4">Datenschutz</h2>
+                    <p class="text-gray-300 mb-4">
+                        Die Nutzung unserer Webseite ist in der Regel ohne Angabe personenbezogener Daten möglich. Soweit auf unseren Seiten personenbezogene Daten erhoben werden, erfolgt dies, soweit möglich, stets auf freiwilliger Basis. Diese Daten werden ohne Ihre ausdrückliche Zustimmung nicht an Dritte weitergegeben.
+                    </p>
+                    <p class="text-gray-300">
+                        Wir weisen darauf hin, dass die Datenübertragung im Internet (z.B. bei der Kommunikation per E-Mail) Sicherheitslücken aufweisen kann. Ein lückenloser Schutz der Daten vor dem Zugriff durch Dritte ist nicht möglich.
+                    </p>
+                </section>
                 
-                <h2 class="text-xl font-semibold mb-4 mt-8 text-purple-400">Datenschutz</h2>
-                <p class="mb-4">
-                    Die Nutzung unserer Webseite ist in der Regel ohne Angabe personenbezogener Daten möglich. 
-                    Soweit auf unseren Seiten personenbezogene Daten (beispielsweise Name, Anschrift oder eMail-Adressen) 
-                    erhoben werden, erfolgt dies, soweit möglich, stets auf freiwilliger Basis. Diese Daten werden ohne 
-                    Ihre ausdrückliche Zustimmung nicht an Dritte weitergegeben.
-                </p>
-                <p class="mb-4">
-                    Wir weisen darauf hin, dass die Datenübertragung im Internet (z.B. bei der Kommunikation per E-Mail) 
-                    Sicherheitslücken aufweisen kann. Ein lückenloser Schutz der Daten vor dem Zugriff durch Dritte ist nicht möglich.
-                </p>
+                <!-- Cookies -->
+                <section id="cookies" class="section-card bg-dark-700 rounded-xl p-6 border border-purple-900/20">
+                    <h2 class="text-xl font-semibold text-purple-400 mb-4">Cookies</h2>
+                    <p class="text-gray-300">
+                        Diese Website verwendet keine Tracking-Cookies oder externe Analysedienste. Technisch notwendige Cookies können für die ordnungsgemäße Funktion der Website verwendet werden. Diese dienen ausschließlich der technischen Bereitstellung und verbessern die Nutzererfahrung.
+                    </p>
+                </section>
                 
-                <h2 id="cookies" class="text-xl font-semibold mb-4 mt-8 text-purple-400">Cookies</h2>
-                <p class="mb-4">
-                    Diese Website verwendet keine Tracking-Cookies oder externe Analysedienste. Technisch notwendige Cookies 
-                    können für die ordnungsgemäße Funktion der Website verwendet werden. Diese dienen ausschließlich der 
-                    technischen Bereitstellung und verbessern die Nutzererfahrung.
-                </p>
+                <!-- Copyright -->
+                <section id="copyright" class="section-card bg-dark-700 rounded-xl p-6 border border-purple-900/20">
+                    <h2 class="text-xl font-semibold text-purple-400 mb-4">Urheberrecht</h2>
+                    <p class="text-gray-300 mb-4">
+                        Die durch die Seitenbetreiber erstellten Inhalte und Werke auf diesen Seiten unterliegen dem deutschen Urheberrecht. Die Vervielfältigung, Bearbeitung, Verbreitung und jede Art der Verwertung außerhalb der Grenzen des Urheberrechtes bedürfen der schriftlichen Zustimmung des jeweiligen Autors bzw. Erstellers.
+                    </p>
+                    <p class="text-gray-300">
+                        Soweit die Inhalte auf dieser Seite nicht vom Betreiber erstellt wurden, werden die Urheberrechte Dritter beachtet. Sollten Sie trotzdem auf eine Urheberrechtsverletzung aufmerksam werden, bitten wir um einen entsprechenden Hinweis. Bei Bekanntwerden von Rechtsverletzungen werden wir derartige Inhalte umgehend entfernen.
+                    </p>
+                </section>
                 
-                <h2 id="links" class="text-xl font-semibold mb-4 mt-8 text-purple-400">Externe Links</h2>
-                <p class="mb-4">
-                    Unser Angebot enthält Links zu externen Webseiten Dritter, auf deren Inhalte wir keinen Einfluss haben. 
-                    Deshalb können wir für diese fremden Inhalte auch keine Gewähr übernehmen. Für die Inhalte der verlinkten 
-                    Seiten ist stets der jeweilige Anbieter oder Betreiber der Seiten verantwortlich.
-                </p>
-                
-                <h2 id="liability" class="text-xl font-semibold mb-4 mt-8 text-purple-400">Haftungsausschluss</h2>
-                <p class="mb-4">
-                    Die Inhalte unserer Seiten wurden mit größter Sorgfalt erstellt. Für die Richtigkeit, Vollständigkeit 
-                    und Aktualität der Inhalte können wir jedoch keine Gewähr übernehmen. Als Diensteanbieter sind wir 
-                    gemäß § 7 Abs.1 TMG für eigene Inhalte auf diesen Seiten nach den allgemeinen Gesetzen verantwortlich.
-                </p>
-                
-                <h2 id="opensource" class="text-xl font-semibold mb-4 mt-8 text-purple-400">Open Source</h2>
-                <p class="mb-4">
-                    Diese Website und zugehörige Projekte verwenden Open-Source-Software und -Bibliotheken. 
-                    Entsprechende Lizenzen und Urheberrechte werden in den jeweiligen Repositories auf GitHub respektiert. 
-                    Eigene Open-Source-Beiträge stehen unter den in den jeweiligen Repositories angegebenen Lizenzen.
-                </p>
-                
-                <h2 id="copyright" class="text-xl font-semibold mb-4 mt-8 text-purple-400">Urheberrecht</h2>
-                <p class="mb-4">
-                    Die durch die Seitenbetreiber erstellten Inhalte und Werke auf diesen Seiten unterliegen dem deutschen 
-                    Urheberrecht. Die Vervielfältigung, Bearbeitung, Verbreitung und jede Art der Verwertung außerhalb der 
-                    Grenzen des Urheberrechtes bedürfen der schriftlichen Zustimmung des jeweiligen Autors bzw. Erstellers. 
-                    Downloads und Kopien dieser Seite sind nur für den privaten, nicht kommerziellen Gebrauch gestattet.
-                </p>
-                <p class="mb-4">
-                    Soweit die Inhalte auf dieser Seite nicht vom Betreiber erstellt wurden, werden die Urheberrechte 
-                    Dritter beachtet. Insbesondere werden Inhalte Dritter als solche gekennzeichnet. Sollten Sie trotzdem 
-                    auf eine Urheberrechtsverletzung aufmerksam werden, bitten wir um einen entsprechenden Hinweis. Bei 
-                    Bekanntwerden von Rechtsverletzungen werden wir derartige Inhalte umgehend entfernen.
-                </p>
-                
-                <div class="mt-12 pt-8 border-t border-gray-600 text-sm text-gray-400">
-                    <p>Letzte Aktualisierung: <span id="last-updated"></span></p>
-                </div>
+                <!-- Open Source -->
+                <section id="opensource" class="section-card bg-dark-700 rounded-xl p-6 border border-purple-900/20">
+                    <h2 class="text-xl font-semibold text-purple-400 mb-4">Open Source</h2>
+                    <p class="text-gray-300">
+                        Diese Website und zugehörige Projekte verwenden Open-Source-Software und -Bibliotheken. Entsprechende Lizenzen und Urheberrechte werden in den jeweiligen Repositories auf GitHub respektiert. Eigene Open-Source-Beiträge stehen unter den in den jeweiligen Repositories angegebenen Lizenzen.
+                    </p>
+                </section>
             </div>
         </div>
     </main>
-
-    <script>
-        // Set last updated date
-        document.getElementById('last-updated').textContent = new Date().toLocaleDateString('de-DE', {
-            year: 'numeric',
-            month: 'long',
-            day: 'numeric'
-        });
-        
-        // Smooth scroll for TOC links with highlight
-        document.querySelectorAll('.toc-link').forEach(link => {
-            link.addEventListener('click', function(e) {
-                e.preventDefault();
-                const targetId = this.getAttribute('href').substring(1);
-                const targetElement = document.getElementById(targetId);
-                
-                if (targetElement) {
-                    targetElement.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
-                    
-                    // Add highlight effect
-                    setTimeout(() => {
-                        targetElement.classList.add('highlight-flash');
-                        setTimeout(() => {
-                            targetElement.classList.remove('highlight-flash');
-                        }, 2000);
-                    }, 500);
-                }
-            });
-        });
-        
-        // Add scroll to top button
-        const scrollToTopButton = document.createElement('button');
-        scrollToTopButton.innerHTML = '↑';
-        scrollToTopButton.className = 'fixed bottom-6 right-6 bg-purple-600 hover:bg-purple-700 text-white w-12 h-12 rounded-full shadow-lg transition-all duration-200 z-50 no-print';
-        scrollToTopButton.style.display = 'none';
-        scrollToTopButton.onclick = () => window.scrollTo({ top: 0, behavior: 'smooth' });
-        document.body.appendChild(scrollToTopButton);
-        
-        // Show/hide scroll to top button
-        window.addEventListener('scroll', () => {
-            if (window.pageYOffset > 300) {
-                scrollToTopButton.style.display = 'block';
-            } else {
-                scrollToTopButton.style.display = 'none';
-            }
-        });
-    </script>
-
+    
     <!-- Footer -->
-    <footer class="bg-black text-white py-8 border-t border-purple-500/20">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <p>&copy; 2025 Tay März. Alle Rechte vorbehalten.</p>
+    <footer class="relative z-10 py-8 border-t border-purple-900/20">
+        <div class="max-w-4xl mx-auto px-6 text-center">
+            <p class="text-gray-500 text-sm">© 2024 Tay März. Alle Rechte vorbehalten.</p>
         </div>
     </footer>
-
-    <!-- JavaScript -->
+    
+    <!-- Scroll to Top -->
+    <button id="scroll-top" onclick="window.scrollTo({top:0,behavior:'smooth'})" class="no-print fixed bottom-6 right-6 w-12 h-12 bg-purple-600 hover:bg-purple-500 rounded-full shadow-lg transition-all duration-300 opacity-0 pointer-events-none z-50">
+        <svg class="w-6 h-6 mx-auto text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 15l7-7 7 7"/>
+        </svg>
+    </button>
+    
     <script>
-        // Set last updated date
-        document.getElementById('last-updated').textContent = new Date().toLocaleDateString('de-DE');
+        // Load legal data
+        async function loadLegalData() {
+            try {
+                const response = await fetch('/api/legal');
+                const data = await response.json();
+                renderPage(data);
+            } catch (error) {
+                console.error('Failed to load legal data:', error);
+                // Fallback rendering
+                renderFallback();
+            }
+        }
+        
+        function renderPage(data) {
+            // Last updated
+            document.getElementById('last-updated').textContent = `Letzte Aktualisierung: ${new Date(data.lastUpdated).toLocaleDateString('de-DE', { year: 'numeric', month: 'long', day: 'numeric' })}`;
+            
+            // Domains
+            const domainsContainer = document.getElementById('domains');
+            domainsContainer.innerHTML = data.domains.map(domain => 
+                `<span class="px-3 py-1 bg-dark-600 text-purple-300 rounded-lg text-sm font-mono">${domain}</span>`
+            ).join('');
+            
+            // Owner info
+            const ownerInfo = document.getElementById('owner-info');
+            ownerInfo.innerHTML = `
+                <p class="font-semibold text-white">${data.owner.name}</p>
+                <p>${data.owner.street}</p>
+                <p>${data.owner.zip} ${data.owner.city}</p>
+                <p>${data.owner.country}</p>
+            `;
+            
+            // Contact email
+            document.getElementById('email').textContent = data.contact.email;
+            
+            // Editorial
+            document.getElementById('editorial-name').textContent = data.owner.name;
+            
+            // TOC
+            renderTOC();
+        }
+        
+        function renderFallback() {
+            // Fallback with hardcoded data
+            const domains = ['taymaerz.de', 'maerz.click', 'spaghettis.code', 'apolochees.me', 'gayshit.wtf', 'blubberbarsch.de', 'hoodity.shop'];
+            document.getElementById('domains').innerHTML = domains.map(d => 
+                `<span class="px-3 py-1 bg-dark-600 text-purple-300 rounded-lg text-sm font-mono">${d}</span>`
+            ).join('');
+            
+            document.getElementById('owner-info').innerHTML = `
+                <p class="font-semibold text-white">Tay März</p>
+                <p>Reinhäuser Landstraße 129</p>
+                <p>37083 Göttingen</p>
+                <p>Deutschland</p>
+            `;
+            
+            document.getElementById('email').textContent = 'hi[at]taymaerz.de';
+            document.getElementById('editorial-name').textContent = 'Tay März';
+            document.getElementById('last-updated').textContent = 'Letzte Aktualisierung: ' + new Date().toLocaleDateString('de-DE');
+            
+            renderTOC();
+        }
+        
+        function renderTOC() {
+            const sections = [
+                { id: 'scope', name: 'Geltungsbereich' },
+                { id: 'tmg', name: 'Angaben gemäß TMG' },
+                { id: 'contact', name: 'Kontakt' },
+                { id: 'editorial', name: 'Redaktionell Verantwortlicher' },
+                { id: 'dispute', name: 'EU-Streitschlichtung' },
+                { id: 'privacy', name: 'Datenschutz' },
+                { id: 'cookies', name: 'Cookies' },
+                { id: 'copyright', name: 'Urheberrecht' },
+                { id: 'opensource', name: 'Open Source' }
+            ];
+            
+            document.getElementById('toc').innerHTML = sections.map(s => 
+                `<a href="#${s.id}" class="toc-link block px-3 py-2 text-sm text-gray-400 hover:text-purple-400 hover:bg-dark-600 rounded-lg transition-all">→ ${s.name}</a>`
+            ).join('');
+        }
+        
+        // Scroll to top button
+        window.addEventListener('scroll', () => {
+            const btn = document.getElementById('scroll-top');
+            if (window.scrollY > 300) {
+                btn.classList.remove('opacity-0', 'pointer-events-none');
+                btn.classList.add('opacity-100');
+            } else {
+                btn.classList.add('opacity-0', 'pointer-events-none');
+                btn.classList.remove('opacity-100');
+            }
+        });
+        
+        // Initialize
+        loadLegalData();
     </script>
 </body>
 </html>
