@@ -4,31 +4,41 @@
       "name": "zip.maerz.click",
       "url": "https://zip.maerz.click",
       "description": "Free Cloud / ShareX uploader service (setup + hosting).",
-      "type": "setup-service"
+      "type": "setup-service",
+      "statusId": "zip.taymaerz.de"
     },
     {
       "name": "woah.gayshit.wtf",
       "url": "https://woah.gayshit.wtf",
       "description": "Mirror of zip.maerz.click (ShareX uploader) — maintained as a redundant endpoint and as a funny domain.",
-      "type": "mirror"
+      "type": "mirror",
+      "statusId": "woah.gayshit.wtf"
     },
     {
       "name": "maerz.click",
       "url": "https://maerz.click",
       "description": "Personal URL shortener service (setup + hosting).",
-      "type": "setup-service"
+      "type": "setup-service",
+      "statusId": "maerz.click"
     },
     {
       "name": "rm-bg.taymaerz.de",
       "url": "https://rm-bg.taymaerz.de",
       "description": "Free AI image background remover (hosted service).",
-      "type": "hosted-service"
+      "type": "hosted-service",
+      "statusId": "rm-bg.taymaerz.de"
     },
     {
       "name": "8mb.taymaerz.de",
       "url": "https://8mb.taymaerz.de",
       "description": "Free video compressor that reduces upload sizes.",
-      "type": "hosted-service"
+      "type": "hosted-service",
+      "statusId": "8mb.taymaerz.de"
     }
-  ]
+  ],
+  "status": {
+    "uptimeKumaMonitor": "uk1_gdBy2wRZ53RTWLXnPwwHmK_SWi0NRHkNW6Xp8qdV",
+    "statusUrl": "https://status.taymaerz.de/status/services",
+    "badgeTemplate": "https://status.taymaerz.de/badge/{id}"
+  }
 }

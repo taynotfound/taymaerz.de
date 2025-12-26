@@ -685,6 +685,7 @@
                 <p class="text-purple-400 font-mono text-sm tracking-widest uppercase mb-4">Services</p>
                 <h2 class="text-3xl md:text-4xl font-bold gradient-text">Services I Maintain (free / setup)</h2>
                 <p class="text-gray-500 max-w-2xl mx-auto mt-3">Public services I operate or have set up for free — links open in a new tab.</p>
+                <p id="services-status" class="text-sm mt-2"></p>
             </div>
             <div id="services-container" class="grid md:grid-cols-2 gap-6">
                 <!-- Dynamic services -->
@@ -905,11 +906,21 @@
                 const container = document.getElementById('services-container');
                 if (!container) return;
 
+                // Render status link from data/services.json if present
+                const statusEl = document.getElementById('services-status');
+                if (statusEl) {
+                    if (services?.status?.statusUrl) {
+                        statusEl.innerHTML = `<a href="${services.status.statusUrl}" target="_blank" rel="noopener" class="text-purple-300 hover:underline">Status page</a>`;
+                    } else {
+                        statusEl.textContent = '';
+                    }
+                }
+
                 container.innerHTML = services.services.map(s => `
                     <a href="${s.url}" target="_blank" rel="noopener" class="service-card block p-5 bg-dark-700 hover:bg-dark-600 rounded-xl border border-purple-900/20 hover:border-purple-500/40 transition-all duration-200">
                         <div class="flex items-start gap-4">
                             <div class="flex-1">
-                                <h4 class="text-lg font-semibold text-white">${s.name} ${s.type ? `<span class=\"inline-block text-xs px-2 py-0.5 rounded-full bg-purple-900/30 text-purple-300 ml-2\">${s.type === 'mirror' ? 'mirror' : s.type === 'hosted-service' ? 'hosted' : s.type === 'setup-service' ? 'setup' : s.type}</span>` : ''}</h4>
+                                <h4 class="text-lg font-semibold text-white">${s.name} ${s.type ? `<span class="inline-block text-xs px-2 py-0.5 rounded-full bg-purple-900/30 text-purple-300 ml-2">${s.type === 'mirror' ? 'mirror' : s.type === 'hosted-service' ? 'hosted' : s.type === 'setup-service' ? 'setup' : s.type}</span>` : ''}</h4>
                                 <p class="text-gray-400 text-sm mt-1">${s.description}</p>
                             </div>
                             <div class="flex items-center">

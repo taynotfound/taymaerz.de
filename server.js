@@ -39,6 +39,67 @@ app.get('/api/data', (req, res) => {
   }
 });
 
+// Helper to fetch external JSON (using native http/https)
+const http = require('http');
+const https = require('https');
+function fetchJson(url) {
+  return new Promise((resolve, reject) => {
+    const client = url.startsWith('https') ? https : http;
+    client.get(url, (resp) => {
+      const { statusCode } = resp;
+      if (statusCode && statusCode >= 400) {
+        resp.resume();
+        return reject(new Error(`Status code ${statusCode}`));
+      }
+      let raw = '';
+      resp.setEncoding('utf8');
+      resp.on('data', (chunk) => raw += chunk);
+      resp.on('end', () => {
+        try {
+          const parsed = JSON.parse(raw);
+          resolve(parsed);
+        } catch (e) {
+          // not JSON
+          resolve(raw);
+        }
+      });
+    }).on('error', (err) => reject(err));
+  });
+}
+
+// Proxy endpoint to fetch monitors from the status page (Uptime Kuma API)
+app.get('/api/status/monitors', async (req, res) => {
+  try {
+    const servicesData = loadData('services.json') || {};
+    const statusUrl = servicesData?.status?.statusUrl || '';
+    if (!statusUrl) return res.status(404).json({ error: 'No status URL configured' });
+
+    const base = new URL(statusUrl).origin; // e.g. https://status.taymaerz.de
+
+    const candidates = [
+      `${base}/api/monitors`,
+      `${base}/status.json`,
+      `${base}/api/status`,
+      `${base}/api/monitors/`,
+    ];
+
+    let lastErr = null;
+    for (const url of candidates) {
+      try {
+        const data = await fetchJson(url);
+        // If we got something reasonable, return it
+        if (data) return res.json({ source: url, data });
+      } catch (err) {
+        lastErr = err;
+      }
+    }
+
+    return res.status(502).json({ error: 'Failed to fetch monitors', details: lastErr?.message });
+  } catch (error) {
+    res.status(500).json({ error: 'Internal server error', details: error.message });
+  }
+});
+
 // Individual data endpoints
 app.get('/api/profile', (req, res) => res.json(loadData('profile.json')));
 app.get('/api/contact', (req, res) => res.json(loadData('contact.json')));
