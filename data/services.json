@@ -1,0 +1,34 @@
+{
+  "services": [
+    {
+      "name": "zip.maerz.click",
+      "url": "https://zip.maerz.click",
+      "description": "Free Cloud / ShareX uploader service (setup + hosting).",
+      "type": "setup-service"
+    },
+    {
+      "name": "woah.gayshit.wtf",
+      "url": "https://woah.gayshit.wtf",
+      "description": "Mirror of zip.maerz.click (ShareX uploader) — maintained as a redundant endpoint and as a funny domain.",
+      "type": "mirror"
+    },
+    {
+      "name": "maerz.click",
+      "url": "https://maerz.click",
+      "description": "Personal URL shortener service (setup + hosting).",
+      "type": "setup-service"
+    },
+    {
+      "name": "rm-bg.taymaerz.de",
+      "url": "https://rm-bg.taymaerz.de",
+      "description": "Free AI image background remover (hosted service).",
+      "type": "hosted-service"
+    },
+    {
+      "name": "8mb.taymaerz.de",
+      "url": "https://8mb.taymaerz.de",
+      "description": "Free video compressor that reduces upload sizes.",
+      "type": "hosted-service"
+    }
+  ]
+}

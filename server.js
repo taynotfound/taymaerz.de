@@ -29,8 +29,8 @@ app.get('/api/data', (req, res) => {
       contact: loadData('contact.json'),
       skills: loadData('skills.json'),
       experience: loadData('experience.json'),
-      projects: loadData('projects.json'),
-      site: loadData('site.json'),
+        projects: loadData('projects.json'),
+        services: loadData('services.json'),        contributions: loadData('contributions.json'),      site: loadData('site.json'),
       homelab: loadData('homelab.json')
     };
     res.json(data);

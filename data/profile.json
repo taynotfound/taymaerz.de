@@ -1,8 +1,8 @@
 {
   "name": "Tay März",
-  "title": "Developer & Linux Enthusiast",
-  "tagline": "Building beautiful, accessible, and modern web experiences",
-  "bio": "I'm a passionate developer from Germany with 6+ years of programming experience since 2019. My journey has taken me through AI prototyping, internships, and real-world projects for communities and businesses. I run a 2-node Proxmox homelab where I self-host NextCloud, Pelican, AzuraCast, Element, and many more. Currently experimenting with OwnTracks, Zabbix, and bewCloud. Always curious, always shipping.",
+  "title": "IT System Administrator",
+  "tagline": "Based in Germany — I manage and secure infrastructure; hobbyist full-stack developer.",
+  "bio": "Based in Germany, I manage and secure production and homelab infrastructure — Proxmox, Docker, backups, monitoring, and networking. I build tooling and web apps as a hobby. Seeking system administration / SRE opportunities.",
   "photo": "/assets/images/photo.jpg",
   "location": "Germany",
   "availability": "Open to opportunities",

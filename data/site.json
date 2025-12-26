@@ -1,7 +1,7 @@
 {
-  "title": "Tay März - Developer & Linux Enthusiast",
-  "description": "Personal portfolio of Tay März - passionate developer from Germany building beautiful, accessible, and modern web experiences.",
-  "keywords": ["developer", "web development", "linux", "germany", "portfolio", "tay märz", "frontend", "backend"],
+  "title": "Tay März - IT System Administrator",
+  "description": "IT System Administrator based in Germany. Infrastructure, Proxmox, Docker, monitoring, and networking. Hobbyist full-stack developer.",
+  "keywords": ["system administrator", "sysadmin", "infrastructure", "proxmox", "linux", "germany", "portfolio", "tay märz"],
   "favicon": "/favicon.ico",
   "theme": {
     "primary": "#a855f7",
@@ -13,12 +13,12 @@
   "hero": {
     "greeting": "Welcome to my portfolio",
     "prefix": "Hi, I'm",
-    "scrollText": "scroll down :3"
+    "scrollText": "scroll down"
   },
   "sections": {
     "about": {
       "label": "About Me",
-      "title": "Who I Am"
+      "title": "About Me"
     },
     "homelab": {
       "label": "Running on my Homelab",
@@ -57,6 +57,7 @@
     { "name": "Home", "href": "#home" },
     { "name": "About", "href": "#about" },
     { "name": "Skills", "href": "#skills" },
+    { "name": "Services", "href": "#services" },
     { "name": "Projects", "href": "#projects" },
     { "name": "Experience", "href": "#experience" },
     { "name": "Contact", "href": "#contact" }

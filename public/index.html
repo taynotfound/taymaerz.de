@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tay März - Developer & Linux Enthusiast</title>
-    <meta name="description" content="Personal portfolio of Tay März - passionate developer from Germany building beautiful, accessible, and modern web experiences.">
+    <title>Tay März - IT System Administrator</title>
+    <meta name="description" content="IT System Administrator based in Germany. Infrastructure, Proxmox, Docker, monitoring, and networking. Hobbyist full-stack developer.">
     
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -60,10 +60,10 @@
         ::-webkit-scrollbar { width: 8px; }
         ::-webkit-scrollbar-track { background: #0a0a0f; }
         ::-webkit-scrollbar-thumb { 
-            background: linear-gradient(180deg, #7c3aed, #a855f7); 
+            background: #7c3aed; 
             border-radius: 4px;
         }
-        ::-webkit-scrollbar-thumb:hover { background: linear-gradient(180deg, #a855f7, #c084fc); }
+        ::-webkit-scrollbar-thumb:hover { background: #a855f7; }
         
         ::selection {
             background: rgba(168, 85, 247, 0.3);
@@ -113,12 +113,11 @@
         }
         
         .floating {
-            animation: floating 6s ease-in-out infinite;
+            /* Removed animation */
         }
         
         @keyframes floating {
-            0%, 100% { transform: translateY(0px); }
-            50% { transform: translateY(-20px); }
+            /* Removed */
         }
         
         .fade-in {
@@ -136,17 +135,11 @@
         .stagger-4 { animation-delay: 0.4s; }
         
         .blob {
-            position: absolute;
-            border-radius: 50%;
-            filter: blur(80px);
-            opacity: 0.4;
-            animation: blob 15s ease-in-out infinite;
+            /* Removed */
         }
         
         @keyframes blob {
-            0%, 100% { transform: translate(0, 0) scale(1); }
-            33% { transform: translate(30px, -50px) scale(1.1); }
-            66% { transform: translate(-20px, 20px) scale(0.9); }
+            /* Removed */
         }
         
         .skill-card:hover .skill-icon {
@@ -233,18 +226,12 @@
         
         /* Glitch Effect */
         .glitch {
-            position: relative;
+            /* Removed */
         }
         
         .glitch::before,
         .glitch::after {
-            content: attr(data-text);
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: #0a0a0f;
+            /* Removed */
         }
         
         .glitch::before {
@@ -262,51 +249,11 @@
         }
         
         @keyframes glitch-anim {
-            0% { clip: rect(42px, 9999px, 44px, 0); }
-            5% { clip: rect(12px, 9999px, 59px, 0); }
-            10% { clip: rect(48px, 9999px, 29px, 0); }
-            15% { clip: rect(42px, 9999px, 73px, 0); }
-            20% { clip: rect(63px, 9999px, 27px, 0); }
-            25% { clip: rect(34px, 9999px, 55px, 0); }
-            30% { clip: rect(86px, 9999px, 73px, 0); }
-            35% { clip: rect(20px, 9999px, 20px, 0); }
-            40% { clip: rect(26px, 9999px, 60px, 0); }
-            45% { clip: rect(25px, 9999px, 66px, 0); }
-            50% { clip: rect(57px, 9999px, 98px, 0); }
-            55% { clip: rect(5px, 9999px, 46px, 0); }
-            60% { clip: rect(82px, 9999px, 31px, 0); }
-            65% { clip: rect(54px, 9999px, 27px, 0); }
-            70% { clip: rect(28px, 9999px, 99px, 0); }
-            75% { clip: rect(45px, 9999px, 69px, 0); }
-            80% { clip: rect(23px, 9999px, 85px, 0); }
-            85% { clip: rect(54px, 9999px, 84px, 0); }
-            90% { clip: rect(45px, 9999px, 47px, 0); }
-            95% { clip: rect(37px, 9999px, 20px, 0); }
-            100% { clip: rect(4px, 9999px, 91px, 0); }
+            /* Removed */
         }
         
         @keyframes glitch-anim-2 {
-            0% { clip: rect(65px, 9999px, 100px, 0); }
-            5% { clip: rect(52px, 9999px, 74px, 0); }
-            10% { clip: rect(79px, 9999px, 85px, 0); }
-            15% { clip: rect(75px, 9999px, 5px, 0); }
-            20% { clip: rect(67px, 9999px, 61px, 0); }
-            25% { clip: rect(14px, 9999px, 79px, 0); }
-            30% { clip: rect(1px, 9999px, 66px, 0); }
-            35% { clip: rect(86px, 9999px, 30px, 0); }
-            40% { clip: rect(23px, 9999px, 98px, 0); }
-            45% { clip: rect(85px, 9999px, 72px, 0); }
-            50% { clip: rect(71px, 9999px, 75px, 0); }
-            55% { clip: rect(2px, 9999px, 48px, 0); }
-            60% { clip: rect(30px, 9999px, 16px, 0); }
-            65% { clip: rect(59px, 9999px, 50px, 0); }
-            70% { clip: rect(41px, 9999px, 62px, 0); }
-            75% { clip: rect(2px, 9999px, 82px, 0); }
-            80% { clip: rect(47px, 9999px, 73px, 0); }
-            85% { clip: rect(3px, 9999px, 27px, 0); }
-            90% { clip: rect(26px, 9999px, 55px, 0); }
-            95% { clip: rect(42px, 9999px, 97px, 0); }
-            100% { clip: rect(38px, 9999px, 49px, 0); }
+            /* Removed */
         }
         
         /* Typewriter effect */
@@ -575,9 +522,6 @@
 <body class="bg-dark-900 text-gray-100 font-sans antialiased">
     <!-- Background Effects -->
     <div class="fixed inset-0 pointer-events-none overflow-hidden">
-        <div class="blob w-96 h-96 bg-purple-700/30 top-0 -left-48"></div>
-        <div class="blob w-80 h-80 bg-purple-500/20 top-1/3 right-0" style="animation-delay: -5s;"></div>
-        <div class="blob w-72 h-72 bg-purple-600/20 bottom-0 left-1/4" style="animation-delay: -10s;"></div>
     </div>
     
     <!-- Navigation -->
@@ -609,7 +553,7 @@
     <section id="home" class="min-h-screen flex items-center justify-center relative bg-grid">
         <div class="max-w-6xl mx-auto px-6 py-32 text-center relative z-10">
             <div class="hero-animate opacity-0 pop-in stagger-1">
-                <div id="hero-photo" class="w-36 h-36 mx-auto mb-6 rounded-full overflow-hidden ring-4 ring-purple-500/50 glow floating hover:ring-purple-400 transition-all duration-300">
+                <div id="hero-photo" class="w-36 h-36 mx-auto mb-6 rounded-full overflow-hidden ring-4 ring-purple-500/50 glow hover:ring-purple-400 transition-all duration-300">
                     <!-- Dynamic photo -->
                 </div>
             </div>
@@ -626,11 +570,11 @@
             </div>
             <h1 class="hero-animate opacity-0 slide-in-left stagger-2 text-5xl md:text-7xl font-bold mb-4">
                 <span class="text-white">Hi, I'm </span>
-                <span id="hero-name" class="gradient-text glitch" data-text="Tay">Loading...</span>
+                <span id="hero-name" class="gradient-text" data-text="Tay">Tay</span>
                 <span id="hero-pronouns" class="text-gray-500 text-lg md:text-xl font-normal ml-2">(they/them)</span>
             </h1>
-            <p id="hero-title" class="hero-animate opacity-0 slide-in-right stagger-3 text-xl md:text-2xl text-gray-400 mb-4">Developer & Linux Enthusiast</p>
-            <p id="hero-tagline" class="hero-animate opacity-0 fade-in stagger-3 text-lg text-gray-500 max-w-2xl mx-auto mb-8 font-mono">// Building beautiful, accessible, and modern web experiences</p>
+            <p id="hero-title" class="hero-animate opacity-0 slide-in-right stagger-3 text-xl md:text-2xl text-gray-400 mb-4">IT System Administrator</p>
+            <p id="hero-tagline" class="hero-animate opacity-0 fade-in stagger-3 text-lg text-gray-500 max-w-2xl mx-auto mb-8 font-mono">// I manage and secure infrastructure; hobbyist full-stack developer</p>
             
             <!-- Fun Facts Ticker -->
             <div class="opacity-0 fade-in stagger-3 mb-10">
@@ -641,44 +585,20 @@
             
             <div class="hero-animate opacity-0 fade-in stagger-4 flex flex-col sm:flex-row gap-4 justify-center items-center">
                 <a href="#projects" class="group inline-flex items-center justify-center gap-2 px-8 py-4 bg-gradient-to-r from-purple-600 to-purple-700 hover:from-purple-500 hover:to-purple-600 rounded-xl font-semibold transition-all duration-300 glow-hover hover:scale-105 min-w-[180px]">
-                    <span>View My Work</span>
+                    <span>View My Projects</span>
                     <svg class="w-5 h-5 opacity-0 group-hover:opacity-100 group-hover:translate-x-1 transition-all duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"/></svg>
                 </a>
                 <a href="#contact" class="inline-flex items-center justify-center px-8 py-4 border-2 border-purple-500/50 hover:border-purple-400 hover:bg-purple-500/10 rounded-xl font-semibold transition-all duration-300 hover:scale-105 min-w-[180px]">
-                    Get In Touch
+                    Contact Me for Work
                 </a>
                 <a href="https://ko-fi.com/taygotkofi" target="_blank" class="group px-6 py-4 bg-dark-700 hover:bg-dark-600 border-2 border-orange-500/60 hover:border-yellow-400 rounded-xl font-semibold transition-all duration-300 flex items-center gap-2 justify-center hover:scale-105">
-                    <svg class="w-5 h-8 spezi-can" viewBox="0 0 300 450" xmlns="http://www.w3.org/2000/svg">
-                        <defs>
-                            <linearGradient id="metalTop" x1="0%" y1="0%" x2="100%" y2="0%">
-                                <stop offset="0%" style="stop-color:#a8b5ba" />
-                                <stop offset="50%" style="stop-color:#d4dfe3" />
-                                <stop offset="100%" style="stop-color:#a8b5ba" />
-                            </linearGradient>
-                            <linearGradient id="orangeRed" x1="0%" y1="0%" x2="0%" y2="100%">
-                                <stop offset="0%" style="stop-color:#ff8c1a" />
-                                <stop offset="40%" style="stop-color:#e84c3d" />
-                                <stop offset="100%" style="stop-color:#c23866" />
-                            </linearGradient>
-                        </defs>
-                        <path d="M 90 60 L 80 90 L 80 380 Q 80 400 100 410 L 200 410 Q 220 400 220 380 L 220 90 L 210 60 Z" fill="#8b9498"/>
-                        <ellipse cx="150" cy="60" rx="60" ry="15" fill="url(#metalTop)"/>
-                        <ellipse cx="150" cy="60" rx="50" ry="12" fill="#c5d0d5"/>
-                        <path d="M 85 90 L 215 90 L 215 200 L 85 200 Z" fill="#f7b32b"/>
-                        <path d="M 85 200 L 215 200 L 215 320 L 85 320 Z" fill="url(#orangeRed)"/>
-                        <path d="M 85 320 L 215 320 L 215 380 Q 215 395 200 405 L 100 405 Q 85 395 85 380 Z" fill="#5a4a9f"/>
-                        <ellipse cx="150" cy="405" rx="55" ry="8" fill="#6d7a7e"/>
-                    </svg>
-                    <span class="text-orange-300 group-hover:text-yellow-300">Buy me a Spezi</span>
+                    <span class="text-orange-300 group-hover:text-yellow-300">Support My Work</span>
                 </a>
             </div>
             
             <!-- Scroll Indicator -->
             <div class="absolute bottom-12 left-1/2 -translate-x-1/2 opacity-0 fade-in stagger-4">
-                <div class="w-6 h-10 border-2 border-purple-500/50 rounded-full flex justify-center pt-2 scroll-bounce">
-                    <div class="w-1 h-2 bg-purple-500 rounded-full animate-bounce"></div>
-                </div>
-                <p class="text-purple-400/50 text-xs font-mono mt-2">scroll down :3</p>
+                <p class="text-purple-400/50 text-xs font-mono mt-2">scroll down</p>
             </div>
         </div>
     </section>
@@ -689,8 +609,8 @@
             <div class="grid md:grid-cols-2 gap-16 items-center">
                 <div class="about-content">
                     <p class="text-purple-400 font-mono text-sm tracking-widest uppercase mb-4">About Me</p>
-                    <h2 class="text-4xl md:text-5xl font-bold mb-6 gradient-text">Passionate Developer</h2>
-                    <p id="about-bio" class="text-gray-400 text-lg leading-relaxed mb-8">Loading...</p>
+                    <h2 class="text-4xl md:text-5xl font-bold mb-6 gradient-text">About Me</h2>
+                    <p id="about-bio" class="text-gray-400 text-lg leading-relaxed mb-8">I develop web applications that solve real problems for businesses and communities. I work with modern web technologies to create accessible, performant solutions. Currently seeking full-time opportunities in web development.</p>
                     <div class="flex flex-wrap gap-4">
                         <div class="flex items-center gap-2 px-4 py-2 bg-dark-700 rounded-lg border border-purple-900/30">
                             <svg class="w-5 h-5 text-purple-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -758,6 +678,34 @@
         </div>
     </section>
     
+    <!-- Services I Maintain -->
+    <section id="services" class="py-20 relative">
+        <div class="max-w-6xl mx-auto px-6">
+            <div class="section-header text-center mb-12">
+                <p class="text-purple-400 font-mono text-sm tracking-widest uppercase mb-4">Services</p>
+                <h2 class="text-3xl md:text-4xl font-bold gradient-text">Services I Maintain (free / setup)</h2>
+                <p class="text-gray-500 max-w-2xl mx-auto mt-3">Public services I operate or have set up for free — links open in a new tab.</p>
+            </div>
+            <div id="services-container" class="grid md:grid-cols-2 gap-6">
+                <!-- Dynamic services -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Community Contributions -->
+    <section id="contributions" class="py-12 relative bg-dark-800/20">
+        <div class="max-w-6xl mx-auto px-6">
+            <div class="section-header text-center mb-8">
+                <p class="text-purple-400 font-mono text-sm tracking-widest uppercase mb-4">Community</p>
+                <h2 class="text-3xl md:text-4xl font-bold gradient-text">Community Contributions</h2>
+                <p class="text-gray-500 max-w-2xl mx-auto mt-3">Small, meaningful contributions I made for local communities and events.</p>
+            </div>
+            <div id="contributions-container" class="grid md:grid-cols-2 gap-6">
+                <!-- Dynamic contributions -->
+            </div>
+        </div>
+    </section>
+
     <!-- Skills Section -->
     <section id="skills" class="py-32 relative bg-dark-800/50">
         <div class="max-w-6xl mx-auto px-6">
@@ -836,14 +784,14 @@
         <div class="max-w-6xl mx-auto px-6">
             <!-- Fun rotating quotes -->
             <div class="text-center mb-8">
-                <p id="tech-quote" class="font-mono text-gray-600 text-sm italic transition-opacity duration-500">"Loading quote..."</p>
+                <p id="tech-quote" class="font-mono text-gray-600 text-sm italic transition-opacity duration-500">"Talk is cheap. Show me the code." - Linus Torvalds</p>
             </div>
             <!-- Hosting Fun Fact -->
             <div id="footer-tagline" class="flex flex-wrap items-center justify-center gap-3 mb-8 text-gray-500 text-sm">
                 <!-- Dynamic tagline -->
             </div>
             <div class="flex flex-col md:flex-row items-center justify-between gap-4">
-                <p id="footer-copyright" class="text-gray-500 text-sm">Loading...</p>
+                <p id="footer-copyright" class="text-gray-500 text-sm">© 2025 Tay März. All rights reserved.</p>
                 <div id="footer-links" class="flex items-center gap-6">
                     <!-- Dynamic footer links -->
                 </div>
@@ -881,6 +829,8 @@
                 this.renderHero();
                 this.renderAbout();
                 this.renderHomelab();
+                this.renderServices();
+                this.renderContributions();
                 this.renderSkills();
                 this.renderProjects();
                 this.renderExperience();
@@ -946,6 +896,44 @@
                 document.getElementById('about-location').textContent = profile.location;
                 document.getElementById('about-experience').textContent = `${profile.yearsExperience}+ Years Experience`;
                 document.getElementById('stat-years').textContent = `${profile.yearsExperience}+`;
+            }
+
+            renderServices() {
+                const { services, site } = this.data;
+                if (!services?.services) return;
+
+                const container = document.getElementById('services-container');
+                if (!container) return;
+
+                container.innerHTML = services.services.map(s => `
+                    <a href="${s.url}" target="_blank" rel="noopener" class="service-card block p-5 bg-dark-700 hover:bg-dark-600 rounded-xl border border-purple-900/20 hover:border-purple-500/40 transition-all duration-200">
+                        <div class="flex items-start gap-4">
+                            <div class="flex-1">
+                                <h4 class="text-lg font-semibold text-white">${s.name} ${s.type ? `<span class=\"inline-block text-xs px-2 py-0.5 rounded-full bg-purple-900/30 text-purple-300 ml-2\">${s.type === 'mirror' ? 'mirror' : s.type === 'hosted-service' ? 'hosted' : s.type === 'setup-service' ? 'setup' : s.type}</span>` : ''}</h4>
+                                <p class="text-gray-400 text-sm mt-1">${s.description}</p>
+                            </div>
+                            <div class="flex items-center">
+                                <svg class="w-5 h-5 text-purple-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"/></svg>
+                            </div>
+                        </div>
+                    </a>
+                `).join('');
+            }
+
+            renderContributions() {
+                const { contributions } = this.data;
+                if (!contributions?.contributions) return;
+
+                const container = document.getElementById('contributions-container');
+                if (!container) return;
+
+                container.innerHTML = contributions.contributions.map(c => `
+                    <div class="contrib-card p-5 bg-dark-700 rounded-xl border border-purple-900/20">
+                        <h4 class="text-lg font-semibold text-white mb-1"><a href="${c.url}" target="_blank" rel="noopener" class="hover:text-purple-300">${c.name}</a></h4>
+                        <p class="text-gray-400 text-sm">${c.description}</p>
+                        <p class="text-xs text-gray-500 mt-2">Role: ${c.role}</p>
+                    </div>
+                `).join('');
             }
             
             renderSkills() {
@@ -1018,20 +1006,26 @@
                 
                 // Other Projects
                 const otherContainer = document.getElementById('other-projects');
-                otherContainer.innerHTML = projects.other.map(project => `
-                    <a href="${project.liveUrl}" target="_blank" class="project-card group block p-5 bg-dark-700 hover:bg-dark-600 rounded-xl border border-purple-900/20 hover:border-purple-500/40 transition-all duration-300">
-                        <div class="flex items-center gap-3 mb-3">
-                            <span class="text-2xl">${project.emoji || '🚀'}</span>
-                            <h4 class="font-semibold text-white group-hover:text-purple-300 transition-colors">${project.name}</h4>
-                        </div>
-                        <p class="text-gray-400 text-sm line-clamp-2">${project.description}</p>
-                        ${project.tags ? `
-                            <div class="flex flex-wrap gap-1 mt-3">
-                                ${project.tags.map(tag => `<span class="text-xs px-2 py-0.5 bg-dark-500 text-gray-500 rounded">${tag}</span>`).join('')}
+                if (!projects.other || projects.other.length === 0) {
+                    document.getElementById('projects-other-title').style.display = 'none';
+                    otherContainer.innerHTML = '';
+                } else {
+                    document.getElementById('projects-other-title').style.display = '';
+                    otherContainer.innerHTML = projects.other.map(project => `
+                        <a href="${project.liveUrl}" target="_blank" class="project-card group block p-5 bg-dark-700 hover:bg-dark-600 rounded-xl border border-purple-900/20 hover:border-purple-500/40 transition-all duration-300">
+                            <div class="flex items-center gap-3 mb-3">
+                                <span class="text-2xl">${project.emoji || '🚀'}</span>
+                                <h4 class="font-semibold text-white group-hover:text-purple-300 transition-colors">${project.name}</h4>
                             </div>
-                        ` : ''}
-                    </a>
-                `).join('');
+                            <p class="text-gray-400 text-sm line-clamp-2">${project.description}</p>
+                            ${project.tags ? `
+                                <div class="flex flex-wrap gap-1 mt-3">
+                                    ${project.tags.map(tag => `<span class="text-xs px-2 py-0.5 bg-dark-500 text-gray-500 rounded">${tag}</span>`).join('')}
+                                </div>
+                            ` : ''}
+                        </a>
+                    `).join('');
+                }
                 
                 // Setup project animations
                 this.setupProjectAnimations();

@@ -4,8 +4,8 @@
       "name": "Humngry",
       "version": "v1.4.0",
       "emoji": "🍽️",
-      "description": "Privacy-first meal tracker that respects your data. Track meals, earn XP, level up your nutrition - without surveillance capitalism.",
-      "highlights": ["ML-powered predictions", "1000+ recipes", "100% offline-first", "Open source"],
+      "description": "Privacy-first meal tracker that helped users track nutrition without data collection. Served 1000+ recipes offline, improving user health tracking.",
+      "highlights": ["Eliminated data surveillance for meal tracking", "1000+ recipes available offline", "Improved user nutrition awareness"],
       "image": "https://humngry.taymaerz.de/images/screenshot9.jpg",
       "liveUrl": "https://humngry.taymaerz.de",
       "githubUrl": "https://github.com/taynotfound/Humgry",
@@ -15,8 +15,8 @@
     {
       "name": "WeatherWeb",
       "emoji": "🌤️",
-      "description": "Autistic-friendly & AI-powered weather web app. Clean, simple, no distractions.",
-      "highlights": ["AI-powered", "Accessible", "Clean UI"],
+      "description": "AI-powered weather app that simplified weather checking for autistic users. Reduced cognitive load with clean, distraction-free interface.",
+      "highlights": ["Simplified weather access for autistic users", "AI-enhanced predictions", "Zero distractions"],
       "image": "/assets/images/screenshots/weatherweb-1.png",
       "liveUrl": "https://weather.taymaerz.de/",
       "githubUrl": "https://github.com/taynotfound/weatherweb",
@@ -26,8 +26,8 @@
     {
       "name": "Nexus Search",
       "emoji": "🔍",
-      "description": "A modern, privacy-focused search engine interface powered by multiple search APIs.",
-      "highlights": ["Privacy-focused", "Multiple APIs", "Fast"],
+      "description": "Privacy-focused search engine that protected user data while providing fast results. Alternative to surveillance-based search platforms.",
+      "highlights": ["Protected user privacy from tracking", "Fast multi-API search", "Ethical search alternative"],
       "image": "/assets/images/screenshots/nexus-search-1.png",
       "liveUrl": "https://search.taymaerz.de/",
       "githubUrl": "https://github.com/taynotfound/nexus-search",
@@ -36,41 +36,5 @@
     }
   ],
   "other": [
-    {
-      "name": "Recimaster",
-      "emoji": "👨‍🍳",
-      "description": "Recipes without any BS & AI-powered instructions. Just you and your food.",
-      "liveUrl": "https://recipe.taymaerz.de/",
-      "githubUrl": "https://github.com/taynotfound/recimaster",
-      "tags": ["Recipes", "AI"]
-    },
-    {
-      "name": "MyRadio",
-      "emoji": "📻",
-      "description": "A web-based radio station with curated playlists and song requests.",
-      "liveUrl": "https://myradio.taymaerz.de/",
-      "tags": ["Music", "Streaming"]
-    },
-    {
-      "name": "maerz.click",
-      "emoji": "🔗",
-      "description": "Modern URL shortener with custom domains, click tracking, and full management.",
-      "liveUrl": "https://maerz.click/",
-      "tags": ["Tools", "URL"]
-    },
-    {
-      "name": "Soup",
-      "emoji": "✈️",
-      "description": "A travel assistant with AI built in for smarter trip planning.",
-      "liveUrl": "https://soup.taymaerz.de/",
-      "tags": ["Travel", "AI"]
-    },
-    {
-      "name": "Gay Clicker",
-      "emoji": "🏳️‍🌈",
-      "description": "The ultimate LGBTQ+ idle game! Collect gay points and become the ultimate Gay Icon.",
-      "liveUrl": "https://gayshit.wtf/clicker",
-      "tags": ["Game", "Fun"]
-    }
   ]
 }
