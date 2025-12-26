@@ -180,8 +180,11 @@
             /* Removed */
         }
         
+        .skill-icon {
+            transform: none;
+        }
         .skill-card.visible .skill-icon {
-            transform: scale(1.2) rotate(5deg);
+            transform: scale(1.12);
         }
         
         .project-card {
@@ -795,7 +798,7 @@
         <div class="max-w-4xl mx-auto px-6 text-center">
             <div class="section-header">
                 <p id="contact-label" class="text-purple-400 font-mono text-sm tracking-widest uppercase mb-4">Get In Touch</p>
-                <h2 id="contact-title" class="text-4xl md:text-5xl font-bold gradient-text mb-6">Let's Work Together</h2>
+                <h2 id="contact-title" class="text-4xl md:text-5xl font-bold gradient-text mb-6 leading-relaxed">Let's Work Together</h2>
                 <p id="contact-subtitle" class="text-gray-400 text-lg mb-12 max-w-2xl mx-auto">Have a project in mind or just want to say hi? Feel free to reach out!</p>
             </div>
             
@@ -1156,7 +1159,7 @@
                         
                         <!-- Content -->
                         <div class="ml-8 md:ml-0 md:w-1/2 ${index % 2 === 0 ? 'md:pr-12' : 'md:pl-12'}">
-                            <div class="p-6 bg-dark-700 rounded-xl border border-purple-900/20 hover:border-purple-500/30 transition-all duration-300 hover:scale-[1.02] hover:shadow-lg hover:shadow-purple-500/10">
+                            <div class="p-6 bg-dark-700 rounded-xl border border-purple-900/20 transition-all duration-300">
                                 <div class="flex items-center gap-2 mb-2">
                                     <span class="text-purple-400 font-mono text-sm">${exp.period}</span>
                                     ${exp.current ? '<span class="px-2 py-0.5 bg-green-500/20 text-green-400 text-xs rounded-full animate-pulse">Current</span>' : ''}
