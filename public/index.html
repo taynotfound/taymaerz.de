@@ -52,9 +52,47 @@
         * {
             box-sizing: border-box;
         }
+        /* Screen-reader helper */
+        .sr-only {
+            position: absolute !important;
+            width: 1px !important;
+            height: 1px !important;
+            padding: 0 !important;
+            margin: -1px !important;
+            overflow: hidden !important;
+            clip: rect(0, 0, 0, 0) !important;
+            white-space: nowrap !important;
+            border: 0 !important;
+        }
+        .skip-link:focus {
+            position: fixed;
+            left: 1rem;
+            top: 1rem;
+            z-index: 9999;
+            transform: none;
+        }
+
+        /* Focus-visible for keyboard users */
+        :focus {
+            outline: none;
+        }
+        :focus-visible, button:focus-visible, a:focus-visible {
+            outline: 3px solid rgba(168,85,247,0.6);
+            outline-offset: 3px;
+            border-radius: 6px;
+        }
+
+        /* Respect user's reduced-motion preference; enable animations only when body has 'lively' class */
+        @media (prefers-reduced-motion: reduce) {
+            * {
+                animation-duration: 0.001ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.001ms !important;
+            }
+        }
         
         html {
-            scroll-behavior: smooth;
+            /* Respect user's native scrolling preferences; avoid scroll hijacking */
         }
         
         ::-webkit-scrollbar { width: 8px; }
@@ -142,7 +180,7 @@
             /* Removed */
         }
         
-        .skill-card:hover .skill-icon {
+        .skill-card.visible .skill-icon {
             transform: scale(1.2) rotate(5deg);
         }
         
@@ -256,23 +294,7 @@
             /* Removed */
         }
         
-        /* Typewriter effect */
-        .typewriter {
-            overflow: hidden;
-            border-right: 3px solid #a855f7;
-            white-space: nowrap;
-            animation: typing 2s steps(20, end), blink-caret 0.75s step-end infinite;
-        }
-        
-        @keyframes typing {
-            from { width: 0 }
-            to { width: 100% }
-        }
-        
-        @keyframes blink-caret {
-            from, to { border-color: transparent }
-            50% { border-color: #a855f7; }
-        }
+        /* Removed typewriter/typing animations to keep content scannable and accessible */
         
         /* Rainbow border on hover */
         .rainbow-border {
@@ -406,6 +428,8 @@
         /* Infinite scrolling marquee */
         .marquee-container {
             overflow: hidden;
+            position: relative;
+            isolation: isolate;
             mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
             -webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
         }
@@ -444,12 +468,15 @@
             border-radius: 0.75rem;
             white-space: nowrap;
             transition: all 0.3s ease;
+            transform-origin: center;
+            will-change: transform;
+            backface-visibility: hidden;
         }
         
         .marquee-item:hover {
             border-color: rgba(168, 85, 247, 0.5);
             background: rgba(26, 26, 36, 0.9);
-            transform: scale(1.05);
+            /* scaling removed to prevent hover overflow and layout shifts */
         }
         
         .marquee-item img {
@@ -520,15 +547,19 @@
     </style>
 </head>
 <body class="bg-dark-900 text-gray-100 font-sans antialiased">
+    <!-- Accessibility: skip link -->
+    <a href="#main" class="skip-link sr-only focus:not-sr-only fixed left-4 top-4 z-50 bg-purple-700 text-white px-3 py-2 rounded-md shadow">Skip to content</a>
+
     <!-- Background Effects -->
     <div class="fixed inset-0 pointer-events-none overflow-hidden">
     </div>
     
     <!-- Navigation -->
-    <nav id="navbar" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300">
+    <nav id="navbar" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300" role="navigation" aria-label="Primary">
         <div class="max-w-6xl mx-auto px-6 py-4">
             <div class="flex items-center justify-between bg-dark-800/80 backdrop-blur-xl rounded-2xl px-6 py-3 border border-purple-900/20">
                 <a href="#home" class="text-xl font-bold gradient-text">TM</a>
+
                 <div class="hidden md:flex items-center gap-8" id="nav-links">
                     <!-- Dynamic nav links -->
                 </div>
@@ -549,6 +580,7 @@
         </div>
     </nav>
     
+    <main id="main" role="main">
     <!-- Hero Section -->
     <section id="home" class="min-h-screen flex items-center justify-center relative bg-grid">
         <div class="max-w-6xl mx-auto px-6 py-32 text-center relative z-10">
@@ -640,7 +672,7 @@
                             </div>
                             <div class="stat-card text-center p-4">
                                 <div class="text-4xl font-bold gradient-text mb-2">∞</div>
-                                <p class="text-gray-500 text-sm">Spezi Consumed</p>
+                                    <p class="text-gray-500 text-sm">Beverages Enjoyed</p>
                             </div>
                             <div class="stat-card text-center p-4">
                                 <div class="text-4xl font-bold gradient-text mb-2">2</div>
@@ -780,6 +812,7 @@
         </div>
     </section>
     
+    </main>
     <!-- Footer -->
     <footer class="py-12 border-t border-purple-900/20">
         <div class="max-w-6xl mx-auto px-6">
@@ -799,8 +832,43 @@
             </div>
         </div>
     </footer>
+    <!-- Accessibility live region for announcements -->
+    <div id="a11y-toast" role="status" aria-live="polite" aria-atomic="true" class="sr-only"></div>
     
     <script>
+        // Small clipboard helper + accessible toast
+        window.copyToClipboard = async (text) => {
+            try {
+                await navigator.clipboard.writeText(text || '');
+                // Announce to screen readers
+                const live = document.getElementById('a11y-toast');
+                if (live) live.textContent = 'Copied to clipboard';
+
+                // Visual toast for sighted users
+                const t = document.createElement('div');
+                t.setAttribute('role','status');
+                t.textContent = 'Copied to clipboard';
+                Object.assign(t.style, {
+                    position: 'fixed',
+                    right: '20px',
+                    bottom: '20px',
+                    padding: '10px 14px',
+                    background: 'rgba(17, 24, 39, 0.95)',
+                    color: '#fff',
+                    borderRadius: '8px',
+                    boxShadow: '0 6px 24px rgba(0,0,0,0.4)',
+                    zIndex: 9999,
+                    fontFamily: 'Inter, system-ui, sans-serif',
+                    fontSize: '14px'
+                });
+                document.body.appendChild(t);
+                setTimeout(() => t.remove(), 1800);
+            } catch (err) {
+                const live = document.getElementById('a11y-toast');
+                if (live) live.textContent = 'Failed to copy to clipboard';
+            }
+        };
+
         // Portfolio Application
         class Portfolio {
             constructor() {
@@ -876,8 +944,9 @@
                 // Fun facts
                 if (profile.funFacts && profile.funFacts.length > 0) {
                     const funFactsContainer = document.getElementById('fun-facts');
+                    // Keep fun facts non-interactive and scannable (no hover affordances)
                     funFactsContainer.innerHTML = profile.funFacts.map(fact => 
-                        `<span class="px-4 py-2 bg-dark-700/80 border border-purple-900/30 rounded-full text-sm text-gray-400 hover:text-purple-300 hover:border-purple-500/50 hover:bg-dark-600/80 transition-all duration-300 cursor-default">${fact}</span>`
+                        `<span class="px-4 py-2 bg-dark-700/80 border border-purple-900/30 rounded-full text-sm text-gray-400">${fact}</span>`
                     ).join('');
                 }
                 
@@ -938,13 +1007,25 @@
                 const container = document.getElementById('contributions-container');
                 if (!container) return;
 
-                container.innerHTML = contributions.contributions.map(c => `
+                container.innerHTML = contributions.contributions.map(c => {
+                    if (c.url) {
+                        return `
+                        <a href="${c.url}" target="_blank" rel="noopener" class="contrib-card block p-5 bg-dark-700 rounded-xl border border-purple-900/20 hover:border-purple-500/40 transition-all duration-200">
+                            <h4 class="text-lg font-semibold text-white mb-1">${c.name}</h4>
+                            <p class="text-gray-400 text-sm">${c.description}</p>
+                            <p class="text-xs text-gray-500 mt-2">Role: ${c.role}</p>
+                        </a>
+                        `;
+                    }
+
+                    return `
                     <div class="contrib-card p-5 bg-dark-700 rounded-xl border border-purple-900/20">
-                        <h4 class="text-lg font-semibold text-white mb-1"><a href="${c.url}" target="_blank" rel="noopener" class="hover:text-purple-300">${c.name}</a></h4>
+                        <h4 class="text-lg font-semibold text-white mb-1">${c.name}</h4>
                         <p class="text-gray-400 text-sm">${c.description}</p>
                         <p class="text-xs text-gray-500 mt-2">Role: ${c.role}</p>
                     </div>
-                `).join('');
+                    `;
+                }).join('');
             }
             
             renderSkills() {
@@ -963,9 +1044,9 @@
                         <h3 class="text-xl font-semibold text-gray-300 mb-6">${category.name}</h3>
                         <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4">
                             ${category.skills.map(skill => `
-                                <div class="skill-card group p-4 bg-dark-700 hover:bg-dark-600 rounded-xl border border-purple-900/20 hover:border-purple-500/40 text-center cursor-default">
+                                <div class="skill-card p-4 bg-dark-700 rounded-xl border border-purple-900/20 text-center">
                                     <img src="${skill.icon}" alt="${skill.name}" class="skill-icon w-10 h-10 mx-auto mb-3 transition-transform duration-300" onerror="this.style.display='none'">
-                                    <p class="text-sm text-gray-400 group-hover:text-gray-200">${skill.name}</p>
+                                    <p class="text-sm text-gray-400">${skill.name}</p>
                                 </div>
                             `).join('')}
                         </div>
@@ -992,7 +1073,7 @@
                 // Featured Projects
                 const featuredContainer = document.getElementById('featured-projects');
                 featuredContainer.innerHTML = projects.featured.map(project => `
-                    <div class="project-card gradient-border p-6 glow-hover group cursor-default">
+                    <div class="project-card gradient-border p-6 glow-hover group ${project.liveUrl || project.githubUrl ? 'cursor-pointer' : 'cursor-default'}" data-link="${project.liveUrl || project.githubUrl || ''}">
                         <div class="relative mb-4 rounded-lg overflow-hidden">
                             <img src="${project.image}" alt="${project.name}" class="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-700" onerror="this.parentElement.innerHTML='<div class=\\'w-full h-48 bg-gradient-to-br from-purple-900/50 to-dark-700 flex items-center justify-center text-4xl\\'>${project.emoji || '🚀'}</div>'">
                             <div class="absolute inset-0 bg-gradient-to-t from-dark-900/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
@@ -1040,6 +1121,21 @@
                 
                 // Setup project animations
                 this.setupProjectAnimations();
+                // Make whole featured project cards clickable (but allow inner links/buttons to work)
+                this.setupProjectLinks();
+            }
+
+            setupProjectLinks() {
+                document.querySelectorAll('.project-card[data-link]').forEach(card => {
+                    const url = card.getAttribute('data-link');
+                    if (!url) return;
+                    card.addEventListener('click', (e) => {
+                        // if user clicked an inner anchor/button, let that action happen
+                        if (e.target.closest('a')) return;
+                        window.open(url, '_blank', 'noopener');
+                    });
+                    card.style.cursor = 'pointer';
+                });
             }
             
             renderExperience() {
@@ -1105,8 +1201,18 @@
                 const contactLinks = document.getElementById('contact-links');
                 contactLinks.innerHTML = contact.socials.map(social => {
                     const isKofi = social.icon === 'kofi';
+                    if (social.icon === 'discord') {
+                        // Render as a button that copies handle to clipboard
+                        return `
+                        <button type="button" onclick="copyToClipboard('${(social.handle||'').replace(/'/g, "\\'")}')" aria-label="Copy ${social.handle || social.name} to clipboard" class="flex items-center gap-3 px-6 py-3 bg-dark-700 hover:bg-dark-600 border-purple-900/20 hover:border-purple-500/40 rounded-xl border transition-all duration-300 group">
+                            <span class="text-purple-400">${iconsMap[social.icon] || ''}</span>
+                            <span class="text-gray-300 font-mono text-sm">${social.handle || social.name}</span>
+                        </button>
+                        `;
+                    }
+
                     return `
-                    <a href="${social.url || '#'}" ${social.url ? 'target="_blank"' : ''} class="flex items-center gap-3 px-6 py-3 ${isKofi ? 'bg-pink-500/10 hover:bg-pink-500/20 border-pink-500/30 hover:border-pink-400' : 'bg-dark-700 hover:bg-dark-600 border-purple-900/20 hover:border-purple-500/40'} rounded-xl border transition-all duration-300 group">
+                    <a href="${social.url || '#'}" ${social.url ? 'target="_blank" rel="noopener"' : ''} class="flex items-center gap-3 px-6 py-3 ${isKofi ? 'bg-pink-500/10 hover:bg-pink-500/20 border-pink-500/30 hover:border-pink-400' : 'bg-dark-700 hover:bg-dark-600 border-purple-900/20 hover:border-purple-500/40'} rounded-xl border transition-all duration-300 group">
                         <span class="${isKofi ? 'text-pink-400 group-hover:text-pink-300' : 'text-purple-400 group-hover:text-purple-300'}">${iconsMap[social.icon] || ''}</span>
                         <span class="text-gray-300 group-hover:text-white font-mono text-sm">${social.handle || social.name}</span>
                     </a>
@@ -1205,6 +1311,31 @@
                         navbar.classList.remove('py-2');
                     }
                 });
+
+                // Lively toggle: respects prefers-reduced-motion and persists user choice
+                const livelyBtn = document.getElementById('toggle-lively');
+                const applyLively = (enabled) => {
+                    document.body.classList.toggle('lively', !!enabled);
+                    livelyBtn.setAttribute('aria-pressed', enabled ? 'true' : 'false');
+                };
+                try {
+                    const stored = localStorage.getItem('lively');
+                    if (stored !== null) {
+                        applyLively(stored === '1');
+                    } else {
+                        // default: respect user preference
+                        applyLively(!window.matchMedia('(prefers-reduced-motion: reduce)').matches);
+                    }
+                } catch (e) {}
+
+                if (livelyBtn) {
+                    livelyBtn.addEventListener('click', () => {
+                        const pressed = livelyBtn.getAttribute('aria-pressed') === 'true';
+                        applyLively(!pressed);
+                        try { localStorage.setItem('lively', (!pressed) ? '1' : '0'); } catch (e) {}
+                    });
+                    livelyBtn.classList.remove('hidden');
+                }
             }
             
             setupAnimations() {
@@ -1327,14 +1458,8 @@
                 // Set initial quote
                 quoteEl.textContent = quotes[0];
                 
-                setInterval(() => {
-                    quoteEl.style.opacity = '0';
-                    setTimeout(() => {
-                        currentQuote = (currentQuote + 1) % quotes.length;
-                        quoteEl.textContent = quotes[currentQuote];
-                        quoteEl.style.opacity = '1';
-                    }, 500);
-                }, 5000);
+                // Keep a single static quote to avoid looping text animations which can hinder scanning
+                // (If you prefer rotation later, we can add a user-toggle)
             }
         }
         
