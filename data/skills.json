@@ -13,7 +13,7 @@
       "name": "Monitoring & Automation",
       "skills": [
         { "name": "Prometheus & Grafana", "icon": "https://raw.githubusercontent.com/grafana/grafana/main/public/img/grafana_icon.svg" },
-        { "name": "Zabbix", "icon": "https://upload.wikimedia.org/wikipedia/commons/2/24/Zabbix_logo.svg" },
+        { "name": "Zabbix", "icon": "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fcdn.icon-icons.com%2Ficons2%2F2699%2FPNG%2F512%2Fzabbix_logo_icon_167937.png&f=1&nofb=1&ipt=77bb386395b020f9c6d3966c333309d5cc509fc7b1c4a87812b929ce19fedaaa" },
         { "name": "Bash / Shell", "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bash/bash-original.svg" }
       ]
     },
