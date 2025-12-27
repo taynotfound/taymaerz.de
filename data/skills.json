@@ -14,7 +14,7 @@
       "skills": [
         { "name": "Prometheus & Grafana", "icon": "https://raw.githubusercontent.com/grafana/grafana/main/public/img/grafana_icon.svg" },
         { "name": "Zabbix", "icon": "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fcdn.icon-icons.com%2Ficons2%2F2699%2FPNG%2F512%2Fzabbix_logo_icon_167937.png&f=1&nofb=1&ipt=77bb386395b020f9c6d3966c333309d5cc509fc7b1c4a87812b929ce19fedaaa" },
-        { "name": "Bash / Shell", "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bash/bash-original.svg" }
+        { "name": "Bash / Shell", "icon": "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fcdn2.iconfinder.com%2Fdata%2Ficons%2Ffile-type-46%2F512%2FBash_shell_script-512.png&f=1&nofb=1&ipt=4aa082751922d5a3f91e81a49c4c4812f91dede24a140691c2b8b9719e83b908" }
       ]
     },
     {

@@ -6,102 +6,183 @@
     {
       "name": "Nextcloud",
       "icon": "https://cdn.simpleicons.org/nextcloud/0082C9",
-      "status": "running"
+      "status": "running",
+      "projectUrl": "https://nextcloud.com",
+      "description": "Self-hosted file sync & collaboration platform with calendars, contacts, and document preview."
     },
     {
       "name": "Pelican",
       "icon": "https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/svg/pelican-panel.svg",
-      "status": "running"
+      "status": "running",
+      "projectUrl": "https://getpelican.com",
+      "description": "Static site generator powering lightweight personal sites and documentation."
     },
     {
       "name": "AzuraCast",
       "icon": "https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/svg/azuracast.svg",
-      "status": "running"
+      "status": "running",
+      "projectUrl": "https://www.azuracast.com",
+      "description": "Self-hosted web radio management — streaming, automation and station management."
     },
     {
       "name": "Element/Matrix",
       "icon": "https://cdn.simpleicons.org/element/0DBD8B",
-      "status": "running"
+      "status": "running",
+      "projectUrl": "https://element.io",
+      "description": "Matrix client and decentralized messaging stack for secure communications."
     },
     {
       "name": "Proxmox VE",
       "icon": "https://cdn.simpleicons.org/proxmox/E57000",
-      "status": "running"
+      "status": "running",
+      "projectUrl": "https://www.proxmox.com/en/proxmox-ve",
+      "description": "Virtualization platform that hosts VMs and containers across the 2-node cluster."
     },
     {
       "name": "AdGuard Home",
       "icon": "https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/svg/adguard-home.svg",
-      "status": "running"
+      "status": "running",
+      "projectUrl": "https://adguard.com",
+      "description": "Network-level ad and tracker blocking for locally connected devices."
     },
     {
       "name": "Immich",
       "icon": "https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/svg/immich.svg",
-      "status": "running"
+      "status": "running",
+      "projectUrl": "https://immich.app",
+      "description": "Self-hosted photo and video backup with privacy-first syncing and quick sharing."
     },
     {
       "name": "Grafana",
       "icon": "https://cdn.simpleicons.org/grafana/F46800",
-      "status": "running"
+      "status": "running",
+      "projectUrl": "https://grafana.com",
+      "description": "Metrics and dashboarding platform used to visualise monitoring data."
     },
     {
       "name": "Uptime Kuma",
       "icon": "https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/svg/uptime-kuma.svg",
-      "status": "running"
+      "status": "running",
+      "projectUrl": "https://uptime.kuma.pet",
+      "description": "Lightweight self-hosted uptime monitor with alerts for service outages."
     },
     {
       "name": "n8n",
       "icon": "https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/svg/n8n.svg",
-      "status": "running"
+      "status": "running",
+      "projectUrl": "https://n8n.io",
+      "description": "Workflow automation tool used to connect services and automate repetitive tasks."
     },
     {
       "name": "Radarr",
       "icon": "https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/svg/radarr.svg",
-      "status": "running"
+      "status": "running",
+      "projectUrl": "https://radarr.video",
+      "description": "Movie download manager and organizer integrated with indexers and download clients."
     },
     {
       "name": "Sonarr",
       "icon": "https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/svg/sonarr.svg",
-      "status": "running"
+      "status": "running",
+      "projectUrl": "https://sonarr.tv",
+      "description": "TV series download manager with automated search and organization features."
     },
     {
       "name": "Prowlarr",
       "icon": "https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/svg/prowlarr.svg",
-      "status": "running"
+      "status": "running",
+      "projectUrl": "https://github.com/Prowlarr/Prowlarr",
+      "description": "Indexer manager that centralizes indexers for other media automation tools."
     },
     {
       "name": "Baikal",
       "icon": "https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/png/baikal.png",
-      "status": "running"
+      "status": "running",
+      "projectUrl": "https://sabre.io/baikal",
+      "description": "Lightweight CalDAV/CardDAV server for contacts and calendars on self-hosted stacks."
     },
     {
       "name": "Etherpad",
       "icon": "https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/svg/etherpad.svg",
-      "status": "running"
+      "status": "running",
+      "projectUrl": "https://etherpad.org",
+      "description": "Collaborative real-time editor for notes and simple document collaboration."
     },
     {
       "name": "Portainer",
       "icon": "https://cdn.simpleicons.org/portainer/13BEF9",
-      "status": "running"
+      "status": "running",
+      "projectUrl": "https://www.portainer.io",
+      "description": "Container management UI for Docker and Kubernetes used to manage workloads."
     },
     {
       "name": "Docker",
       "icon": "https://cdn.simpleicons.org/docker/2496ED",
-      "status": "running"
+      "status": "running",
+      "projectUrl": "https://www.docker.com",
+      "description": "Container runtime used as the basis for many self-hosted services." 
     },
     {
       "name": "Nginx Proxy",
       "icon": "https://cdn.simpleicons.org/nginx/009639",
-      "status": "running"
+      "status": "running",
+      "projectUrl": "https://nginx.org",
+      "description": "Reverse proxy and TLS termination routing traffic to services in the cluster."
     },
     {
       "name": "Zabbix",
       "icon": "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fcreazilla-store.fra1.digitaloceanspaces.com%2Fcliparts%2F7824584%2Fzabbix-logo-square-clipart-md.png&f=1&nofb=1&ipt=a12bc9216a745e253dabaab7ce2a411a2a2bcd2f94ab671f2de202ae34bd9bf1",
-      "status": "testing"
+      "status": "running",
+      "url": "https://zabbix.taymaerz.de",
+      "projectUrl": "https://www.zabbix.com",
+      "description": "Infrastructure monitoring and alerting — full Zabbix stack for hosts, network devices, and services."
     },
     {
       "name": "OwnTracks",
       "icon": "https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/svg/owntracks.svg",
-      "status": "testing"
+      "status": "running",
+      "url": "https://owntracks.taymaerz.de",
+      "projectUrl": "https://owntracks.org",
+      "description": "Privacy-first location reporting for personal devices; used for presence, geofencing and personal automations."
+    }
+    ,
+    {
+      "name": "Zipline",
+      "icon": "https://zipline.diced.sh/favicons/favicon.svg",
+      "status": "running",
+      "url": "https://zipline.taymaerz.de",
+      "description": "Small internal tooling service (delivery/automation helper) used for quick job dispatch and simple webhooks."
+    },
+    {
+      "name": "Kutt",
+      "icon": "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fmedevel.com%2Fcontent%2Fimages%2Fsize%2Fw2000%2F2023%2F04%2Flogo-github.png&f=1&nofb=1&ipt=e4ebf08934dbbe753a6cbb162052338e272fa9aefc759dc09f73f06ac8f1ea47",
+      "status": "running",
+      "url": "https://kutt.taymaerz.de",
+      "projectUrl": "https://kutt.it",
+      "description": "Self-hosted URL shortener for quick links and sharing; supports custom aliases and stats."
+    },
+    {
+      "name": "Authentik",
+      "icon": "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fgoauthentik.io%2Fimg%2Ficon.png&f=1&nofb=1&ipt=bfc5a1b1a48d1b18ad32432a7edc02f83a9cf35d65b604920be4c093ea078321",
+      "status": "running",
+      "url": "https://auth.taymaerz.de",
+      "projectUrl": "https://goauthentik.io",
+      "description": "Identity provider for SSO, service accounts and short lived sessions across my stack."
+    },
+    {
+      "name": "Scanopy (NetVisor)",
+      "icon": "https://scanopy.net/docs/scanopy-logo.png",
+      "status": "running",
+      "url": "https://netvisor.taymaerz.de",
+      "description": "Network visualisation and device inventory — small internal dashboard for LAN topology and device data."
+    }
+    ,
+    {
+      "name": "Raspberry Pi 4B",
+      "icon": "https://cdn.simpleicons.org/raspberrypi/C51A4A",
+      "status": "running",
+      "url": "https://pi.taymaerz.de",
+      "description": "Small single-board computer running various lightweight services and edge integrations." 
     }
   ]
 }

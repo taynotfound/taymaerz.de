@@ -186,6 +186,87 @@
         .skill-card.visible .skill-icon {
             transform: scale(1.12);
         }
+        /* Improve icon contrast (helps small SVGs like Bash) */
+        .skill-card img {
+            filter: contrast(140%) saturate(120%);
+            background: rgba(255,255,255,0.02);
+            padding: 6px;
+            border-radius: 8px;
+        }
+        /* Homelab tooltip (shows on hover/focus) */
+        .homelab-card { position: relative; }
+        .homelab-card .tooltip {
+            position: absolute;
+            bottom: 100%;
+            left: 50%;
+            transform: translateX(-50%) translateY(-8px);
+            background: linear-gradient(180deg, rgba(17,17,22,0.98), rgba(11,11,16,0.96));
+            color: #e6e6e9;
+            padding: 0.6rem 0.9rem;
+            border-radius: 8px;
+            box-shadow: 0 12px 40px rgba(2,6,23,0.75);
+            width: min(28rem, 92%);
+            font-size: 0.9rem;
+            line-height: 1.25;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 140ms ease, transform 140ms ease;
+            z-index: 30;
+        }
+        .homelab-card .tooltip::after {
+            content: '';
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            bottom: -7px;
+            border-width: 7px 7px 0 7px;
+            border-style: solid;
+            border-color: rgba(11,11,16,0.96) transparent transparent transparent;
+        }
+        .homelab-card:focus-within .tooltip,
+        .homelab-card:hover .tooltip {
+            opacity: 1;
+            transform: translateX(-50%) translateY(-12px);
+            pointer-events: auto;
+        }
+        /* Simple modal for Proxmox specs */
+        .modal-backdrop { position: fixed; inset: 0; background: rgba(2,6,23,0.65); display: none; align-items: center; justify-content: center; z-index: 60; }
+        .modal-backdrop.open { display: flex; }
+        .modal { background: linear-gradient(180deg,#0f0f15,#0b0b10); border: 1px solid rgba(124,58,237,0.12); padding: 1rem; border-radius: 12px; max-width: 900px; width: 96%; color: #dfe7f2; box-shadow: 0 20px 60px rgba(2,6,23,0.7); }
+        .modal h3 { font-size: 1.15rem; margin-bottom: 0.5rem; }
+        .modal .spec-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+        .modal .node-card { padding: 1rem; background: linear-gradient(180deg, rgba(17,17,22,0.7), rgba(11,11,16,0.6)); border-radius: 8px; border: 1px solid rgba(124,58,237,0.06); }
+        .modal .node-card h4 { margin-bottom: 0.5rem; }
+        .modal .node-card ul { margin: 0; padding-left: 1rem; }
+        .modal pre { background: rgba(255,255,255,0.02); padding: 0.75rem; border-radius: 6px; font-size: 0.85rem; overflow: auto; }
+        /* Experience vertical line (more visible) */
+        .experience-line { width: 10px; background: linear-gradient(180deg, rgba(168,85,247,1), rgba(124,58,237,1)); z-index: 8; left: 50%; transform: translateX(-50%); border-radius: 8px; box-shadow: 0 10px 50px rgba(124,58,237,0.36), inset 0 0 14px rgba(255,255,255,0.04); pointer-events: none; }
+        /* SVG connector that draws the curved timeline between dots */
+        .experience-connector { position: absolute; inset: 0; z-index: 12; pointer-events: none; overflow: visible; }
+        .experience-connector path { fill: none; stroke: #e29bff; stroke-width: 8; stroke-linecap: round; stroke-linejoin: round; filter: drop-shadow(0 8px 28px rgba(168,85,247,0.18)); opacity: 0.98; }
+        .experience-line::before { content: ""; position: absolute; left: 50%; top: 0; transform: translateX(-50%); width: 2px; height: 100%; background: rgba(255,255,255,0.04); border-radius: 2px; }
+        .experience-line::after { content: ""; position: absolute; left: 50%; transform: translateX(-50%); top: 18%; width: 34px; height: 34px; border-radius: 999px; box-shadow: 0 10px 40px rgba(168,85,247,0.08); opacity: 0.8; }
+        .experience-item { position: relative; z-index: 10; }
+        .experience-item .rounded-full { z-index: 20; box-shadow: 0 6px 24px rgba(0,0,0,0.5); }
+        @media (max-width: 767px) {
+            .experience-line { left: 1rem; transform: none; }
+        }
+        /* Section separators */
+        /* Removed section separators to keep layout cleaner */
+        section + section::before { display: none; }
+        /* Experience tabs */
+        #experience-tabs .tab-btn[aria-selected="true"] {
+            background: linear-gradient(90deg,#6b21a8,#a855f7);
+            color: white;
+            box-shadow: 0 8px 30px rgba(107,33,168,0.12);
+            border-color: transparent;
+        }
+        #experience-tabs .tab-btn { transition: all 160ms ease; }
+        #experience-tabs .tab-btn:focus { outline: none; box-shadow: 0 0 0 3px rgba(168,85,247,0.12); }
+        /* Hide tooltips on touch devices and rely on links + short text */
+        @media (hover: none) {
+            .homelab-card .tooltip { display: none !important; }
+        }
         
         .project-card {
             transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
@@ -265,15 +346,7 @@
             75% { transform: rotate(5deg); }
         }
         
-        /* Glitch Effect */
-        .glitch {
-            /* Removed */
-        }
-        
-        .glitch::before,
-        .glitch::after {
-            /* Removed */
-        }
+        /* Glitch Effect removed to simplify visuals */
         
         .glitch::before {
             left: 2px;
@@ -561,7 +634,10 @@
     <nav id="navbar" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300" role="navigation" aria-label="Primary">
         <div class="max-w-6xl mx-auto px-6 py-4">
             <div class="flex items-center justify-between bg-dark-800/80 backdrop-blur-xl rounded-2xl px-6 py-3 border border-purple-900/20">
-                <a href="#home" class="text-xl font-bold gradient-text">TM</a>
+                <a href="#home" class="flex items-center gap-3 text-lg font-semibold" aria-label="Home">
+                    <img src="/assets/images/me_avatar.jpg" alt="Tay" class="w-8 h-8 rounded-full object-cover" />
+                    <span class="gradient-text hidden sm:inline">Tay März</span>
+                </a>
 
                 <div class="hidden md:flex items-center gap-8" id="nav-links">
                     <!-- Dynamic nav links -->
@@ -609,7 +685,8 @@
                 <span id="hero-pronouns" class="text-gray-500 text-lg md:text-xl font-normal ml-2">(they/them)</span>
             </h1>
             <p id="hero-title" class="hero-animate opacity-0 slide-in-right stagger-3 text-xl md:text-2xl text-gray-400 mb-4">IT System Administrator</p>
-            <p id="hero-tagline" class="hero-animate opacity-0 fade-in stagger-3 text-lg text-gray-500 max-w-2xl mx-auto mb-8 font-mono">// I manage and secure infrastructure; hobbyist full-stack developer</p>
+            <p id="hero-tagline" class="hero-animate opacity-0 fade-in stagger-3 text-lg text-gray-500 max-w-2xl mx-auto mb-4 font-mono">// I manage and secure infrastructure; hobbyist full-stack developer</p>
+
             
             <!-- Fun Facts Ticker -->
             <div class="opacity-0 fade-in stagger-3 mb-10">
@@ -624,20 +701,41 @@
                     <svg class="w-5 h-5 opacity-0 group-hover:opacity-100 group-hover:translate-x-1 transition-all duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"/></svg>
                 </a>
                 <a href="#contact" class="inline-flex items-center justify-center px-8 py-4 border-2 border-purple-500/50 hover:border-purple-400 hover:bg-purple-500/10 rounded-xl font-semibold transition-all duration-300 hover:scale-105 min-w-[180px]">
-                    Contact Me for Work
+                    Contact Me
                 </a>
                 <a href="https://ko-fi.com/taygotkofi" target="_blank" class="group px-6 py-4 bg-dark-700 hover:bg-dark-600 border-2 border-orange-500/60 hover:border-yellow-400 rounded-xl font-semibold transition-all duration-300 flex items-center gap-2 justify-center hover:scale-105">
                     <span class="text-orange-300 group-hover:text-yellow-300">Support My Work</span>
                 </a>
             </div>
             
-            <!-- Scroll Indicator -->
-            <div class="absolute bottom-12 left-1/2 -translate-x-1/2 opacity-0 fade-in stagger-4">
-                <p class="text-purple-400/50 text-xs font-mono mt-2">scroll down</p>
-            </div>
+            <!-- Scroll Indicator removed per design feedback -->
         </div>
     </section>
     
+    <!-- Experience Section (moved up) -->
+    <section id="experience" class="py-28 relative bg-dark-800/50">
+        <div class="max-w-6xl mx-auto px-6">
+            <div class="section-header text-center mb-12">
+                <p id="experience-label" class="text-purple-400 font-mono text-sm tracking-widest uppercase mb-4">My Journey</p>
+                <h2 id="experience-title" class="text-3xl md:text-4xl font-bold gradient-text">Experience</h2>
+            </div>
+            <!-- Tabs for experience categories -->
+            <div id="experience-tabs" class="flex items-center justify-center gap-3 mb-6" role="tablist" aria-label="Experience categories">
+                <button role="tab" aria-selected="true" data-cat="professional" class="tab-btn px-4 py-2 rounded-lg bg-dark-700 border border-purple-900/20">Professional</button>
+                <button role="tab" aria-selected="false" data-cat="school" class="tab-btn px-4 py-2 rounded-lg bg-dark-700 border border-purple-900/20">School</button>
+                <button role="tab" aria-selected="false" data-cat="hobby" class="tab-btn px-4 py-2 rounded-lg bg-dark-700 border border-purple-900/20">Hobby</button>
+            </div>
+            <div id="experience-timeline" class="relative mb-8">
+                <div class="experience-line absolute top-0 bottom-0 left-1/2 -translate-x-1/2"></div>
+                <!-- SVG overlay used to draw a curved connector between timeline dots -->
+                <svg id="experience-connector" class="experience-connector absolute inset-0 pointer-events-none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" aria-hidden="true">
+                    <path d="" stroke="#c084fc" />
+                </svg>
+                <!-- Dynamic experience items will be rendered here -->
+            </div>
+        </div>
+    </section>
+
     <!-- About Section -->
     <section id="about" class="py-32 relative">
         <div class="max-w-6xl mx-auto px-6">
@@ -698,17 +796,13 @@
             </div>
         </div>
         
-        <!-- Marquee Row 1 -->
-        <div class="marquee-container mb-4">
-            <div id="marquee-row-1" class="marquee">
-                <!-- Dynamic apps -->
+        <!-- Homelab grid (replaces marquee/carousel for better scanning) -->
+        <div class="max-w-6xl mx-auto px-6">
+            <div id="homelab-grid" class="grid grid-cols-2 sm:grid-cols-4 md:grid-cols-4 lg:grid-cols-4 gap-4">
+                <!-- Dynamic apps rendered as cards -->
             </div>
-        </div>
-        
-        <!-- Marquee Row 2 (reverse direction) -->
-        <div class="marquee-container">
-            <div id="marquee-row-2" class="marquee marquee-reverse">
-                <!-- Dynamic apps -->
+            <div id="homelab-controls" class="mt-4 text-center">
+                <!-- Show all toggle rendered here -->
             </div>
         </div>
     </section>
@@ -778,20 +872,7 @@
         </div>
     </section>
     
-    <!-- Experience Section -->
-    <section id="experience" class="py-32 relative bg-dark-800/50">
-        <div class="max-w-6xl mx-auto px-6">
-            <div class="section-header text-center mb-16">
-                <p id="experience-label" class="text-purple-400 font-mono text-sm tracking-widest uppercase mb-4">My Journey</p>
-                <h2 id="experience-title" class="text-4xl md:text-5xl font-bold gradient-text">Experience</h2>
-            </div>
-            <div id="experience-timeline" class="relative">
-                <!-- Timeline line -->
-                <div class="absolute left-0 md:left-1/2 top-0 bottom-0 w-px bg-gradient-to-b from-purple-600 via-purple-500 to-purple-600/0"></div>
-                <!-- Dynamic experience items -->
-            </div>
-        </div>
-    </section>
+    <!-- Experience moved up; original instance removed -->
     
     <!-- Contact Section -->
     <section id="contact" class="py-32 relative">
@@ -835,6 +916,47 @@
             </div>
         </div>
     </footer>
+    <!-- Proxmox specs modal -->
+    <div id="proxmox-modal" class="modal-backdrop" role="dialog" aria-modal="true" aria-hidden="true">
+        <div class="modal" role="document">
+            <div class="flex items-center justify-between mb-4">
+                <h3>Proxmox Cluster — Hardware</h3>
+                <button id="proxmox-modal-close" aria-label="Close" class="px-3 py-1 rounded bg-dark-700 hover:bg-dark-600">Close</button>
+            </div>
+            <div class="spec-grid">
+                <div class="node-card">
+                    <div class="flex items-center justify-between">
+                        <h4 class="text-white">Empirestate</h4>
+                        <span class="text-xs px-2 py-0.5 rounded-full bg-green-700/20 text-green-300">Primary</span>
+                    </div>
+                    <p class="text-sm text-gray-400 mb-3">Primary host for user VMs and services.</p>
+                    <ul class="text-sm text-gray-300 mt-2 ml-4 space-y-1">
+                        <li><strong>CPU(s):</strong> 8 × Intel(R) Core™ i7-3770K @ 3.50GHz</li>
+                        <li><strong>RAM:</strong> 16 GiB</li>
+                        <li><strong>Storage:</strong> 38.64 GiB</li>
+                        <li><strong>GPU:</strong> GTX 1050 Ti</li>
+                        <li><strong>Kernel:</strong> Linux 6.17.2-2-pve</li>
+                        <li><strong>Notes:</strong> Hosts main services and higher-priority VMs.</li>
+                    </ul>
+                </div>
+                <div class="node-card">
+                    <div class="flex items-center justify-between">
+                        <h4 class="text-white">2ndTower</h4>
+                        <span class="text-xs px-2 py-0.5 rounded-full bg-yellow-700/20 text-yellow-300">Secondary</span>
+                    </div>
+                    <p class="text-sm text-gray-400 mb-3">Secondary node for backups and low-priority workloads.</p>
+                    <ul class="text-sm text-gray-300 mt-2 ml-4 space-y-1">
+                        <li><strong>CPU(s):</strong> 4 × Intel(R) Core™ i5-4590 @ 3.30GHz</li>
+                        <li><strong>RAM:</strong> 16 GiB</li>
+                        <li><strong>Storage:</strong> 93.93 GiB</li>
+                        <li><strong>GPU:</strong> GT 710</li>
+                        <li><strong>Kernel:</strong> Linux 6.17.2-2-pve</li>
+                        <li><strong>Notes:</strong> Good for background tasks and backups.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
     <!-- Accessibility live region for announcements -->
     <div id="a11y-toast" role="status" aria-live="polite" aria-atomic="true" class="sr-only"></div>
     
@@ -1144,15 +1266,33 @@
             renderExperience() {
                 const { experience, site } = this.data;
                 if (!experience?.work) return;
-                
+
                 // Update section headers from site.json
                 if (site?.sections?.experience) {
                     document.getElementById('experience-label').textContent = site.sections.experience.label;
                     document.getElementById('experience-title').textContent = site.sections.experience.title;
                 }
-                
+
+                // Group entries by category and sort newest-first (by start year)
+                const groups = { professional: [], school: [], hobby: [] };
+                const parseStartYear = (period) => {
+                    if (!period) return 0;
+                    const m = period.match(/(\d{4})/);
+                    return m ? parseInt(m[1], 10) : 0;
+                };
+                experience.work.forEach(exp => {
+                    const cat = exp.category || 'professional';
+                    if (!groups[cat]) groups[cat] = [];
+                    groups[cat].push(exp);
+                });
+                // Sort each group newest-first
+                Object.keys(groups).forEach(k => {
+                    groups[k].sort((a, b) => parseStartYear(b.period) - parseStartYear(a.period));
+                });
+
                 const timeline = document.getElementById('experience-timeline');
-                const items = experience.work.map((exp, index) => `
+
+                const buildItems = (items) => items.map((exp, index) => `
                     <div class="experience-item relative flex items-center mb-12 opacity-0 ${index % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'}" data-direction="${index % 2 === 0 ? 'left' : 'right'}">
                         <!-- Timeline dot -->
                         <div class="absolute left-0 md:left-1/2 w-4 h-4 -ml-2 md:-ml-2 rounded-full bg-purple-500 ring-4 ring-dark-800 z-10 scale-0 transition-transform duration-500" style="transition-delay: 0.2s;"></div>
@@ -1163,7 +1303,7 @@
                                 <div class="flex items-center gap-2 mb-2">
                                     <span class="text-purple-400 font-mono text-sm">${exp.period}</span>
                                     ${exp.current ? '<span class="px-2 py-0.5 bg-green-500/20 text-green-400 text-xs rounded-full animate-pulse">Current</span>' : ''}
-                                </div>
+                                                </div>
                                 <h4 class="text-lg font-semibold text-white mb-1">${exp.position}</h4>
                                 <p class="text-purple-300 text-sm mb-3">${exp.company} · ${exp.location}</p>
                                 <p class="text-gray-400 text-sm">${exp.description}</p>
@@ -1171,11 +1311,55 @@
                         </div>
                     </div>
                 `).join('');
-                
-                timeline.innerHTML += items;
-                
-                // Setup experience item animations
-                this.setupExperienceAnimations();
+
+                const renderCategory = (cat) => {
+                    const items = groups[cat] || [];
+                    timeline.innerHTML = buildItems(items);
+                    this.setupExperienceAnimations();
+                };
+
+                // Tabs behaviour
+                const tabs = document.querySelectorAll('#experience-tabs .tab-btn');
+                const setActiveTab = (activeBtn) => {
+                    tabs.forEach(btn => {
+                        const sel = btn === activeBtn;
+                        btn.setAttribute('aria-selected', sel ? 'true' : 'false');
+                        btn.classList.toggle('bg-purple-900/10', sel);
+                        btn.classList.toggle('ring-2', sel);
+                    });
+                };
+
+                tabs.forEach(btn => {
+                    btn.addEventListener('click', () => {
+                        const cat = btn.dataset.cat;
+                        setActiveTab(btn);
+                        renderCategory(cat);
+                        // redraw connector after content changed
+                        setTimeout(() => { this.drawExperienceConnector(); }, 80);
+                    });
+
+                    btn.addEventListener('keydown', (e) => {
+                        if (e.key === 'ArrowRight' || e.key === 'ArrowLeft') {
+                            e.preventDefault();
+                            const idx = Array.from(tabs).indexOf(btn);
+                            const nextIdx = e.key === 'ArrowRight' ? (idx + 1) % tabs.length : (idx - 1 + tabs.length) % tabs.length;
+                            tabs[nextIdx].focus();
+                        }
+                    });
+                });
+
+                // Initial render - Professional tab
+                const defaultTab = document.querySelector('#experience-tabs .tab-btn[data-cat="professional"]');
+                if (defaultTab) {
+                    setActiveTab(defaultTab);
+                    renderCategory('professional');
+                    // ensure connector is drawn for initial content
+                    setTimeout(() => { this.drawExperienceConnector(); }, 120);
+                } else {
+                    // fallback to render all entries in case tabs missing
+                    timeline.innerHTML = buildItems(experience.work);
+                    this.setupExperienceAnimations();
+                }
             }
             
             renderContact() {
@@ -1233,35 +1417,120 @@
                     document.getElementById('homelab-title').textContent = section.title;
                 }
                 if (homelab.description) {
-                    document.getElementById('homelab-description').textContent = homelab.description;
+                    const descEl = document.getElementById('homelab-description');
+                    // Make the 'my 2-node Proxmox cluster' text clickable to open specs
+                    const targetText = 'my 2-node Proxmox cluster';
+                    if (homelab.description.includes(targetText)) {
+                        descEl.innerHTML = homelab.description.replace(targetText, `<button id="proxmox-specs-link" class="text-purple-300 underline">${targetText}</button>`);
+                    } else {
+                        descEl.textContent = homelab.description;
+                    }
                 }
                 
-                // Split apps into two rows
-                const apps = homelab.apps;
-                const midpoint = Math.ceil(apps.length / 2);
-                const row1Apps = apps.slice(0, midpoint);
-                const row2Apps = apps.slice(midpoint);
-                
-                // Generate marquee item HTML
-                const generateMarqueeItem = (app) => {
-                    const statusColor = app.status === 'running' ? 'green' : app.status === 'testing' ? 'yellow' : 'gray';
+                // Render apps as a responsive grid of cards (replacing marquee)
+                const apps = homelab.apps || [];
+                const grid = document.getElementById('homelab-grid');
+                const controls = document.getElementById('homelab-controls');
+                if (!grid) return;
+
+                const visibleCount = 4;
+                const allProjects = [].concat(this.data.projects?.featured || [], this.data.projects?.other || []);
+
+                const cardFor = (app) => {
                     const statusText = app.status === 'running' ? 'Running' : app.status === 'testing' ? 'Testing' : 'Offline';
-                    return `
-                        <div class="marquee-item">
-                            <img src="${app.icon}" alt="${app.name}" onerror="this.style.display='none'">
-                            <span class="text-gray-300">${app.name}</span>
-                            <span class="text-xs text-${statusColor}-400">• ${statusText}</span>
+                    const statusColor = app.status === 'running' ? 'text-green-400 bg-green-500/10' : app.status === 'testing' ? 'text-yellow-400 bg-yellow-500/10' : 'text-gray-400 bg-gray-700/10';
+                    const slug = (app.name || '').toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/(^-|-$)/g,'');
+                    const tipId = `tip-${slug}`;
+
+                    // try to find a matching project (prefer project pages over usage endpoints)
+                    const matched = allProjects.find(p => p.name && (p.name.toLowerCase() === (app.name||'').toLowerCase() || p.name.toLowerCase().includes((app.name||'').toLowerCase()) || (app.name||'').toLowerCase().includes(p.name.toLowerCase())));
+                    // Prefer official projectUrl set in data, fall back to project page on this site, then service URL
+                    const projectLink = app.projectUrl || (matched ? (matched.liveUrl || '/projects') : null);
+
+                    const linkTarget = projectLink || app.url || null;
+                    const linkStart = linkTarget ? `<a href="${linkTarget}" target="_blank" rel="noopener" class="block" aria-describedby="${tipId}">` : `<div tabindex="0" aria-describedby="${tipId}" class="block">`;
+                    const linkEnd = linkTarget ? '</a>' : '</div>';
+
+                    return `${linkStart}
+                        <div class="group homelab-card p-4 bg-dark-700 rounded-xl border border-purple-900/20 flex items-center gap-3 hover:border-purple-500/30 transition-all focus-within:ring-2 focus-within:ring-purple-600">
+                            <img src="${app.icon}" alt="${app.name}" class="w-10 h-10 object-contain rounded-md" onerror="this.style.display='none'" />
+                            <div class="flex-1">
+                                <div class="flex items-center justify-between gap-3">
+                                    <div class="text-sm font-semibold text-white">${app.name}</div>
+                                    <div class="text-xs px-2 py-0.5 rounded-full ${statusColor}">${statusText}</div>
+                                </div>
+                            </div>
+                            ${app.description ? `<div id="${tipId}" class="tooltip" role="tooltip">${app.description}</div>` : ''}
                         </div>
-                    `;
+                    ${linkEnd}`;
                 };
-                
-                // Row 1 - duplicate for seamless loop
-                const row1HTML = [...row1Apps, ...row1Apps].map(generateMarqueeItem).join('');
-                document.getElementById('marquee-row-1').innerHTML = row1HTML;
-                
-                // Row 2 - duplicate for seamless loop
-                const row2HTML = [...row2Apps, ...row2Apps].map(generateMarqueeItem).join('');
-                document.getElementById('marquee-row-2').innerHTML = row2HTML;
+
+                // Helper to render a slice (first N or all)
+                const renderSlice = (count) => {
+                    const slice = apps.slice(0, count);
+                    grid.innerHTML = slice.map(cardFor).join('');
+                };
+
+                // Initial render: show a random selection of N apps (keeps the page feeling fresh)
+                const shuffled = apps.slice().sort(() => Math.random() - 0.5);
+                const initialSelection = shuffled.slice(0, Math.min(visibleCount, apps.length));
+                grid.innerHTML = initialSelection.map(cardFor).join('');
+
+                // Update toggle behavior to restore initial random selection when collapsing
+                const renderInitial = () => { grid.innerHTML = initialSelection.map(cardFor).join(''); };
+
+                // Controls: if there are more apps, add a Show all toggle
+                if (apps.length > visibleCount && controls) {
+                    controls.innerHTML = `<button id="homelab-toggle" class="px-4 py-2 bg-dark-700 border border-purple-900/20 rounded-lg text-sm hover:bg-dark-600 transition">Show all (${apps.length})</button>`;
+                    const toggle = document.getElementById('homelab-toggle');
+                    let expanded = false;
+                    toggle.addEventListener('click', () => {
+                        expanded = !expanded;
+                        if (expanded) {
+                            renderSlice(apps.length);
+                            toggle.textContent = 'Show less';
+                            // reattach listeners in case DOM replaced
+                            attachProxmoxListener();
+                            attachTooltipA11y();
+                        } else {
+                            // restore the initial (random) selection
+                            renderInitial();
+                            toggle.textContent = `Show all (${apps.length})`;
+                            // scroll back to homelab section when collapsing to keep context
+                            document.getElementById('homelab-grid').scrollIntoView({ behavior: 'smooth', block: 'start' });
+                            attachProxmoxListener();
+                            attachTooltipA11y();
+                        }
+                    });
+                } else if (controls) {
+                    controls.innerHTML = '';
+                }
+
+                // helper to attach Proxmox modal listener and tooltip keyboard behavior
+                function attachProxmoxListener() {
+                    const btn = document.getElementById('proxmox-specs-link');
+                    if (!btn) return;
+                    btn.addEventListener('click', (e) => {
+                        e.preventDefault();
+                        showProxmoxModal();
+                    });
+                }
+
+                function attachTooltipA11y() {
+                    // allow ESC to close modal if open
+                    document.querySelectorAll('.homelab-card[tabindex], .homelab-card a').forEach(el => {
+                        el.addEventListener('keydown', (ev) => {
+                            if (ev.key === 'Escape') {
+                                const open = document.querySelector('.modal-backdrop.open');
+                                if (open) open.classList.remove('open');
+                            }
+                        });
+                    });
+                }
+
+                // attach initially
+                attachProxmoxListener();
+                attachTooltipA11y();
             }
             
             renderFooter() {
@@ -1415,6 +1684,7 @@
             }
             
             setupExperienceAnimations() {
+                const self = this;
                 const expObserver = new IntersectionObserver((entries) => {
                     entries.forEach(entry => {
                         if (entry.isIntersecting) {
@@ -1422,13 +1692,16 @@
                             entry.target.style.opacity = '1';
                             entry.target.style.transform = 'translateX(0) rotate(0deg)';
                             entry.target.style.transition = 'all 0.8s cubic-bezier(0.34, 1.56, 0.64, 1)';
-                            
+
                             // Animate the dot
                             const dot = entry.target.querySelector('.rounded-full');
                             if (dot) {
                                 dot.style.transform = 'scale(1)';
                             }
-                            
+
+                            // redraw connector when items appear so path follows visible dots
+                            try { self.drawExperienceConnector(); } catch (e) {}
+
                             expObserver.unobserve(entry.target);
                         }
                     });
@@ -1440,6 +1713,62 @@
                     item.style.transitionDelay = `${index * 0.15}s`;
                     expObserver.observe(item);
                 });
+                // Ensure connector is up-to-date and redraw on resize
+                this.drawExperienceConnector?.();
+                if (!this.__experienceConnectorResize) {
+                    this.__experienceConnectorResize = () => this.drawExperienceConnector();
+                    window.addEventListener('resize', this.__experienceConnectorResize);
+                }
+            }
+
+            // Draw a smooth connector between timeline dots using an SVG path
+            drawExperienceConnector() {
+                try {
+                    const timeline = document.getElementById('experience-timeline');
+                    const svg = document.getElementById('experience-connector');
+                    if (!timeline || !svg) return;
+
+                    const dots = Array.from(timeline.querySelectorAll('.experience-item .rounded-full'));
+                    if (!dots.length) {
+                        const p = svg.querySelector('path'); if (p) p.setAttribute('d','');
+                        return;
+                    }
+
+                    const rect = timeline.getBoundingClientRect();
+                    const points = dots.map(d => {
+                        const r = d.getBoundingClientRect();
+                        return {
+                            x: (r.left + r.right) / 2 - rect.left,
+                            y: (r.top + r.bottom) / 2 - rect.top
+                        };
+                    }).sort((a,b) => a.y - b.y || a.x - b.x);
+
+                    if (points.length < 2) {
+                        const p = svg.querySelector('path'); if (p) p.setAttribute('d','');
+                        return;
+                    }
+
+                    // Build a smooth path using quadratic segments between midpoints
+                    let d = `M ${points[0].x.toFixed(1)} ${points[0].y.toFixed(1)}`;
+                    for (let i = 0; i < points.length - 1; i++) {
+                        const p0 = points[i];
+                        const p1 = points[i+1];
+                        const mx = ((p0.x + p1.x) / 2).toFixed(1);
+                        const my = ((p0.y + p1.y) / 2).toFixed(1);
+                        d += ` Q ${p0.x.toFixed(1)} ${p0.y.toFixed(1)} ${mx} ${my}`;
+                    }
+                    // finish to last point
+                    const last = points[points.length-1];
+                    d += ` T ${last.x.toFixed(1)} ${last.y.toFixed(1)}`;
+
+                    const path = svg.querySelector('path');
+                    if (path) path.setAttribute('d', d);
+
+                    // Keep SVG sized to timeline for crispness
+                    svg.setAttribute('viewBox', `0 0 ${Math.max(rect.width, 1)} ${Math.max(rect.height, 1)}`);
+                } catch (e) {
+                    console.error('Failed to draw experience connector', e);
+                }
             }
             
             setupQuotes() {
@@ -1469,6 +1798,24 @@
         // Initialize
         document.addEventListener('DOMContentLoaded', () => {
             new Portfolio();
+            // Modal behavior
+            const modal = document.getElementById('proxmox-modal');
+            const closeBtn = document.getElementById('proxmox-modal-close');
+            window.showProxmoxModal = () => {
+                if (modal) {
+                    modal.classList.add('open');
+                    modal.setAttribute('aria-hidden', 'false');
+                }
+            };
+            window.hideProxmoxModal = () => {
+                if (modal) {
+                    modal.classList.remove('open');
+                    modal.setAttribute('aria-hidden', 'true');
+                }
+            };
+            if (closeBtn) closeBtn.addEventListener('click', () => window.hideProxmoxModal());
+            if (modal) modal.addEventListener('click', (e) => { if (e.target === modal) window.hideProxmoxModal(); });
+            document.addEventListener('keydown', (e) => { if (e.key === 'Escape') window.hideProxmoxModal(); });
         });
     </script>
 </body>

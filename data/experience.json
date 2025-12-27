@@ -5,15 +5,8 @@
       "company": "dikon Elektronik & IT GmbH",
       "position": "Trainee IT Specialist in System Integration",
       "location": "Germany",
-      "description": "Support and maintain the company's infrastructure and employees' PCs.",
-      "current": true
-    },
-    {
-      "period": "2019 - Present",
-      "company": "Personal Homelab",
-      "position": "Self-Hosted Infrastructure Administrator",
-      "location": "Germany",
-      "description": "Manage a 2-node Proxmox cluster hosting multiple self-hosted services including web applications, databases, and development environments.",
+      "category": "professional",
+      "description": "Support and maintain the company's infrastructure, factory machines, networking, and employees' PCs. Responsible for patch management, monitoring, backups, hardware troubleshooting, and user support across the site.",
       "current": true
     },
     {
@@ -21,7 +14,8 @@
       "company": "Greenmark IT GmbH",
       "position": "Junior Development Apprentice",
       "location": "Alfeld",
-      "description": "Developed and maintained web applications, contributed to new features and internal tools, and supported the launch of a customer portal.",
+      "category": "professional",
+      "description": "Developed and maintained web applications, contributed to new features and internal tools, performed code reviews, and helped improve CI pipelines and deployment processes.",
       "current": false
     },
     {
@@ -29,17 +23,72 @@
       "company": "AGVolution GmbH",
       "position": "Intern Web & AI Developer",
       "location": "Göttingen",
-      "description": "Independently developed a self-hosted AI assistant for agriculture, and contributed to backend and frontend web projects.",
+      "category": "professional",
+      "description": "Built backend and frontend components and prototyped a self-hosted AI assistant for agricultural use. Apprenticeship overlapped with studies; worked on integrations and testing.",
       "current": false
+    },
+    {
+      "period": "2022 - 2023",
+      "company": "Europaschule BBS1 Northeim",
+      "position": "BFS – Economics (Berufsfachschule)",
+      "location": "Northeim, Germany",
+      "category": "school",
+      "description": "Two-year BFS programme in Economics (BFS). Focused on business fundamentals, accounting basics, and practical economic skills.",
+      "current": false
+    },
+    {
+      "period": "2023 - 2024",
+      "company": "BBS2 Göttingen (Fachoberschule IT)",
+      "position": "Fachoberschule IT (left after first year)",
+      "location": "Göttingen, Germany",
+      "category": "school",
+      "description": "Started Fachoberschule IT to deepen programming and IT knowledge; left after the first year while undertaking an apprenticeship at AGVolution.",
+      "current": false
+    },
+    {
+      "period": "2019 - Present",
+      "company": "Freelance / Personal Projects",
+      "position": "Coding Services and Websites",
+      "location": "Germany",
+      "category": "hobby",
+      "description": "Built and maintained small client websites and services, handled deployments, domain/DNS, and ongoing support since 2019.",
+      "current": true
+    },
+    {
+      "period": "2025 - Present",
+      "company": "Personal Projects",
+      "position": "Coding Apps for myself",
+      "location": "Germany",
+      "category": "hobby",
+      "description": "Designing and developing personal applications for productivity and learning; focusing on robust, maintainable code and small, useful tools.",
+      "current": true
+    },
+    {
+      "period": "2023 - Present",
+      "company": "PATHFindr",
+      "position": "Community Moderator",
+      "location": "Discord",
+      "category": "hobby",
+      "description": "Volunteer Community Moderator since 21.03.2023 — onboarding new members, moderating discussions, enforcing community guidelines, and assisting users with resources.",
+      "current": true
+    },
+    {
+      "period": "2022 - Present",
+      "company": "Personal Homelab",
+      "position": "Self-Hosted Infrastructure Administrator",
+      "location": "Germany",
+      "category": "hobby",
+      "description": "Design, deploy and maintain self-hosted services on Proxmox and container platforms since 2022. Migrated earlier VPS-hosted sites and handcrafted websites to local infrastructure, manage backups, DNS, monitoring, and lightweight CI for personal projects.",
+      "current": true
     }
   ],
   "volunteer": [
     {
-      "period": "2023 - Present",
+      "period": "2023-03-21 - Present",
       "organization": "PATHFindr",
-      "position": "Volunteer Moderator",
+      "position": "Community Moderator",
       "location": "Discord",
-      "description": "Moderating the PATHFindr community Discord Server, ensuring a positive and welcoming environment for all members."
+      "description": "Volunteer Community Moderator at PATHFindr since 21.03.2023 — onboarding new members, moderating discussions, enforcing community guidelines, helping run events, and assisting users with basic troubleshooting and resources."
     }
   ]
 }
